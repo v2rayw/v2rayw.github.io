@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-19170.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>MySQL数据库生成某一年的日历存储过程_在线工具</title>
+        <meta name="description" content="DELIMITER $$ CREATE PROCEDURE `t_base_calender` ( IN YEAR VARCHAR ( 20 ) ) BEGIN DECLARE     i INT; " />
+        <link rel="icon" href="__ADDON__/img/v2rayw/favicon.ico" type="image/x-icon"/>
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- theme meta -->
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="/">
+                            <span>V2ray W</span>
+                        </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="#">关于</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">联系</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>MySQL数据库生成某一年的日历存储过程_在线工具</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div class="cnblogs_code"> <pre><span style='font-family: "comic sans ms", sans-serif'><span style="color: rgba(0, 0, 0, 1)">DELIMITER $$ CREATE PROCEDURE `t_base_calender` ( IN YEAR VARCHAR ( </span>20<span style="color: rgba(0, 0, 0, 1)"> ) ) BEGIN DECLARE     i INT; DECLARE     start_date VARCHAR ( </span>20<span style="color: rgba(0, 0, 0, 1)"> ); DECLARE     end_date VARCHAR ( </span>20<span style="color: rgba(0, 0, 0, 1)"> ); DECLARE     date_count INT;  SET i </span>= 0<span style="color: rgba(0, 0, 0, 1)">;  SET start_date </span>= concat( YEAR, '-01-01'<span style="color: rgba(0, 0, 0, 1)"> );  SET end_date </span>= concat( YEAR + 1, '-01-01'<span style="color: rgba(0, 0, 0, 1)"> );  SET date_count </span>=<span style="color: rgba(0, 0, 0, 1)"> datediff( end_date, start_date ); WHILE     i </span>&lt;<span style="color: rgba(0, 0, 0, 1)"> date_count DO     INSERT INTO t_base_calender ( day_time, day_week, day_type ) SELECT     DATE_FORMAT( STR_TO_DATE( start_date, </span>'%Y-%m-%d %H:%i:%s' ), '%Y-%m-%d'<span style="color: rgba(0, 0, 0, 1)"> ) day_time,     DAYOFWEEK( STR_TO_DATE( start_date, </span>'%Y-%m-%d %H:%i:%s'<span style="color: rgba(0, 0, 0, 1)"> ) ) day_week,<br>//注意这里的周几会多1天，如应该是周五，会是周六。需特殊处理 CASE     DAYOFWEEK( STR_TO_DATE( start_date, </span>'%Y-%m-%d %H:%i:%s'<span style="color: rgba(0, 0, 0, 1)"> ) )      WHEN </span>6<span style="color: rgba(0, 0, 0, 1)"> THEN     </span>2<span style="color: rgba(0, 0, 0, 1)">      WHEN </span>7<span style="color: rgba(0, 0, 0, 1)"> THEN     </span>2 ELSE 1<span style="color: rgba(0, 0, 0, 1)">      END day_type  FROM     DUAL;  SET i </span>= i + 1<span style="color: rgba(0, 0, 0, 1)">;  SET start_date </span>= DATE_FORMAT( date_add( STR_TO_DATE( start_date, '%Y-%m-%d %H:%i:%s' ), INTERVAL 1 DAY ), '%Y-%m-%d'<span style="color: rgba(0, 0, 0, 1)"> );  END WHILE;  END</span></span></pre> </div> <p><span style='font-family: "comic sans ms", sans-serif'>改良之后：</span></p> <p> </p> <div class="cnblogs_code"> <pre><span style='font-family: "comic sans ms", sans-serif'><span style="color: rgba(0, 0, 0, 1)">DELIMITER $$ CREATE PROCEDURE `t_base_calender` ( IN YEAR VARCHAR ( </span>20<span style="color: rgba(0, 0, 0, 1)"> ) ) BEGIN DECLARE     i INT; DECLARE     start_date VARCHAR ( </span>20<span style="color: rgba(0, 0, 0, 1)"> ); DECLARE     end_date VARCHAR ( </span>20<span style="color: rgba(0, 0, 0, 1)"> ); DECLARE     date_count INT;  SET i </span>= 0<span style="color: rgba(0, 0, 0, 1)">;  SET start_date </span>= concat( YEAR, '-01-01'<span style="color: rgba(0, 0, 0, 1)"> );  SET end_date </span>= concat( YEAR + 1, '-01-01'<span style="color: rgba(0, 0, 0, 1)"> );  SET date_count </span>=<span style="color: rgba(0, 0, 0, 1)"> datediff( end_date, start_date ); WHILE     i </span>&lt;<span style="color: rgba(0, 0, 0, 1)"> date_count DO     INSERT INTO t_base_calender ( day_time, day_week, day_type ) SELECT     DATE_FORMAT( STR_TO_DATE( start_date, </span>'%Y-%m-%d %H:%i:%s' ), '%Y-%m-%d'<span style="color: rgba(0, 0, 0, 1)"> ) day_time, CASE     DAYOFWEEK( STR_TO_DATE( start_date, </span>'%Y-%m-%d %H:%i:%s' ) ) - 1<span style="color: rgba(0, 0, 0, 1)">      WHEN </span>0<span style="color: rgba(0, 0, 0, 1)"> THEN     </span>7 ELSE DAYOFWEEK( STR_TO_DATE( start_date, '%Y-%m-%d %H:%i:%s' ) ) - 1<span style="color: rgba(0, 0, 0, 1)">      END day_week, CASE     DAYOFWEEK( STR_TO_DATE( start_date, </span>'%Y-%m-%d %H:%i:%s'<span style="color: rgba(0, 0, 0, 1)"> ) )      WHEN </span>7<span style="color: rgba(0, 0, 0, 1)"> THEN     </span>2<span style="color: rgba(0, 0, 0, 1)">      WHEN </span>1<span style="color: rgba(0, 0, 0, 1)"> THEN     </span>2 ELSE 1<span style="color: rgba(0, 0, 0, 1)">      END day_type  FROM     DUAL;  SET i </span>= i + 1<span style="color: rgba(0, 0, 0, 1)">;  SET start_date </span>= DATE_FORMAT( date_add( STR_TO_DATE( start_date, '%Y-%m-%d %H:%i:%s' ), INTERVAL 1 DAY ), '%Y-%m-%d'<span style="color: rgba(0, 0, 0, 1)"> );  END WHILE;  END</span></span></pre> </div> <p> </p> <p> </p> <p> </p> <p><span style='font-family: "comic sans ms", sans-serif'>执行存储过程：</span></p> <div class="cnblogs_code"> <pre><span style='font-family: "comic sans ms", sans-serif'>call t_base_calender('2021'); </span></pre> </div> <p><span style='font-family: "comic sans ms", sans-serif'>删除存储过程：</span></p> <div class="cnblogs_code"> <pre><span style='font-family: "comic sans ms", sans-serif'>DROP PROCEDURE t_base_calender;</span></pre> </div> <p><span style='font-family: "comic sans ms", sans-serif'>注：</span></p> <p><span style='font-family: "comic sans ms", sans-serif'>MySQL的存储过程语句之前要加 DELIMITER $$ 否则会报 declare 定义变量报错。</span></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-18736.htm">梦见抱住别的女人是什么意思（梦见抱着别人的女人是什么意思）</a></p>
+                                        <p>下一个：<a href="/news/article-19171.htm">宠物疫苗猫多少钱一针打（宠物疫苗猫多少钱一针打的）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-4-free-high-speed-nodes.htm" title="10月4日→18.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月4日→18.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19624.htm" title="带你进⼊ OpenAI 的世界">带你进⼊ OpenAI 的世界</a></li>
+                        <li class="py-2"><a href="/news/article-18736.htm" title="梦见抱住别的女人是什么意思（梦见抱着别人的女人是什么意思）">梦见抱住别的女人是什么意思（梦见抱着别人的女人是什么意思）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-28-clash-v2ray-ss-ssr.htm" title="9月28日→18.6M/S|2024年最新免费节点V2ray W订阅链接地址">9月28日→18.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-v2ray-subscribe.htm" title="11月23日→18.7M/S|2024年最新免费节点V2ray W订阅链接地址">11月23日→18.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-node-share.htm" title="9月18日→22.3M/S|2024年最新免费节点V2ray W订阅链接地址">9月18日→22.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-node-subscribe.htm" title="10月22日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月22日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-15-free-v2ray.htm" title="9月15日→20.5M/S|2024年最新免费节点V2ray W订阅链接地址">9月15日→20.5M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-free-node-subscribe.htm" title="9月23日→22.9M/S|2024年最新免费节点V2ray W订阅链接地址">9月23日→22.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-12-free-subscribe-node.htm" title="9月12日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址">9月12日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright"><a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress</p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
