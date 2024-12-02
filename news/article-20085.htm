@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-20085.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>网页中的动态加载(js文件和css文件即换肤)</title>
+        <meta name="description" content="导语： 最近经常遇到一些人问起网页中按需加载的需求，例如网页load时不加载js文件，只有当用户触发某个事件时才按其所需加载其所需的js文件，又比如用户可以随意地切换网页的颜色等。纵观这些需求分析，不" />
+        <link rel="icon" href="__ADDON__/img/v2rayw/favicon.ico" type="image/x-icon"/>
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- theme meta -->
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="/">
+                            <span>V2ray W</span>
+                        </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="#">关于</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">联系</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>网页中的动态加载(js文件和css文件即换肤)</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> <p><span style="font-size:18px"><span style="font-size:24px">导语：</span><br /></span></p> <p><span style="font-size:18px">最近<span style="font-size:18px">经常</span>遇到一些人<span style="font-size:18px">问</span>起网页中按需加载的需求，<span style="font-size:18px">例</span>如网页load时不加载js文件，只<span style="font-size:18px">有当</span>用户触发某个事件时才按其所需加载其所需<span style="font-size:18px">的</span>js文件，又比如用户<span style="font-size:18px">可以<span style="font-size:18px">随<span style="font-size:18px">意地<span style="font-size:18px">切换<span style="font-size:18px">网页的颜色等。<span style="font-size:18px">纵观这些需求分析，不外<span style="font-size:18px">乎就是j<span style="font-size:18px">s里面的一个动态加载，因此有必要<span style="font-size:18px">做<span style="font-size:18px">几个<span style="font-size:18px">demo以供大家参考。</span></span></span></span></span></span></span></span></span></span></span></span></p> <p></p> <p><span style="font-size:24px">一、网页中动态加载js文件后执行某个函数：</span></p> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px">网页中的元素：</span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p> <pre><code class="language-html">&lt;input type="button" value="动态加载js文件" id="btn1" /&gt;</code></pre> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px">js代码：</span></span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px">照格式创建：&lt;script src="../js/myJs.js" type="text/javascript"&gt;&lt;/script&gt;</span><br /></span></span></span></span></span></span></span></span></span></span></span></p> <pre><code class="language-html">document.getElementById("btn1").onclick = function () { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var url = "js/myjs.js";  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!checkIsExist(url)) { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var script = document.createElement("script"); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; script.type = "text/javascript"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; script.src = "../" + url; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.body.appendChild(script); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout("sayHi()", 100); //加载完成后，执行其内部的函数 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  //检查页面中是否存在重名的js文件 function checkIsExist(url) { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var scripts = document.getElementsByTagName("script"); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //遍历查询页面中已存在有想要加载的js文件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (var i = 0; i &lt; scripts.length; i++) { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (scripts[i].src.indexOf(url)&gt;-1) { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</code></pre> <p><span style="font-size:18px">js文件动态加载并运行完毕！</span></p> <p></p> <p><span style="font-size:18px">二、动态加载css文件实现换肤的功能</span></p> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#000000">页面style</span><br /><span style="font-size:18px"></span></span></span></span></span></span></span></span></span></span></span></p> <pre><code class="language-html">#ulList li{ list-style-type: none; height:50px; width:50px; background-color:Green; margin-right:5px; float:left;}</code></pre> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><font size="4"><font size="4"><font size="4">三个css文件分别<font size="4">为：red.css\<font size="4">yellow.css\<font size="4">blue.css，保存在css文件夹中，<font size="4">其内容就是background<span style="font-size:18px">-c<span style="font-size:18px">olor:分别对应文件<span style="font-size:18px">名的颜色</span></span></span></font></font></font></font><br /></font></font></font></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px">页面布局</span></span></span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px; color:#FF6666"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"></span></span></span></span></span></span></span></span></span></span></span></span></p> <pre><code class="language-html">&lt;ul id="ulList"&gt;    &lt;li&gt;&lt;/li&gt;    &lt;li&gt;&lt;/li&gt;    &lt;li&gt;&lt;/li&gt; &lt;/ul&gt;</code></pre> <p><span style="font-size:18px; color:#000000">页面js</span></p> <pre><code class="language-html">&lt;script src="../js/jquery-1.8.3.min.js" type="text/javascript"&gt;&lt;/script&gt;     &lt;script src="../js/cookies.jquery.js" type="text/javascript"&gt;&lt;/script&gt;     &lt;script type="text/javascript"&gt;         var arrCss = [{ "color": "red" }, { "color": "yellow" }, { "color": "blue" } ]         $(function () {             //从cookie中读取有没有css的链接地址             var cssHrefCookie = $.cookie("cssName");             if (cssHrefCookie) {                 loadCss(cssHrefCookie);             }              $("#ulList &gt; li").map(function (index, item) {                 $(item).css("background-color", arrCss[index].color).click(function () {                     //1.先移除页面中包括在arrCss数组中的颜色link                     $("link").map(function (index, item) {                         //页面中css链接的地址                         var href = $(item).attr("href");                          //遍历arrCss数组对其值与页面获得的值进行比对                         $.map(arrCss, function (value, key) {                             //根据数组获得的css链接的地址                             var cssHref = "css/" + arrCss[key].color + ".css";                             if (cssHref == href) {                                 //1.移除该link标签                                 $(item).remove();                             }                         });                     });                      //动态加载css文件到页面中                     var url = "css/" + arrCss[index].color + ".css";                     loadCss(url);                      //保存当前用户的css地址到cookie中                     $.cookie("cssName", url, { expires: 1 });                 });             });         });          //动态加载css文件的函数         function loadCss(url) {             //&lt;link href="css/main.css"  type="text/css" /&gt;             var link = document.createElement("link");             link.rel = "stylesheet";             link.type = "text/css";             link.href = url;             document.getElementsByTagName("head")[0].appendChild(link);         }     &lt;/script&gt;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-19624.htm">带你进⼊ OpenAI 的世界</a></p>
+                                        <p>下一个：<a href="/news/article-20086.htm">2021年公务员国考报名时间（2021公务员国考报考时间）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-node-subscribe.htm" title="11月12日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月12日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-free-node-subscribe-links.htm" title="11月15日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月15日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-v2ray-subscribe.htm" title="11月23日→18.7M/S|2024年最新免费节点V2ray W订阅链接地址">11月23日→18.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-subscribe-node.htm" title="11月8日→22.5M/S|2024年最新免费节点V2ray W订阅链接地址">11月8日→22.5M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-high-speed-nodes.htm" title="10月30日→19.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月30日→19.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-free-subscribe-node.htm" title="9月22日→22.4M/S|2024年最新免费节点V2ray W订阅链接地址">9月22日→22.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-24-free-node-subscribe.htm" title="9月24日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址">9月24日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-v2ray-subscribe.htm" title="11月1日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月1日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-8-free-high-speed-nodes.htm" title="9月8日→22.3M/S|2024年最新免费节点V2ray W订阅链接地址">9月8日→22.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="11月13日→18.1M/S|2024年最新免费节点V2ray W订阅链接地址">11月13日→18.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright"><a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress</p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
