@@ -4,13 +4,12 @@
 <head>
         <!-- Basic Page Needs
         ================================================== -->
-    <link rel="canonical" href="https://v2rayw.github.io" />
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-24214.htm" />
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="favicon.ico">
-    <title>2024-10归档 - V2ray W机场节点订阅官网</title>
-        <meta name="keywords" content="2024-10归档" />
-        <meta name="description" content="2024-10归档" />
+    <title>Spring boot整合JPA</title>
+        <meta name="description" content="1.pom.xml添加jpa和数据库依赖包 &lt;dependency&gt;  &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework" />
         <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
     <!-- Mobile Specific Metas
         ================================================== -->
@@ -49,7 +48,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
         <!--
         ==================================================
         Header Section Start
@@ -101,7 +100,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h1>2024-10 归档</h1>
+                        <h1>Spring boot整合JPA</h1>
                         <ol class="breadcrumb list-inline text-center">
                             <li class="list-inline-item">
                                 <a href="/">
@@ -109,7 +108,13 @@
                                     首页 &nbsp; &nbsp;/
                                 </a>
                             </li>
-                            <li class="active list-inline-item">2024-10 归档</li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
                         </ol>
                     </div>
                 </div>
@@ -125,24 +130,12 @@ About Section Start
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="xcblog-blog-list">
-                                                <div class="row item xcblog-blog-item" data-date="2024-10-01">
-                            <div class="col-md-3">
-                                <a href="/free-nodes/2024-10-1-free-v2ray.htm" class="xcblog-blog-url">
-                                    <img src="/uploads/20240908-1/8c213f04de65875fd49f90f2a89b298e.webp" style="width:100%;" alt="10月1日→20.4M/S|2024年最新免费节点V2ray W订阅链接地址">
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                <a href="/free-nodes/2024-10-1-free-v2ray.htm" class="xcblog-blog-url">
-                                    <h3 class="xcblog-blog-title">
-                                        10月1日→20.4M/S|2024年最新免费节点V2ray W订阅链接地址                                    </h3>
-                                </a>
-                                <p>这一次的节点更新覆盖了香港、欧洲、韩国、美国、新加坡、日本、加拿大等地区,最高速度可达20.4 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                            </div>
-                        </div>
-                        
-                        <ul class="pagination"><li><a href="/date/2024-10/page-3.htm">&laquo;</a></li> <li><a href="/date/2024-10/">1</a></li><li><a href="/date/2024-10/page-2.htm">2</a></li><li><a href="/date/2024-10/page-3.htm">3</a></li><li class="active"><span>4</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                    </div>
-                </div>
+                                      				  				  				<div id="content_views" class="htmledit_views"> <p>1.pom.xml添加jpa和数据库依赖包</p> <pre><code class="language-html">&lt;dependency&gt;  &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;com.oracle&lt;/groupId&gt;     &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;     &lt;version&gt;11.2.0.3&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>2.application.properties配置数据库连接池</p> <pre><code class="language-html">spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl spring.datasource.username=jdjk spring.datasource.password=jdjk spring.datasource.initialSize=20   spring.datasource.minIdle=20   spring.datasource.maxActive=100     spring.datasource.maxWait=60000 spring.jpa.database-platform=org.hibernate.dialect.OracleDialect</code></pre> <p>3.创建表映射实体类</p> <pre><code class="language-html">import javax.persistence.Entity; import javax.persistence.Id; import javax.persistence.Table;  @Entity @Table(name="t_sys_jkconfig") public class T_SYS_JKCONFIG{  	private String xh; 	private String server_ip; 	private String server_name; 	private String server_action; 	 	@Id 	public String getXh() { 		return xh; 	} 	public void setXh(String xh) { 		this.xh = xh; 	} 	public String getServer_ip() { 		return server_ip; 	} 	public void setServer_ip(String server_ip) { 		this.server_ip = server_ip; 	} 	public String getServer_name() { 		return server_name; 	} 	public void setServer_name(String server_name) { 		this.server_name = server_name; 	} 	public String getServer_action() { 		return server_action; 	} 	public void setServer_action(String server_action) { 		this.server_action = server_action; 	} }</code></pre> <p>4.创建接口继承JpaRepository</p> <pre><code class="language-html">import java.util.List; import java.util.Map;  import org.springframework.data.jpa.repository.JpaRepository; import org.springframework.data.jpa.repository.Modifying; import org.springframework.data.jpa.repository.Query; import org.springframework.data.repository.query.Param; import org.springframework.stereotype.Repository; import org.springframework.transaction.annotation.Transactional;  import cn.com.highset.goexpo.bqd.bean.T_SYS_JKCONFIG;  @Repository @Transactional public interface IBaseDao extends JpaRepository&lt;T_SYS_JKCONFIG, String&gt; {  	 	T_SYS_JKCONFIG findByXh(String xh); 	 	//返回对象 	@Query(value = "select * from t_sys_jkconfig where server_ip = :ip", nativeQuery = true) 	List&lt;T_SYS_JKCONFIG&gt; getByIp(@Param("ip") String ip); 	 	//返回map 	@Query(value = "select server_ip from t_sys_jkconfig where server_ip = :ip", nativeQuery = true) 	List&lt;Map&gt; getMapByIp(@Param("ip") String ip);  	@Modifying 	@Query(value = "update t_sys_jkconfig set server_ip = :ip where xh = :xh", nativeQuery = true) 	void updateByXh(@Param("ip") String ip,@Param("xh") String xh); }</code></pre> <p>5.在Controller中调用方法</p> <pre><code class="language-html">import java.util.List; import java.util.Map;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.web.bind.annotation.RequestMapping;  import cn.com.highset.goexpo.dao.IBaseDao;  @Controller public class IndexController { 	 	@Autowired 	private IBaseDao baseDao; 	 	@RequestMapping("/") 	public String root(Model model) { 		//新增 		T_SYS_JKCONFIG t = new T_SYS_JKCONFIG(); 		t.setXh("111"); 		t.setServer_ip("222"); 		t.setServer_name("333"); 		t.setServer_action("444"); 		baseDao.save(t); 		//删除 		T_SYS_JKCONFIG jkconfig = baseDao.findByXh("111"); 		baseDao.delete(jkconfig); 		//修改 		baseDao.updateByXh("12345", "1"); 		//查询 		List&lt;Map&gt; list =  baseDao.getMapByIp("192.168.1.120"); 		for(Map t : list){ 			System.out.println(t.get("xh")); 		} 		model.addAttribute("list", list); 		return "home"; 	} }</code></pre> <p>6.在启动类Application中添加扫描注解</p> <pre><code class="language-html">import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.boot.autoconfigure.domain.EntityScan; import org.springframework.data.jpa.repository.config.EnableJpaRepositories; import org.springframework.web.bind.annotation.RestController;  @RestController @SpringBootApplication @EnableJpaRepositories(basePackages = "xxx.xxx.dao") @EntityScan("xxx.xxx.bean") public class Application {  	public static void main(String[] args) { 		SpringApplication.run(Application.class, args); 	} }</code></pre> <p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-23746.htm">野人部落（野人部落app）</a></p>
+                                        <p>下一个：<a href="/news/article-24215.htm">广州宠物领养中心具体地址电话号码（广州市宠物领养中心）</a></p>
+                                    </div>
+                                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -150,15 +143,15 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-v2ray.htm" title="12月10日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">12月10日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-21466.htm" title="宠物疫苗可以自己打吗现在多少钱（宠物疫苗可以自己打嘛）">宠物疫苗可以自己打吗现在多少钱（宠物疫苗可以自己打嘛）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-23-free-node-subscribe.htm" title="9月23日→22.9M/S|2024年最新免费节点V2ray W订阅链接地址">9月23日→22.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-subscribe-node.htm" title="11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-node-share.htm" title="11月28日→20.8M/S|2024年最新免费节点V2ray W订阅链接地址">11月28日→20.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20540.htm" title="学宠物美容怎么样?有前景吗?（学宠物美容有前途吗）">学宠物美容怎么样?有前景吗?（学宠物美容有前途吗）</a></li>
+                        <li class="py-2"><a href="/news/article-22376.htm" title="jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑">jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑</a></li>
+                        <li class="py-2"><a href="/news/article-24214.htm" title="Spring boot整合JPA">Spring boot整合JPA</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-subscribe-node.htm" title="12月5日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址">12月5日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-7-free-v2ray.htm" title="11月7日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">11月7日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-10-free-node-subscribe-links.htm" title="9月10日→22.8M/S|2024年最新免费节点V2ray W订阅链接地址">9月10日→22.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-14-free-v2ray-subscribe.htm" title="10月14日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址">10月14日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-19-node-share.htm" title="9月19日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址">9月19日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-node-share.htm" title="11月26日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月26日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月27日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-node-share.htm" title="11月11日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址">11月11日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-free-v2ray-subscribe.htm" title="10月27日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月27日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-9-free-high-speed-nodes.htm" title="11月9日→23M/S|2024年最新免费节点V2ray W订阅链接地址">11月9日→23M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                     </ul>
     </div>
