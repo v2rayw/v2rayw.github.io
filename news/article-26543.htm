@@ -4,12 +4,12 @@
 <head>
         <!-- Basic Page Needs
         ================================================== -->
-    <link rel="canonical" href="https://v2rayw.github.io/news/article-26091.htm" />
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-26543.htm" />
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="favicon.ico">
-    <title>python读取HDFS文件</title>
-        <meta name="description" content="2019独角兽企业重金招聘Python工程师标准&gt;&gt;&gt;    ###方法一：使用hdfs库读取HDFS文件 ###在读取数据时，要加上 encoding='utf-8'，否则字符串前" />
+    <title>PHP浮点数据类型详解</title>
+        <meta name="description" content="定义和用法 在PHP中，float数据类型表示任何数字，并带有小数部分。小数部分可以包含小数点后的数字，或者可以使用e或E以科学计数法表示。例如，科学计数法中的100是10e2。 浮点数的大小取决于硬" />
         <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
     <!-- Mobile Specific Metas
         ================================================== -->
@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h1>python读取HDFS文件</h1>
+                        <h1>PHP浮点数据类型详解</h1>
                         <ol class="breadcrumb list-inline text-center">
                             <li class="list-inline-item">
                                 <a href="/">
@@ -130,10 +130,10 @@ About Section Start
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="htmledit_views"> <div class="content" id="articleContent"> <div class="ad-wrap"> <p><a style="color:#A00;font-weight:bold;" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://my.oschina.net/u/2663968/blog/3061697"  rel="nofollow">2019独角兽企业重金招聘Python工程师标准&gt;&gt;&gt; </a> <img decoding="async" src="http://img.555519.xyz/uploads/20221230/6cd21c0e1295f2e6d3c0f8ed9e972592.jpg" alt="python读取HDFS文件"></p> </p></div> <pre><code>###方法一：使用hdfs库读取HDFS文件 ###在读取数据时，要加上 encoding='utf-8'，否则字符串前面会有b'xxx' ###先写入list，再转为df，注意要对数据进行分列，最后要对指定字段转换数据类型 </code></pre> <pre><code>from hdfs.client import Client client = Client("http://hadoop-1-1:50070")  lines = [] with client.read("/user/spark/H2O/Wholesale_customers_data.csv", encoding='utf-8') as reader:     for line in reader:           lines.append(line.strip())  column_str = lines[0] column_list = column_str.split(',')  data = {"item_list":lines[1:]}  import pandas as pd df = pd.DataFrame(data=data) df[column_list] =  df["item_list"].apply(lambda x: pd.Series([i for i in x.split(",")]))  ##重新指定列 df.drop("item_list", axis=1, inplace=True)  ##删除列  df.dtypes """ Region              object Fresh               object Milk                object Grocery             object Frozen              object Detergents_Paper    object Delicassen          object target              object dtype: object  """   df = df.astype('int')  ##将object类型转为int64 df.dtypes """ Region              int64 Fresh               int64 Milk                int64 Grocery             int64 Frozen              int64 Detergents_Paper    int64 Delicassen          int64 target              int64 dtype: object """ </code></pre> <pre><code>###方法二：采用pydoop库读取HDFS文件 </code></pre> <pre><code>import pydoop.hdfs as hdfs  lines = [] with hdfs.open('/user/spark/security/iris.csv', 'rt') as f:     for line in f:         ##print(line)         lines.append(line.strip())   column_list = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width', 'Species']  data = {"item_list":lines[0:]}  import pandas as pd df = pd.DataFrame(data=data) df[column_list] =  df["item_list"].apply(lambda x: pd.Series([i for i in x.split(",")]))  ##重新指定列 df.drop("item_list", axis=1, inplace=True)  ##删除列  ##调整数据类型 df[['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width']] = df[['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width']].astype('float64')  df.dtypes """ Sepal_Length    float64 Sepal_Width     float64 Petal_Length    float64 Petal_Width     float64 Species          object dtype: object """ </code></pre> <pre><code>###直接运用pd.read_table进行数据读取操作 import pydoop.hdfs as hdfs import pandas as pd  ###此份数据含有表头 with hdfs.open('/user/spark/security/iris.csv', 'rt') as f:     df = pd.read_table(f)   column_list = df.columns[0].split(",") df[column_list] =  df.iloc[:,0].apply(lambda x: pd.Series([i for i in x.split(",")]))  ##此处注意要写成df.iloc[:,0]  df.head() """ Sepal_Length,Sepal_Width,Petal_Length,Petal_Width,Species	Sepal_Length	Sepal_Width	Petal_Length	Petal_Width	Species 0	5.1,3.5,1.4,0.2,setosa	5.1	3.5	1.4	0.2	setosa 1	4.9,3,1.4,0.2,setosa	4.9	3	1.4	0.2	setosa 2	4.7,3.2,1.3,0.2,setosa	4.7	3.2	1.3	0.2	setosa 3	4.6,3.1,1.5,0.2,setosa	4.6	3.1	1.5	0.2	setosa 4	5,3.6,1.4,0.2,setosa	5	3.6	1.4	0.2	setosa """   df.drop(df.columns[0], axis=1, inplace=True) df.dtypes """ Sepal_Length    object Sepal_Width     object Petal_Length    object Petal_Width     object Species         object dtype: object """   #####将'Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width'这四个字段转换为float类型 df[['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width']] = df[['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width']].astype('float')  df.dtypes """ Sepal_Length    float64 Sepal_Width     float64 Petal_Length    float64 Petal_Width     float64 Species          object dtype: object """  </code></pre> <div class="ad-wrap"> <div id="blog-title-ad">    <ins class="adsbygoogle"></ins>   </div> </p></div> </div> <p>转载于:https://my.oschina.net/kyo4321/blog/3016864</p> </p></div> 			                <div class="clearfix"></div>
+                                      				  				  				<h2>定义和用法</h2> <p>在PHP中，<strong>float</strong>数据类型表示任何数字，并带有小数部分。小数部分可以包含小数点后的数字，或者可以使用<strong>e</strong>或<strong>E</strong>以科学计数法表示。例如，科学计数法中的100是10e2。</p> <p>浮点数的大小取决于硬件/ OS平台，尽管通常会精确到小数点后14位。</p> <h2>语法</h2> <pre>//Literal&nbsp;assignment&nbsp;of&nbsp;float&nbsp;value&nbsp;to&nbsp;variable $var=5327.496;&nbsp;//&nbsp;standard&nbsp;notation $var1=5.327496e3;&nbsp;//&nbsp;Scientific&nbsp;notation $var2=5.327496E3;&nbsp;//Scientific&nbsp;notation $var3=5_327.496;&nbsp;//sepration&nbsp;symbol</pre> <p>为了更好的可读性，整数文字可以使用<strong>“ _”</strong>作为分隔符，PHP扫描程序在处理时将省略该分隔符。</p> <pre>$var=5_327.496;&nbsp;//&nbsp;it&nbsp;will&nbsp;treated&nbsp;as&nbsp;5327.496</pre> <h2>PHP版本</h2> <p>从PHP 7.40开始，可以使用分隔符号“ _”</p> <p>下面的示例以标准符号显示浮点文字表示形式。</p> <h2>示例</h2> <pre>&lt;?php $var=5327.496; echo&nbsp;$var&nbsp;.&nbsp;"\n"; ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>5327.496</pre> <p>本示例使用科学计数法</p> <h2>示例</h2> <pre>&lt;?php $var1=5.327496e3;&nbsp;&lt;br&nbsp;/&gt; echo&nbsp;$var&nbsp;.&nbsp;"\n";&lt;br&nbsp;/&gt;$var2=5.327496E3;&nbsp;&lt;br&nbsp;/&gt; echo&nbsp;$var&nbsp;.&nbsp;"\n"; ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>5327.496 5327.496</pre> <p>此示例使用分隔符号“ _”（将从PHP 7.40开始运行）</p> <h2>示例</h2> <pre>&lt;?php $var3=5_327.496; echo&nbsp;$var&nbsp;.&nbsp;"\n"; ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>5327.496</pre> <div></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-25612.htm">新手如何开宠物店（我想开宠物店怎么开）</a></p>
-                                        <p>下一个：<a href="/news/article-26092.htm">泰安泰宠宠物食品有限公司代工（泰安泰宠宠物食品工厂）</a></p>
+                                        <p>上一个：<a href="/news/article-26092.htm">泰安泰宠宠物食品有限公司代工（泰安泰宠宠物食品工厂）</a></p>
+                                        <p>下一个：<a href="/news/article-26545.htm">VUE3setup响应式函数系统API详解</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -143,16 +143,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-free-high-speed-nodes.htm" title="11月9日→23M/S|2024年最新免费节点V2ray W订阅链接地址">11月9日→23M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-9-12-free-subscribe-node.htm" title="9月12日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址">9月12日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-1-free-v2ray-subscribe.htm" title="11月1日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月1日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-21911.htm" title="vue路由守卫，限制前端页面访问权限">vue路由守卫，限制前端页面访问权限</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-15-free-node-subscribe-links.htm" title="11月15日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月15日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-high-speed-nodes.htm" title="10月20日→23M/S|2024年最新免费节点V2ray W订阅链接地址">10月20日→23M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-v2ray.htm" title="12月1日→20.2M/S|2024年最新免费节点V2ray W订阅链接地址">12月1日→20.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-v2ray.htm" title="11月21日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月21日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-10-free-node-subscribe.htm" title="10月10日→19.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月10日→19.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-19-node-share.htm" title="9月19日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址">9月19日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月27日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26092.htm" title="泰安泰宠宠物食品有限公司代工（泰安泰宠宠物食品工厂）">泰安泰宠宠物食品有限公司代工（泰安泰宠宠物食品工厂）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-free-node-subscribe.htm" title="9月23日→22.9M/S|2024年最新免费节点V2ray W订阅链接地址">9月23日→22.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-25-free-v2ray-subscribe.htm" title="9月25日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址">9月25日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-subscribe-node.htm" title="11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22376.htm" title="jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑">jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-v2ray.htm" title="12月10日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">12月10日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-v2ray.htm" title="11月16日→20.2M/S|2024年最新免费节点V2ray W订阅链接地址">11月16日→20.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
