@@ -10,7 +10,7 @@
     <link rel="icon" href="favicon.ico">
     <title>当我们更改小于当前序列号的AUTO_INCREMENT值时，MySQL将返回什么？</title>
         <meta name="description" content="当我们在MySQL列上使用AUTO_INCREMENT时，序列号总是从默认值1或我们指定的值开始以升序递增。 MySQL不允许将AUTO_INCREMENT值更改为小于当前序列号的值。通过以下示例可以" />
-        <link rel="icon" href="__ADDON__/img/v2rayw/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
     <!-- Mobile Specific Metas
         ================================================== -->
     <meta name="format-detection" content="telephone=no">
@@ -130,7 +130,8 @@ About Section Start
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<p>当我们在MySQL列上使用AUTO_INCREMENT时，序列号总是从默认值1或我们指定的值开始以升序递增。</p> <p>MySQL不允许将AUTO_INCREMENT值更改为小于当前序列号的值。通过以下示例可以理解-</p> <h2>示例</h2> <p>假设我们有一个名为“ emp1”的表，并在创建表时将AUTO_INCREMENT VALUE指定为100。在表中插入值之后，该序列将从100开始，如以下查询的输出所示-</p> <pre>mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;emp1; +-----+---------+ |&nbsp;id&nbsp;|&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| +-----+---------+ |&nbsp;100&nbsp;|&nbsp;Sohan&nbsp;&nbsp;&nbsp;| |&nbsp;101&nbsp;|&nbsp;Harshit&nbsp;| +-----+---------+ 2&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>当我们尝试通过ALTER TABLE查询将AUTO_INCREMENT值更改为90时，MySQL不会返回错误和警告，因为查询还可以，但是当我们在表中插入新值时，MySQL会将指定的AUTO_INCREMENT值与当前序列号进行比较。由于指定的AUTO_INCREMENT值(90)小于当前序列号(101)，MySQL开始从102开始累积新值，可以从以下查询中观察到-</p> <pre>mysql&gt;&nbsp;ALTER&nbsp;TABLE&nbsp;EMP1&nbsp;AUTO_INCREMENT&nbsp;=&nbsp;90; Records:&nbsp;2&nbsp;Duplicates:&nbsp;0&nbsp;Warnings:&nbsp;0  mysql&gt;&nbsp;Insert&nbsp;into&nbsp;emp1(name)&nbsp;values('Aryan');  mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;emp1; +-----+---------+ |&nbsp;id&nbsp;&nbsp;|&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;| +-----+---------+ |&nbsp;100&nbsp;|&nbsp;Sohan&nbsp;&nbsp;&nbsp;| |&nbsp;101&nbsp;|&nbsp;Harshit&nbsp;| |&nbsp;102&nbsp;|&nbsp;Aryan&nbsp;&nbsp;&nbsp;| +-----+---------+ 3&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>相反，如果我们尝试将AUTO_INCREMENT更改为高于当前序列号的值，则MySQL将开始从指定值开始累积新值。</p> <p>为了在表'emp1'中更加清楚，我们将AUTO_INCREMENT值更改为108，高于当前序列号，因此MySQL从指定的AUTO_INCREMENT值（即从108开始）开始累积新插入的值。</p> <pre>mysql&gt;&nbsp;ALTER&nbsp;TABLE&nbsp;EMP1&nbsp;AUTO_INCREMENT&nbsp;=&nbsp;108; Records:&nbsp;3&nbsp;Duplicates:&nbsp;0&nbsp;Warnings:&nbsp;0  mysql&gt;&nbsp;Insert&nbsp;into&nbsp;emp1(name)&nbsp;values('Daksh');  mysql&gt;&nbsp;Insert&nbsp;into&nbsp;emp1(name)&nbsp;values('Yashraj');  mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;emp1; +-----+---------+ |&nbsp;id&nbsp;&nbsp;|&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;| +-----+---------+ |&nbsp;100&nbsp;|&nbsp;Sohan&nbsp;&nbsp;&nbsp;| |&nbsp;101&nbsp;|&nbsp;Harshit&nbsp;| |&nbsp;102&nbsp;|&nbsp;Aryan&nbsp;&nbsp;&nbsp;| |&nbsp;108&nbsp;|&nbsp;Daksh&nbsp;&nbsp;&nbsp;| |&nbsp;109&nbsp;|&nbsp;Yashraj&nbsp;| +-----+---------+ 5&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <div></div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>当我们在MySQL列上使用AUTO_INCREMENT时，序列号总是从默认值1或我们指定的值开始以升序递增。</p> <p>MySQL不允许将AUTO_INCREMENT值更改为小于当前序列号的值。通过以下示例可以理解-</p> <h2>示例</h2> <p>假设我们有一个名为“ emp1”的表，并在创建表时将AUTO_INCREMENT VALUE指定为100。在表中插入值之后，该序列将从100开始，如以下查询的输出所示-</p> <pre>mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;emp1; +-----+---------+ |&nbsp;id&nbsp;|&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| +-----+---------+ |&nbsp;100&nbsp;|&nbsp;Sohan&nbsp;&nbsp;&nbsp;| |&nbsp;101&nbsp;|&nbsp;Harshit&nbsp;| +-----+---------+ 2&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>当我们尝试通过ALTER TABLE查询将AUTO_INCREMENT值更改为90时，MySQL不会返回错误和警告，因为查询还可以，但是当我们在表中插入新值时，MySQL会将指定的AUTO_INCREMENT值与当前序列号进行比较。由于指定的AUTO_INCREMENT值(90)小于当前序列号(101)，MySQL开始从102开始累积新值，可以从以下查询中观察到-</p> <pre>mysql&gt;&nbsp;ALTER&nbsp;TABLE&nbsp;EMP1&nbsp;AUTO_INCREMENT&nbsp;=&nbsp;90; Records:&nbsp;2&nbsp;Duplicates:&nbsp;0&nbsp;Warnings:&nbsp;0  mysql&gt;&nbsp;Insert&nbsp;into&nbsp;emp1(name)&nbsp;values('Aryan');  mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;emp1; +-----+---------+ |&nbsp;id&nbsp;&nbsp;|&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;| +-----+---------+ |&nbsp;100&nbsp;|&nbsp;Sohan&nbsp;&nbsp;&nbsp;| |&nbsp;101&nbsp;|&nbsp;Harshit&nbsp;| |&nbsp;102&nbsp;|&nbsp;Aryan&nbsp;&nbsp;&nbsp;| +-----+---------+ 3&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>相反，如果我们尝试将AUTO_INCREMENT更改为高于当前序列号的值，则MySQL将开始从指定值开始累积新值。</p> <p>为了在表'emp1'中更加清楚，我们将AUTO_INCREMENT值更改为108，高于当前序列号，因此MySQL从指定的AUTO_INCREMENT值（即从108开始）开始累积新插入的值。</p> <pre>mysql&gt;&nbsp;ALTER&nbsp;TABLE&nbsp;EMP1&nbsp;AUTO_INCREMENT&nbsp;=&nbsp;108; Records:&nbsp;3&nbsp;Duplicates:&nbsp;0&nbsp;Warnings:&nbsp;0  mysql&gt;&nbsp;Insert&nbsp;into&nbsp;emp1(name)&nbsp;values('Daksh');  mysql&gt;&nbsp;Insert&nbsp;into&nbsp;emp1(name)&nbsp;values('Yashraj');  mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;emp1; +-----+---------+ |&nbsp;id&nbsp;&nbsp;|&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;| +-----+---------+ |&nbsp;100&nbsp;|&nbsp;Sohan&nbsp;&nbsp;&nbsp;| |&nbsp;101&nbsp;|&nbsp;Harshit&nbsp;| |&nbsp;102&nbsp;|&nbsp;Aryan&nbsp;&nbsp;&nbsp;| |&nbsp;108&nbsp;|&nbsp;Daksh&nbsp;&nbsp;&nbsp;| |&nbsp;109&nbsp;|&nbsp;Yashraj&nbsp;| +-----+---------+ 5&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <div></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>下一个：<a href="/news/article-18736.htm">梦见抱住别的女人是什么意思（梦见抱着别人的女人是什么意思）</a></p>
                                     </div>
@@ -142,16 +143,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-2-free-v2ray.htm" title="10月2日→18.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月2日→18.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-15-free-node-subscribe-links.htm" title="11月15日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月15日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-v2ray.htm" title="11月2日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">11月2日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-high-speed-nodes.htm" title="11月17日→22M/S|2024年最新免费节点V2ray W订阅链接地址">11月17日→22M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-free-v2ray.htm" title="10月18日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">10月18日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="11月13日→18.1M/S|2024年最新免费节点V2ray W订阅链接地址">11月13日→18.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-17-clash-v2ray-ss-ssr.htm" title="9月17日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">9月17日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-node-subscribe-links.htm" title="10月16日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址">10月16日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-10-27-free-v2ray-subscribe.htm" title="10月27日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月27日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-29-node-share-links.htm" title="9月29日→20.7M/S|2024年最新免费节点V2ray W订阅链接地址">9月29日→20.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-high-speed-nodes.htm" title="10月20日→23M/S|2024年最新免费节点V2ray W订阅链接地址">10月20日→23M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-high-speed-nodes.htm" title="9月30日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">9月30日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-13-free-v2ray-subscribe.htm" title="9月13日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">9月13日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21911.htm" title="vue路由守卫，限制前端页面访问权限">vue路由守卫，限制前端页面访问权限</a></li>
+                        <li class="py-2"><a href="/news/article-21912.htm" title="人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片">人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-high-speed-nodes.htm" title="12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-node-share.htm" title="12月14日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址">12月14日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24215.htm" title="广州宠物领养中心具体地址电话号码（广州市宠物领养中心）">广州宠物领养中心具体地址电话号码（广州市宠物领养中心）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-v2ray-subscribe.htm" title="11月6日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址">11月6日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -163,7 +164,7 @@ About Section Start
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -186,7 +187,18 @@ About Section Start
         <div class="container">
             <div class="row content-justify-between">
                 <div class="col-12 text-center">
-                    <p class="copyright"><a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress</p>
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
                 </div>
             </div>
         </div>

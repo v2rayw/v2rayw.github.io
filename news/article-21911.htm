@@ -10,7 +10,7 @@
     <link rel="icon" href="favicon.ico">
     <title>vue路由守卫，限制前端页面访问权限</title>
         <meta name="description" content="今天给大家写一篇关于vue校验登录状态，如果是非法登录就跳转到登录页面的效果 它的具体实现是一个router.beforeEach的钩子，每次路由切换时触发，写法如下 router.beforeEac" />
-        <link rel="icon" href="__ADDON__/img/v2rayw/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
     <!-- Mobile Specific Metas
         ================================================== -->
     <meta name="format-detection" content="telephone=no">
@@ -130,7 +130,8 @@ About Section Start
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="htmledit_views"> <p>今天给大家写一篇关于vue校验登录状态，如果是非法登录就跳转到登录页面的效果</p> <p>它的具体实现是一个router.beforeEach的钩子，每次路由切换时触发，写法如下</p> <pre class="has"><code class="language-javascript">router.beforeEach((to, from, next) =&gt; {     next() })</code></pre> <h3>beforeEach函数有三个参数：</h3> <ul> <li>to:即将进入的路由对象</li> <li>from:当前导航即将离开的路由</li> <li>next,进行管道中的一个钩子，如果执行完了，则导航的状态就是 confirmed （确认的）；否则为false，终止导航。</li> </ul> <h3>使用案例Demo</h3> <p>限制登陆功能，具体实现思路：每次跳转路由是判断本地 localStorage.getItem('token') 状态</p> <p>路径：找到router-&gt;index.js如下</p> <pre class="has"><code class="language-javascript">import Vue from 'vue' import Router from 'vue-router' Vue.use(Router)  const router = new Router({   routes: [{       path: '/',       name: 'HelloWorld',       component: HelloWorld     },     {       path: '/login',       name: 'login',       component: login     }   ] }) //下面是重点  router.beforeEach((to, from, next) =&gt; {   let token = localStorage.getItem('token')    if (to.path == '/login') {     next()   } else {     if (token == '' || token == null) {       next('/login');     } else {       next()     }   }  })  export default router;</code></pre> <p>解释：index.js写成如上形式，用const router 接受 new Router对象，最后export暴露出去</p> <p>router.beforeEach 在每次路由跳转出发</p> <p>let token = localStorage.getItem('token')&nbsp; 获取本地没有没token 如果没有就跳到login页面 很简单的逻辑</p> </div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>今天给大家写一篇关于vue校验登录状态，如果是非法登录就跳转到登录页面的效果</p> <p>它的具体实现是一个router.beforeEach的钩子，每次路由切换时触发，写法如下</p> <pre class="has"><code class="language-javascript">router.beforeEach((to, from, next) =&gt; {     next() })</code></pre> <h3>beforeEach函数有三个参数：</h3> <ul> <li>to:即将进入的路由对象</li> <li>from:当前导航即将离开的路由</li> <li>next,进行管道中的一个钩子，如果执行完了，则导航的状态就是 confirmed （确认的）；否则为false，终止导航。</li> </ul> <h3>使用案例Demo</h3> <p>限制登陆功能，具体实现思路：每次跳转路由是判断本地 localStorage.getItem('token') 状态</p> <p>路径：找到router-&gt;index.js如下</p> <pre class="has"><code class="language-javascript">import Vue from 'vue' import Router from 'vue-router' Vue.use(Router)  const router = new Router({   routes: [{       path: '/',       name: 'HelloWorld',       component: HelloWorld     },     {       path: '/login',       name: 'login',       component: login     }   ] }) //下面是重点  router.beforeEach((to, from, next) =&gt; {   let token = localStorage.getItem('token')    if (to.path == '/login') {     next()   } else {     if (token == '' || token == null) {       next('/login');     } else {       next()     }   }  })  export default router;</code></pre> <p>解释：index.js写成如上形式，用const router 接受 new Router对象，最后export暴露出去</p> <p>router.beforeEach 在每次路由跳转出发</p> <p>let token = localStorage.getItem('token')&nbsp; 获取本地没有没token 如果没有就跳到login页面 很简单的逻辑</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-21467.htm">动物疫苗企业名单公示最新（动物疫苗生产厂家排名）</a></p>
                                         <p>下一个：<a href="/news/article-21912.htm">人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片</a></p>
@@ -143,16 +144,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-3-node-share.htm" title="11月3日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月3日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-subscribe-node.htm" title="12月5日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址">12月5日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-high-speed-nodes.htm" title="12月17日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址">12月17日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                         <li class="py-2"><a href="/news/article-21911.htm" title="vue路由守卫，限制前端页面访问权限">vue路由守卫，限制前端页面访问权限</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-21-free-subscribe-node.htm" title="9月21日→20.3M/S|2024年最新免费节点V2ray W订阅链接地址">9月21日→20.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-subscribe-node.htm" title="11月8日→22.5M/S|2024年最新免费节点V2ray W订阅链接地址">11月8日→22.5M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-high-speed-nodes.htm" title="10月20日→23M/S|2024年最新免费节点V2ray W订阅链接地址">10月20日→23M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-27-node-share.htm" title="9月27日→20.6M/S|2024年最新免费节点V2ray W订阅链接地址">9月27日→20.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-22833.htm" title="深圳 宠物 领养 深圳宠物领养中心 免费">深圳 宠物 领养 深圳宠物领养中心 免费</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-node-subscribe.htm" title="12月8日→18.2M/S|2024年最新免费节点V2ray W订阅链接地址">12月8日→18.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-21912.htm" title="人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片">人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-node-subscribe-links.htm" title="10月9日→22.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月9日→22.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26091.htm" title="python读取HDFS文件">python读取HDFS文件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-free-high-speed-nodes.htm" title="12月7日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址">12月7日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-free-subscribe-node.htm" title="10月7日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址">10月7日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-15-free-v2ray.htm" title="9月15日→20.5M/S|2024年最新免费节点V2ray W订阅链接地址">9月15日→20.5M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-18735.htm" title="当我们更改小于当前序列号的AUTO_INCREMENT值时，MySQL将返回什么？">当我们更改小于当前序列号的AUTO_INCREMENT值时，MySQL将返回什么？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-20-free-node-subscribe-links.htm" title="9月20日→22.5M/S|2024年最新免费节点V2ray W订阅链接地址">9月20日→22.5M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24214.htm" title="Spring boot整合JPA">Spring boot整合JPA</a></li>
                     </ul>
     </div>
 </div>
@@ -164,7 +165,7 @@ About Section Start
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -187,7 +188,18 @@ About Section Start
         <div class="container">
             <div class="row content-justify-between">
                 <div class="col-12 text-center">
-                    <p class="copyright"><a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress</p>
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
                 </div>
             </div>
         </div>

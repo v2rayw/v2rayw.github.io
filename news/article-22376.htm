@@ -10,7 +10,7 @@
     <link rel="icon" href="favicon.ico">
     <title>jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑</title>
         <meta name="description" content="前提： 由于业务需要在entity Product已经实现了@version的乐观锁的基础上再加上了悲观锁的控制 @Lock(value = LockModeType.PESSIMISTIC_WRIT" />
-        <link rel="icon" href="__ADDON__/img/v2rayw/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
     <!-- Mobile Specific Metas
         ================================================== -->
     <meta name="format-detection" content="telephone=no">
@@ -130,7 +130,8 @@ About Section Start
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>前提：</p> <p>由于业务需要在entity Product已经实现了@version的乐观锁的基础上再加上了悲观锁的控制</p> <p>@Lock(value = LockModeType.PESSIMISTIC_WRITE)</p> <p>Product findByType(String type);</p> <p>详情描述：</p> <p>但是当进行多请求的并发测试的时候发现程序第一个抢占findByType的请求能正常上锁，其它并发请求也正常进入等待，可是当第一个请求修改product并且提交事务释放锁的时候，其它等待请求准备上锁的时候却抛出了乐观锁的错误，为什么会出现这种错误呢？</p> <p>解答：</p> <p>JPA 提供的@Lock 不是直接对findByType生成的对应查询语句后面加for update上锁，而是按照下面的顺序来上锁的：</p> <p>执行查询语句： select * from product where type = ?</p> <p>查询结果(id, type, version): [1001, 'NEW', 1]</p> <p>通过查询出来的id, version在执行以下查询</p> <p>select * from product where product id = 1001 and version = 1</p> <p>如果步骤2查询有数据返回的话就生成下面的for update的查询SQL上锁， 如果没有就抛出乐观锁异常。</p> <p>select * from product where product id = 1001 and version = 1 for update</p> <p>根据@Lock的上述执行原理，当触发多请求并发的时候，所有请求都同步执行了上述1的查询操作，当执行步骤2，3的时候先上锁的请求修改了数据和版本后，后续请求在旧的version就查询不出来数据就抛出了乐观锁异常了。</p> <p>建议：</p> <p>一般情况下尽量避免使用悲观锁，对系统开销很大，如果不得已需要用到的话还是直接写for update的SQL直接上锁。</p> </div></div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>前提：</p> <p>由于业务需要在entity Product已经实现了@version的乐观锁的基础上再加上了悲观锁的控制</p> <p>@Lock(value = LockModeType.PESSIMISTIC_WRITE)</p> <p>Product findByType(String type);</p> <p>详情描述：</p> <p>但是当进行多请求的并发测试的时候发现程序第一个抢占findByType的请求能正常上锁，其它并发请求也正常进入等待，可是当第一个请求修改product并且提交事务释放锁的时候，其它等待请求准备上锁的时候却抛出了乐观锁的错误，为什么会出现这种错误呢？</p> <p>解答：</p> <p>JPA 提供的@Lock 不是直接对findByType生成的对应查询语句后面加for update上锁，而是按照下面的顺序来上锁的：</p> <p>执行查询语句： select * from product where type = ?</p> <p>查询结果(id, type, version): [1001, 'NEW', 1]</p> <p>通过查询出来的id, version在执行以下查询</p> <p>select * from product where product id = 1001 and version = 1</p> <p>如果步骤2查询有数据返回的话就生成下面的for update的查询SQL上锁， 如果没有就抛出乐观锁异常。</p> <p>select * from product where product id = 1001 and version = 1 for update</p> <p>根据@Lock的上述执行原理，当触发多请求并发的时候，所有请求都同步执行了上述1的查询操作，当执行步骤2，3的时候先上锁的请求修改了数据和版本后，后续请求在旧的version就查询不出来数据就抛出了乐观锁异常了。</p> <p>建议：</p> <p>一般情况下尽量避免使用悲观锁，对系统开销很大，如果不得已需要用到的话还是直接写for update的SQL直接上锁。</p> </div></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-21912.htm">人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片</a></p>
                                         <p>下一个：<a href="/news/article-22377.htm">聊城宠物狗商家电话多少（聊城宠物狗市场）</a></p>
@@ -143,16 +144,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-23282.htm" title="小型宠物粮食加工设备价格多少 小型宠物粮食加工设备价格多少钱">小型宠物粮食加工设备价格多少 小型宠物粮食加工设备价格多少钱</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-v2ray.htm" title="11月21日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月21日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-20086.htm" title="2021年公务员国考报名时间（2021公务员国考报考时间）">2021年公务员国考报名时间（2021公务员国考报考时间）</a></li>
-                        <li class="py-2"><a href="/news/article-20540.htm" title="学宠物美容怎么样?有前景吗?（学宠物美容有前途吗）">学宠物美容怎么样?有前景吗?（学宠物美容有前途吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-high-speed-nodes.htm" title="11月25日→21.7M/S|2024年最新免费节点V2ray W订阅链接地址">11月25日→21.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">11月14日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-v2ray-subscribe.htm" title="11月10日→21.2M/S|2024年最新免费节点V2ray W订阅链接地址">11月10日→21.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-26-free-high-speed-nodes.htm" title="9月26日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">9月26日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-clash-v2ray-ss-ssr.htm" title="9月28日→18.6M/S|2024年最新免费节点V2ray W订阅链接地址">9月28日→18.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-25-free-high-speed-nodes.htm" title="10月25日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址">10月25日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-13-free-v2ray-subscribe.htm" title="9月13日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">9月13日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23281.htm" title="java中集合的Collection集合">java中集合的Collection集合</a></li>
+                        <li class="py-2"><a href="/news/article-27468.htm" title="这几种方法帮你快速实现回到页面顶部">这几种方法帮你快速实现回到页面顶部</a></li>
+                        <li class="py-2"><a href="/news/article-25145.htm" title="东北农大研究生官网（东北农业大学研究生官网）">东北农大研究生官网（东北农业大学研究生官网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-node-subscribe.htm" title="12月8日→18.2M/S|2024年最新免费节点V2ray W订阅链接地址">12月8日→18.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-31-free-v2ray.htm" title="10月31日→22.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月31日→22.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27008.htm" title="高端宠物品牌有哪些（高端宠物品牌有哪些牌子）">高端宠物品牌有哪些（高端宠物品牌有哪些牌子）</a></li>
+                        <li class="py-2"><a href="/news/article-25147.htm" title="猫咬了我第二天就死了（猫咬了第二天伤口有点疼）">猫咬了我第二天就死了（猫咬了第二天伤口有点疼）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-node-share-links.htm" title="9月11日→19M/S|2024年最新免费节点V2ray W订阅链接地址">9月11日→19M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-high-speed-nodes.htm" title="10月8日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月8日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -164,7 +165,7 @@ About Section Start
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -187,7 +188,18 @@ About Section Start
         <div class="container">
             <div class="row content-justify-between">
                 <div class="col-12 text-center">
-                    <p class="copyright"><a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress</p>
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
                 </div>
             </div>
         </div>
