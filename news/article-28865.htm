@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-28865.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Vertica集成Apache Hudi指南</title>
+        <meta name="description" content="1. 摘要 本文演示了使用外部表集成 Vertica 和 Apache Hudi。 在演示中我们使用 Spark 上的 Apache Hudi 将数据摄取到 S3 中，并使用 Vertica 外部表访" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- theme meta -->
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="/">
+                            <span>V2ray W</span>
+                        </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="#">关于</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">联系</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Vertica集成Apache Hudi指南</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="1-摘要">1. 摘要</h2> <p>本文演示了使用外部表集成 Vertica 和 Apache Hudi。 在演示中我们使用 Spark 上的 Apache Hudi 将数据摄取到 S3 中，并使用 Vertica 外部表访问这些数据。</p> <h2 id="2-apache-hudi介绍">2. Apache Hudi介绍</h2> <p>Apache Hudi 是一种变更数据捕获 (CDC) 工具，可在不同时间线将事务记录在表中。 Hudi 代表 Hadoop Upserts Deletes and Incrementals，是一个开源框架。 Hudi 提供 ACID 事务、可扩展的元数据处理，并统一流和批处理数据处理。<br /> 以下流程图说明了该过程。 使用安装在 Apache Spark 上的 Hudi 将数据处理到 S3，并从 Vertica 外部表中读取 S3 中的数据更改。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/218c8b259110b0cc5a197d0475aa401e.jpg" alt="Vertica集成Apache Hudi指南"></p> <h2 id="3-环境准备">3. 环境准备</h2> <ul> <li>Apache Spark 环境。 使用具有 1 个 Master 和 3 个 Worker 的 4 节点集群进行了测试。 按照在<a target="_blank" rel="nofollow">多节点集群上设置 Apache Spark 中的说明安装 Spark 集群环境</a>。 启动 Spark 多节点集群。</li> <li>Vertica 分析数据库。 使用 Vertica Enterprise 11.0.0 进行了测试。</li> <li>AWS S3 或 S3 兼容对象存储。 使用 MinIO 作为 S3 存储桶进行了测试。</li> <li>需要以下 jar 文件。将 jar 复制到 Spark 机器上任何需要的位置，将这些 jar 文件放在 /opt/spark/jars 中。 <ul> <li>Hadoop - hadoop-aws-2.7.3.jar</li> <li>AWS - aws-java-sdk-1.7.4.jar</li> </ul> </li> <li>在 Vertica 数据库中运行以下命令来设置访问存储桶的 S3 参数：</li> </ul> <pre><code class="language-sql">SELECT SET_CONFIG_PARAMETER('AWSAuth', 'accesskey:secretkey'); SELECT SET_CONFIG_PARAMETER('AWSRegion','us-east-1'); SELECT SET_CONFIG_PARAMETER('AWSEndpoint',’&lt;S3_IP&gt;:9000'); SELECT SET_CONFIG_PARAMETER('AWSEnableHttps','0');</code></pre> <blockquote> <p>endpoint可能会有所不同，具体取决于 S3 存储桶位置选择的 S3 对象存储。</p> </blockquote> <h2 id="4-vertica和apache-hudi集成">4. Vertica和Apache Hudi集成</h2> <p>要将 Vertica 与 Apache Hudi 集成，首先需要将 Apache Spark 与 Apache Hudi 集成，配置 jars，以及访问 AWS S3 的连接。 其次，将 Vertica 连接到 Apache Hudi。 然后对 S3 存储桶执行 Insert、Append、Update 等操作。<br /> 按照以下部分中的步骤将数据写入 Vertica。<br /><a target="_blank" rel="nofollow">在 Apache Spark 上配置 Apache Hudi 和 AWS S3</a><br /><a target="_blank" rel="nofollow">配置 Vertica 和 Apache Hudi 集成</a></p> <h3 id="41-在-apache-spark-上配置-apache-hudi-和-aws-s3">4.1 在 Apache Spark 上配置 Apache Hudi 和 AWS S3</h3> <p>在 Apache Spark 机器中运行以下命令。<br /> 这会下载 Apache Hudi 包，配置 jar 文件，以及 AWS S3</p> <pre><code class="language-shell">/opt/spark/bin/spark-shell \ --conf "spark.serializer=org.apache.spark.serializer.KryoSerializer"\--packages org.apache.hudi:hudi-spark3-bundle_2.12:0.9.0,org.apache.spark:spark-avro_2.12:3.0.1</code></pre> <p>导入Hudi的读、写等所需的包：</p> <pre><code class="language-scala">import org.apache.hudi.QuickstartUtils._ import scala.collection.JavaConversions._ import org.apache.spark.sql.SaveMode._ import org.apache.hudi.DataSourceReadOptions._ import org.apache.hudi.DataSourceWriteOptions._ import org.apache.hudi.config.HoodieWriteConfig._</code></pre> <p>使用以下命令根据需要配置 Minio 访问密钥、Secret key、Endpoint 和其他 S3A 算法和路径。</p> <pre><code class="language-scala">spark.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", "*****") spark.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", "*****") spark.sparkContext.hadoopConfiguration.set("fs.s3a.endpoint", "http://XXXX.9000") spark.sparkContext.hadoopConfiguration.set("fs.s3a.path.style.access", "true") sc.hadoopConfiguration.set("fs.s3a.signing-algorithm","S3SignerType")</code></pre> <p>创建变量来存储 MinIO 的表名和 S3 路径。</p> <pre><code class="language-scala">val tableName = “Trips” val basepath = “s3a://apachehudi/vertica/”</code></pre> <p>准备数据，使用 Scala 在 Apache spark 中创建示例数据</p> <pre><code class="language-scala">val df = Seq( ("aaa","r1","d1",10,"US","20211001"), ("bbb","r2","d2",20,"Europe","20211002"), ("ccc","r3","d3",30,"India","20211003"), ("ddd","r4","d4",40,"Europe","20211004"), ("eee","r5","d5",50,"India","20211005"), ).toDF("uuid", "rider", "driver","fare","partitionpath","ts")</code></pre> <p>将数据写入 AWS S3 并验证此数据</p> <pre><code class="language-scala">df.write.format("org.apache.hudi"). options(getQuickstartWriteConfigs). option(PRECOMBINE_FIELD_OPT_KEY, "ts"). option(RECORDKEY_FIELD_OPT_KEY, "uuid"). option(PARTITIONPATH_FIELD_OPT_KEY, "partitionpath"). option(TABLE_NAME, tableName). mode(Overwrite). save(basePath)</code></pre> <p>使用 Scala 运行以下命令以验证是否从 S3 存储桶中正确读取数据。</p> <pre><code class="language-scala">spark.read.format("hudi").load(basePath).createOrReplaceTempView("dta") spark.sql("select _hoodie_commit_time, uuid, rider, driver, fare,ts, partitionpath from  dta order by uuid").show()</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/64ecf1f368eb8998940a1e785db57b7c.jpg" alt="Vertica集成Apache Hudi指南"></p> <h3 id="42-配置-vertica-和-apache-hudi-集成">4.2 配置 Vertica 和 Apache HUDI 集成</h3> <p>在 vertica 中创建一个外部表，其中包含来自 S3 上 Hudi 表的数据。 我们创建了“旅行”表。</p> <pre><code class="language-sql">CREATE EXTERNAL TABLE Trips ( _hoodie_commit_time TimestampTz, uuid varchar, rider varchar, driver varchar, fare int, ts varchar, partitionpath varchar ) AS COPY FROM 's3a://apachehudi/parquet/vertica/*/*.parquet' PARQUET;</code></pre> <p>运行以下命令以验证正在读取外部表：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d51da239c4f1a09e9f8dad6b77090c01.jpg" alt="Vertica集成Apache Hudi指南"></p> <h3 id="43-如何让-vertica-查看更改的数据">4.3 如何让 Vertica 查看更改的数据</h3> <p>以下部分包含为查看 Vertica 中更改的数据而执行的一些操作的示例。</p> <h4 id="431-写入数据">4.3.1 写入数据</h4> <p>在这个例子中，我们使用 Scala 在 Apache spark 中运行了以下命令并附加了一些数据：</p> <pre><code class="language-scala">val df2 = Seq( ("fff","r6","d6",50,"India","20211005") ).toDF("uuid", "rider", "driver","fare","partitionpath","ts")</code></pre> <p>运行以下命令将此数据附加到 S3 上的 Hudi 表中：</p> <pre><code class="language-scala">df2.write.format("org.apache.hudi"). options(getQuickstartWriteConfigs). option(PRECOMBINE_FIELD_OPT_KEY, "ts"). option(RECORDKEY_FIELD_OPT_KEY, "uuid"). option(PARTITIONPATH_FIELD_OPT_KEY, "partitionpath"). option(TABLE_NAME, tableName). mode(Append). save(basePath)</code></pre> <h4 id="432-更新数据">4.3.2 更新数据</h4> <p>在这个例子中，我们更新了一条 Hudi 表的记录。 需要导入数据以触发并更新数据：</p> <pre><code class="language-scala">val df3 = Seq( ("aaa","r1","d1",100,"US","20211001"), ("eee","r5","d5",500,"India","20211001") ).toDF("uuid", "rider", "driver","fare","partitionpath","ts")</code></pre> <p>运行以下命令将数据更新到 S3 上的 HUDI 表：</p> <pre><code class="language-scala">df3.write.format("org.apache.hudi"). options(getQuickstartWriteConfigs). option(PRECOMBINE_FIELD_OPT_KEY, "ts"). option(RECORDKEY_FIELD_OPT_KEY, "uuid"). option(PARTITIONPATH_FIELD_OPT_KEY, "partitionpath"). option(TABLE_NAME, tableName). mode(Append). save(basePath)</code></pre> <p>以下是 spark.sql 的输出：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d73d33194936fefd394a6a0f0e8c53d3.jpg" alt="Vertica集成Apache Hudi指南"></p> <p>以下是 Vertica 输出：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/2348df65c8b50aab89c03e22105d4c17.jpg" alt="Vertica集成Apache Hudi指南"></p> <h4 id="433-创建和查看数据的历史快照">4.3.3 创建和查看数据的历史快照</h4> <p>执行以下指向特定时间戳的 spark 命令：</p> <pre><code class="language-scala">val dd = spark.read .format("hudi") .option("as.of.instant", "20211007092600") .load(basePath)</code></pre> <p>使用以下命令将数据写入 S3 中的 parquet：</p> <pre><code class="language-scala">dd.write.parquet("s3a://apachehudi/parquet/p2")</code></pre> <p>在此示例中，我们正在读取截至“20211007092600”日期的 Hudi 表快照。</p> <pre><code class="language-scala">dd.show</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f4747c4959ebf03fe6aa83e8c250551b.jpg" alt="Vertica集成Apache Hudi指南"></p> <p>通过在 parquet 文件上创建外部表从 Vertica 执行命令。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e8e569870e26d87ed728e7b9d45b261a.jpg" alt="Vertica集成Apache Hudi指南"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28396.htm">解决Redis并发带来的雪崩，击穿和穿透问题，以及搭建一个Redis伪集群</a></p>
+                                        <p>下一个：<a href="/news/article-28866.htm">兰州在哪里买狗（兰州在哪里买狗比较好）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-free-high-speed-nodes.htm" title="11月9日→23M/S|2024年最新免费节点V2ray W订阅链接地址">11月9日→23M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-v2ray.htm" title="10月12日→20M/S|2024年最新免费节点V2ray W订阅链接地址">10月12日→20M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-subscribe-node.htm" title="10月17日→19.8M/S|2024年最新免费节点V2ray W订阅链接地址">10月17日→19.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-v2ray.htm" title="12月10日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">12月10日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-high-speed-nodes.htm" title="9月30日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">9月30日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20085.htm" title="网页中的动态加载(js文件和css文件即换肤)">网页中的动态加载(js文件和css文件即换肤)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-17-clash-v2ray-ss-ssr.htm" title="9月17日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">9月17日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19171.htm" title="宠物疫苗猫多少钱一针打（宠物疫苗猫多少钱一针打的）">宠物疫苗猫多少钱一针打（宠物疫苗猫多少钱一针打的）</a></li>
+                        <li class="py-2"><a href="/news/article-27937.htm" title="动物医疗市场 动物医疗市场分析">动物医疗市场 动物医疗市场分析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-node-share.htm" title="11月3日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月3日→21.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
