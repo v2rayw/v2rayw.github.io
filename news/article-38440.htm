@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-38440.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Spring Boot+Mybatis Plus +Spring Security 动态url权限控制</title>
+        <meta name="description" content="一，准备工作  1.1 导入相依的jar包pom &lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;project xmlns="http://mave" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- theme meta -->
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="/">
+                            <span>V2ray W</span>
+                        </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="#">关于</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">联系</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Spring Boot+Mybatis Plus +Spring Security 动态url权限控制</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h3>一，准备工作</h3> <p><img fetchpriority="high" decoding="async" alt="" height="649" src="http://img.555519.xyz/uploads3/20220723/825ddaffd362ef923ce25814e168a232.jpg"></p> <p><strong>1.1 导入相依的jar包pom</strong></p> <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;project xmlns="http://maven.apache.org/POM/4.0.0"          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;     &lt;groupId&gt;com.huangan&lt;/groupId&gt;     &lt;artifactId&gt;springSecurity02&lt;/artifactId&gt;     &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;     &lt;parent&gt;         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;         &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;         &lt;version&gt;2.1.9.RELEASE&lt;/version&gt;     &lt;/parent&gt;      &lt;dependencies&gt;          &lt;!-- mvc --&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;             &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;         &lt;/dependency&gt;          &lt;!-- druid 连接池 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;com.alibaba&lt;/groupId&gt;             &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;             &lt;version&gt;1.1.10&lt;/version&gt;         &lt;/dependency&gt;          &lt;!-- mybatisPlus --&gt;         &lt;dependency&gt;             &lt;groupId&gt;com.baomidou&lt;/groupId&gt;             &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;             &lt;version&gt;3.1.0&lt;/version&gt;         &lt;/dependency&gt;          &lt;!-- mybatis plus 代码生成器依赖 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;com.baomidou&lt;/groupId&gt;             &lt;artifactId&gt;mybatis-plus-generator&lt;/artifactId&gt;             &lt;version&gt;3.1.0&lt;/version&gt;         &lt;/dependency&gt;          &lt;!-- 代码生成器模板 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.freemarker&lt;/groupId&gt;             &lt;artifactId&gt;freemarker&lt;/artifactId&gt;         &lt;/dependency&gt;          &lt;!-- lombok简化java代码 如果没有安装，先安装这个插件--&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;             &lt;artifactId&gt;lombok&lt;/artifactId&gt;             &lt;optional&gt;true&lt;/optional&gt;         &lt;/dependency&gt;          &lt;!-- mysql 依赖 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;mysql&lt;/groupId&gt;             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;         &lt;/dependency&gt;          &lt;!-- 权限 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;             &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;         &lt;/dependency&gt;          &lt;!-- 阿里FastJson转换工具依赖 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;com.alibaba&lt;/groupId&gt;             &lt;artifactId&gt;fastjson&lt;/artifactId&gt;             &lt;version&gt;1.2.13&lt;/version&gt;         &lt;/dependency&gt;          &lt;!-- StringUtils工具类 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;             &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;             &lt;version&gt;3.6&lt;/version&gt;         &lt;/dependency&gt;          &lt;!-- 用于生成、描述、调用和可视化 RESTful 风格的 Web 服务 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;io.springfox&lt;/groupId&gt;             &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;             &lt;version&gt;2.6.1&lt;/version&gt;             &lt;exclusions&gt;                 &lt;exclusion&gt;                     &lt;groupId&gt;org.mapstruct&lt;/groupId&gt;                     &lt;artifactId&gt;mapstruct&lt;/artifactId&gt;                 &lt;/exclusion&gt;             &lt;/exclusions&gt;         &lt;/dependency&gt;         &lt;dependency&gt;             &lt;groupId&gt;io.springfox&lt;/groupId&gt;             &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;             &lt;version&gt;2.6.1&lt;/version&gt;         &lt;/dependency&gt;         &lt;dependency&gt;             &lt;groupId&gt;io.springfox&lt;/groupId&gt;             &lt;artifactId&gt;springfox-bean-validators&lt;/artifactId&gt;             &lt;version&gt;2.6.1&lt;/version&gt;         &lt;/dependency&gt;      &lt;/dependencies&gt; &lt;/project&gt;</code></pre> <h3>二，SpringBoot+Mybatis plus 搭建与使用</h3> <p><strong>2.1 application.yml文件配置</strong></p> <pre><code>#数据源 spring:   datasource:     driver-class-name: com.mysql.jdbc.Driver     #使用druid连接池     type: com.alibaba.druid.pool.DruidDataSource     url: jdbc:mysql://localhost:3306/security?serverTimezone=UTC     username: root     password: 123456  #mybatisPlus配置 mybatis-plus: global-config: db-config:   id-type:  auto   field-strategy: not_empty   table-underline:  true   db-type:  mysql   logic-delete-value: 1 # 逻辑已删除值(默认为 1)   logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)   mapper-locations: classpath:/mapper/*.xml</code></pre> <p><strong>2.2&nbsp; MyBatisPlusConfig文件配置</strong></p> <p><img decoding="async" alt="" height="205" src="http://img.555519.xyz/uploads3/20220723/e0cab9b788b43d113269a4f1955a173d.jpg"></p> <pre><code>package com.config.mybatisPlus;   import com.baomidou.mybatisplus.core.injector.ISqlInjector; import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector; import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor; import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import org.springframework.context.annotation.Profile;  /**  * mybatisPlus配置  */ @Configuration public class MyBatisPlusConfig {      /**      * @description: 配置分页插件      * @author: gradual      * @param: []      * @return: com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor      */     @Bean     public PaginationInterceptor paginationInterceptor() {         return new PaginationInterceptor();     }      /**      * @description: SQL执行效率插件      * @author: gradual      * @param: []      * @return: com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor      */     @Bean     @Profile({"test"})// 设置 dev test 环境开启     public PerformanceInterceptor performanceInterceptor() {         return new PerformanceInterceptor();     }      /**      * 逻辑删除用，3.1.1之后的版本可不需要配置该bean，但项目这里用的是3.1.0的      * @author David Hong      * @return com.baomidou.mybatisplus.core.injector.ISqlInjector      */     @Bean     public ISqlInjector sqlInjector() {         return new LogicSqlInjector();     } }</code></pre> <p><strong>2.3 创建MybatisPlus 代码生成器 MysqlGenerator</strong></p> <pre><code>package com.config.mybatisPlus;  import com.baomidou.mybatisplus.core.toolkit.StringPool; import com.baomidou.mybatisplus.generator.AutoGenerator; import com.baomidou.mybatisplus.generator.InjectionConfig; import com.baomidou.mybatisplus.generator.config.*; import com.baomidou.mybatisplus.generator.config.po.TableFill; import com.baomidou.mybatisplus.generator.config.po.TableInfo; import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy; import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;  import java.util.ArrayList; import java.util.List;  /**  * 代码生成器  */ public class MysqlGenerator {      /**      * RUN THIS      */     public static void main(String[] args) {         // 代码生成器         AutoGenerator mpg = new AutoGenerator();          // 全局配置         GlobalConfig gc = new GlobalConfig();         String projectPath = System.getProperty("user.dir");         gc.setOutputDir(projectPath + "/src/main/java");         // TODO 设置用户名         gc.setAuthor("huangan");         gc.setOpen(true);         // service 命名方式         gc.setServiceName("%sService");         // service impl 命名方式         gc.setServiceImplName("%sServiceImpl");         // 自定义文件命名，注意 %s 会自动填充表实体属性！         gc.setMapperName("%sMapper");         gc.setXmlName("%sMapper");         gc.setFileOverride(true);         gc.setActiveRecord(true);         // XML 二级缓存         gc.setEnableCache(false);         // XML ResultMap         gc.setBaseResultMap(true);         // XML columList         gc.setBaseColumnList(false);         mpg.setGlobalConfig(gc);          // TODO 数据源配置         DataSourceConfig dsc = new DataSourceConfig();         dsc.setUrl("jdbc:mysql://localhost:3306/security?serverTimezone=UTC");         dsc.setDriverName("com.mysql.jdbc.Driver");         dsc.setUsername("root");         dsc.setPassword("123456");         mpg.setDataSource(dsc);          // TODO 包配置         PackageConfig pc = new PackageConfig();         //pc.setModuleName(scanner("模块名"));         pc.setParent("com");         pc.setEntity("entity");         pc.setService("service");         pc.setServiceImpl("service.impl");         mpg.setPackageInfo(pc);          // 自定义需要填充的字段         List&lt;TableFill&gt; tableFillList = new ArrayList&lt;TableFill&gt;();         //如 每张表都有一个创建时间、修改时间         //而且这基本上就是通用的了，新增时，创建时间和修改时间同时修改         //修改时，修改时间会修改，         //虽然像Mysql数据库有自动更新几只，但像ORACLE的数据库就没有了，         //使用公共字段填充功能，就可以实现，自动按场景更新了。         //如下是配置         //TableFill createField = new TableFill("gmt_create", FieldFill.INSERT);         //TableFill modifiedField = new TableFill("gmt_modified", FieldFill.INSERT_UPDATE);         //tableFillList.add(createField);         //tableFillList.add(modifiedField);          // 自定义配置         InjectionConfig cfg = new InjectionConfig() {             @Override             public void initMap() {                 // to do nothing             }         };         List&lt;FileOutConfig&gt; focList = new ArrayList&lt;&gt;();         focList.add(new FileOutConfig("/templates/mapper.xml.ftl") {             @Override             public String outputFile(TableInfo tableInfo) {                 // 自定义输入文件名称                 return projectPath + "/src/main/resources/mapper/"                         + "/" + tableInfo.getEntityName() + "Mapper" +                          StringPool.DOT_XML;             }         });         cfg.setFileOutConfigList(focList);         mpg.setCfg(cfg);         mpg.setTemplate(new TemplateConfig().setXml(null));          // 策略配置         StrategyConfig strategy = new StrategyConfig();         strategy.setNaming(NamingStrategy.underline_to_camel);         strategy.setColumnNaming(NamingStrategy.underline_to_camel);         strategy.setEntityLombokModel(true);         // 设置逻辑删除键         strategy.setLogicDeleteFieldName("deleted");         // TODO 指定生成的bean的数据库表名         strategy.setInclude("t_sys_user_role");         //strategy.setSuperEntityColumns("id");         // 驼峰转连字符         strategy.setControllerMappingHyphenStyle(true);         mpg.setStrategy(strategy);         // 选择 freemarker 引擎需要指定如下加，注意 pom 依赖必须有！         mpg.setTemplateEngine(new FreemarkerTemplateEngine());         mpg.execute();     } }</code></pre> <p><strong>2.4 运行代码生成器main方法生成对应文件</strong></p> <p><img decoding="async" alt="" height="794" src="http://img.555519.xyz/uploads3/20220723/e2b2b49307a23ed85ed602b61522ed77.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37962.htm">全国宠物粮食基地排名前十（全国宠物粮食基地排名前十名）</a></p>
+                                        <p>下一个：<a href="/news/article-38441.htm">动物医院需要几个执业兽医资格证（动物医院需要几个执业兽医资格证呢）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35143.htm" title="猫驱虫一次大概多少钱（猫驱虫需要多少钱）">猫驱虫一次大概多少钱（猫驱虫需要多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-free-high-speed-nodes.htm" title="12月7日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址">12月7日→21.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-node-share.htm" title="12月14日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址">12月14日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26092.htm" title="泰安泰宠宠物食品有限公司代工（泰安泰宠宠物食品工厂）">泰安泰宠宠物食品有限公司代工（泰安泰宠宠物食品工厂）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-node-share.htm" title="12月13日→19.2M/S|2024年最新免费节点V2ray W订阅链接地址">12月13日→19.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-node-subscribe-links.htm" title="10月9日→22.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月9日→22.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-high-speed-nodes.htm" title="10月30日→19.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月30日→19.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33135.htm" title="2021年公务员国考报名时间（2021公务员国考报考时间）">2021年公务员国考报名时间（2021公务员国考报考时间）</a></li>
+                        <li class="py-2"><a href="/news/article-35665.htm" title="WebSocket协议详解（什么是webSocket）">WebSocket协议详解（什么是webSocket）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-subscribe-node.htm" title="11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
