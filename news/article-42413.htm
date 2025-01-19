@@ -144,6 +144,7 @@ About Section Start
                   				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">带参数方法的定义和调用</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">形参和实参</a></li> <li><a href="#_lab2_0_1" rel="nofollow">带参数方法练习</a></li> </ul> <li><a href="#_label1" rel="nofollow">带返回值的方法的定义和调用</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow">带返回值的方法定义</a></li> <li><a href="#_lab2_1_3" rel="nofollow">带返回值的方法调用</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>带参数方法的定义和调用</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>形参和实参</h3> <p>形参：方法定义中的参数</p> <p>           相当于变量定义格式，例int number</p> <p>实参：方法调用中参数</p> <p>           等同于变量或常量，例如10   ， number</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>带参数方法练习</h3> <p>需求： 设计一个方法用于打印两个数中最大数，数据来自于方法参数</p> <p>思路：</p> <p>1.定义一个方法,用于打印两个书中的最大数,例如getMax()</p> <div class="ay1code"> <pre class="brush:java;">public static void getMax( ){  }</pre> </div> <p>2.为方法定义两个参数，用于接收数据</p> <div class="ay1code"> <pre class="brush:java;">public static void getMax(int a,int b){  }</pre> </div> <p>3.使用分支语句分两种情况对数字的大小关系进行处理；</p> <div class="ay1code"> <pre class="brush:java;">if (a&gt;b){            system.out.println(a);  }else{            system.out.printf(b);</pre> </div> <p>4.在main方法中调用定义好的方法（使用常量）</p> <div class="ay1code"> <pre class="brush:java;">public static void main（String[ ] args）{  //直接传递常量            getMax（10,20）；  }</pre> </div> <p>5.在main方法中调用定义好的方法（使用变量）</p> <div class="ay1code"> <pre class="brush:java;">public static void main（String[ ] args）{  //定义变量，传递          int a=10；          int b=20；          getMax（a,b）;  }</pre> </div> <p>代码示例：</p> <div class="ay1code"> <pre class="brush:java;">public static void main(String[] args) {  		// TODO Auto-generated method stub  		getMax(10, 20);//使用常量  		int a=10;  		int b=20;  		getMax(a, b);//使用变量  	}     	public static void getMax(int a,int b){  		if (a&gt;b){  			System.out.println(a);  		}else{  			System.out.println(b);  		}  	}</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>带返回值的方法的定义和调用</h2> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>带返回值的方法定义</h3> <p>格式：</p> <blockquote> <p>public static 数据类型       方法名（参数）{<!-- --></p> <p>           return 数据;</p> <p>}</p> </blockquote> <p>范例：</p> <blockquote> <p>public static boolean isEvenNumber（int number）{<!-- --></p> <p>              return true;</p> <p>}</p> </blockquote> <p>范例2：</p> <blockquote> <p>public static int getMax（int a，int b）{<!-- --></p> <p>             return 100；    </p> <p> }</p> </blockquote> <p>注意：方法定义时return 后面的返回值与方法定义上的数据类型相匹配，否则程序报错</p> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>带返回值的方法调用</h3> <p>格式：</p> <blockquote> <p>方法名（参数）；</p> </blockquote> <p>范例：</p> <blockquote> <p>isEvenNumber(5);</p> </blockquote> <p>格式2：</p> <blockquote> <p>数据类型  变量名  =  方法名（参数）；</p> </blockquote> <p>范例：</p> <blockquote> <p>boolean   Number   =  isEvennumber（5）；</p> </blockquote> <p>注意：</p> <p>方法的返回值通常会使用变量接收，否则该返回值将无意义</p> <p>示例代码：定义一个方法，该方法接收一个参数，判断该数据是否为偶数，并返回true or false</p> <div class="ay1code"> <pre class="brush:java;">public static void main(String[] args) {  		//数据类型 变量名 = 方法名(参数)  		boolean flag= isEvenNumber(10);  		System.out.println(flag);  	}  	public static boolean isEvenNumber(int number) {  		if(number%2==0){  			return true;  		}else{  			return false;  		}  	}</pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-42412.htm">react事件类型</a></p>
+                                        <p>下一个：<a href="/news/article-42904.htm">兽药生产厂家排名（兽药生产企业排名）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -153,16 +154,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-23281.htm" title="java中集合的Collection集合">java中集合的Collection集合</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-node-share.htm" title="11月26日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址">11月26日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-33623.htm" title="一片枫叶送给谁（一片枫叶猜一首歌）">一片枫叶送给谁（一片枫叶猜一首歌）</a></li>
-                        <li class="py-2"><a href="/news/article-26091.htm" title="python读取HDFS文件">python读取HDFS文件</a></li>
-                        <li class="py-2"><a href="/news/article-34568.htm" title="宠物医院好评评语200字 给宠物医院好评怎么写">宠物医院好评评语200字 给宠物医院好评怎么写</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-14-free-node-subscribe.htm" title="1月14日→19.6M/S|2025年最新免费节点V2ray W订阅链接地址">1月14日→19.6M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-28395.htm" title="栈、队列、链表">栈、队列、链表</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-11-clash-v2ray-ss-ssr.htm" title="1月11日→18.4M/S|2025年最新免费节点V2ray W订阅链接地址">1月11日→18.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-38929.htm" title="不能养什么狗的英文（不能养的狗品种）">不能养什么狗的英文（不能养的狗品种）</a></li>
-                        <li class="py-2"><a href="/news/article-41410.htm" title="给猫咪驱虫一般多少钱一只（给猫驱虫要多少钱）">给猫咪驱虫一般多少钱一只（给猫驱虫要多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-node-share-links.htm" title="1月17日→18.1M/S|2025年最新免费节点V2ray W订阅链接地址">1月17日→18.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-high-speed-nodes.htm" title="10月8日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月8日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37962.htm" title="全国宠物粮食基地排名前十（全国宠物粮食基地排名前十名）">全国宠物粮食基地排名前十（全国宠物粮食基地排名前十名）</a></li>
+                        <li class="py-2"><a href="/news/article-39454.htm" title="同城领养猫咪平台有哪些好（同城领养猫咪平台有哪些好的）">同城领养猫咪平台有哪些好（同城领养猫咪平台有哪些好的）</a></li>
+                        <li class="py-2"><a href="/news/article-30771.htm" title="动物防疫疫苗种类有哪些品种 动物防疫疫苗种类有哪些品种图片">动物防疫疫苗种类有哪些品种 动物防疫疫苗种类有哪些品种图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-node-subscribe-links.htm" title="1月16日→18.9M/S|2025年最新免费节点V2ray W订阅链接地址">1月16日→18.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39921.htm" title="兰州有没有宠物市场（兰州有宠物市场吗）">兰州有没有宠物市场（兰州有宠物市场吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-free-v2ray.htm" title="1月2日→19.9M/S|2025年最新免费节点V2ray W订阅链接地址">1月2日→19.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-40422.htm" title="宠物领养中心官网网址是什么呢（宠物领养中心app）">宠物领养中心官网网址是什么呢（宠物领养中心app）</a></li>
+                        <li class="py-2"><a href="/news/article-40424.htm" title="广州宠物狗批发（广州哪里有宠物狗买）">广州宠物狗批发（广州哪里有宠物狗买）</a></li>
                     </ul>
     </div>
 </div>
@@ -174,7 +175,7 @@ About Section Start
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
