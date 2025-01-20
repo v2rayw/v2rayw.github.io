@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-43398.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性</title>
+        <meta name="description" content="随机森林      1. 随机森林介绍   1.1 租赁数据案例   2. 特征相关性分析（热图）   2.1 热图绘制 2.2 构建随机森林模型 2.3 不同特征合并的重要性   2.3.1 经纬度" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-43398.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/0d5e741f02a5dc72bdd378464c6f3ed2.webp" />
+        <meta property="og:release_date" content="2025-01-20T07:11:46" />
+    <meta property="og:updated_time" content="2025-01-20T07:11:46" />
+        <meta property="og:description" content="随机森林      1. 随机森林介绍   1.1 租赁数据案例   2. 特征相关性分析（热图）   2.1 热图绘制 2.2 构建随机森林模型 2.3 不同特征合并的重要性   2.3.1 经纬度" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- theme meta -->
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="/">
+                            <span>V2ray W</span>
+                        </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="#">关于</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">联系</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>随机森林</h3> <ul> <li> <ul> <li> <ul> <li><a href="#1__3" rel="nofollow">1. 随机森林介绍</a></li> <li> <ul> <li><a href="#11__7" rel="nofollow">1.1 租赁数据案例</a></li> </ul> </li> <li><a href="#2__80" rel="nofollow">2. 特征相关性分析（热图）</a></li> <li> <ul> <li><a href="#21__81" rel="nofollow">2.1 热图绘制</a></li> <li><a href="#22__141" rel="nofollow">2.2 构建随机森林模型</a></li> <li><a href="#23__164" rel="nofollow">2.3 不同特征合并的重要性</a></li> <li> <ul> <li><a href="#231_3_165" rel="nofollow">2.3.1 经纬度合并（分3类）</a></li> <li><a href="#232_2_173" rel="nofollow">2.3.2 经纬度合并（分2类）</a></li> <li><a href="#233_4_181" rel="nofollow">2.3.3 经纬度合并（分4类）</a></li> <li><a href="#234_4_194" rel="nofollow">2.3.4 经纬度合并（分4类）</a></li> <li><a href="#235_oob_206" rel="nofollow">2.3.5 oob重要性</a></li> </ul> </li> </ul> </li> <li><a href="#3__214" rel="nofollow">3. 总结</a></li> </ul> </li> </ul> </li> </ul> </div> <h3> <a id="1__3" rel="nofollow"></a>1. 随机森林介绍</h3> <p>    在随机森林中创建决策树时，通过测量特征在减少不确定性（分类器）或方差（回归器）方面的有效性来计算特征的平均-减少-不纯重要性。问题是这种机制虽然快速，但并不总是能准确反映出重要性。Strobl等指出：<strong>“the variable importance measures of Breiman’s original random forest method … are not reliable in situations where potential predictor variables vary in their scale of measurement or their number of categories.”</strong><br />     <strong>互换重要性</strong>是一个更好的方法，它衡量一个特征的重要性为：将验证集或袋外（OOB）样本导入随机森林，并记录基线准确性（分类器）或 <strong>R2</strong> 得分（调节器）。对单一预测特征的列值进行修正，然后将所有测试样本重新通过随机森林，重新计算准确率或者 <strong>R2</strong> 。该特征的重要性是基线和因排列组合而造成的总体准确率或R2下降之间的差异。虽然替换机制的计算成本比杂质机制的平均下降的成本高得多，但结果更可靠。</p> <h4> <a id="11__7" rel="nofollow"></a>1.1 租赁数据案例</h4> <p><strong>需要安装的库：</strong> <strong>rfpimp（Random Forest Feature Importances Package）</strong></p> <pre><code class="prism language-python">pip install <span class="token operator">-</span>i http<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>douban<span class="token punctuation">.</span>com<span class="token operator">/</span>simple <span class="token operator">-</span><span class="token operator">-</span>trusted<span class="token operator">-</span>host pypi<span class="token punctuation">.</span>douban<span class="token punctuation">.</span>com rfpimp </code></pre> <p><strong>数据来源</strong>：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries"  rel="nofollow">Two Sigma Connect: Rental Listing Inquiries</a><br /><strong>rent.csv（租赁数据集）</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/7ad071cf65badf724ff4f898821a681a.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <pre><code class="prism language-python"><span class="token keyword">from</span> rfpimp <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> RandomForestRegressor <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split  df_orig <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"C:/Users/Administrator/Desktop/rent.csv"</span><span class="token punctuation">)</span>  df <span class="token operator">=</span> df_orig<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 突出rent.csv中价格异常值的影响</span> df<span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  df_train<span class="token punctuation">,</span> df_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>df<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">)</span>  features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bathrooms'</span><span class="token punctuation">,</span><span class="token string">'bedrooms'</span><span class="token punctuation">,</span><span class="token string">'longitude'</span><span class="token punctuation">,</span><span class="token string">'latitude'</span><span class="token punctuation">,</span><span class="token string">'price'</span><span class="token punctuation">]</span> df_train <span class="token operator">=</span> df_train<span class="token punctuation">[</span>features<span class="token punctuation">]</span> df_test <span class="token operator">=</span> df_test<span class="token punctuation">[</span>features<span class="token punctuation">]</span> </code></pre> <pre><code class="prism language-python"><span class="token comment"># 将训练集拆分，并将拆分后的数据分别赋予X_train（没有价格），y_train（价格）</span> X_train<span class="token punctuation">,</span> y_train <span class="token operator">=</span> df_train<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'price'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> df_train<span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span> <span class="token comment"># drop()：默认删除某行，若axis=1，表示删除某列数据</span> X_test<span class="token punctuation">,</span> y_test <span class="token operator">=</span> df_test<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'price'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> df_test<span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span> <span class="token comment"># 添加随机数的列数</span> X_train<span class="token punctuation">[</span><span class="token string">'random'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>X_train<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 返回0-1之间的随机数，矩阵大小为：len(X_train)，即39481*1行随机数据</span> X_test<span class="token punctuation">[</span><span class="token string">'random'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>X_test<span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <pre><code class="prism language-python">df_train<span class="token punctuation">,</span> df_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>df_orig<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">)</span> features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bathrooms'</span><span class="token punctuation">,</span><span class="token string">'bedrooms'</span><span class="token punctuation">,</span><span class="token string">'price'</span><span class="token punctuation">,</span><span class="token string">'longitude'</span><span class="token punctuation">,</span><span class="token string">'latitude'</span><span class="token punctuation">,</span><span class="token string">'interest_level'</span><span class="token punctuation">]</span> df_train <span class="token operator">=</span> df_train<span class="token punctuation">[</span>features<span class="token punctuation">]</span> df_test <span class="token operator">=</span> df_test<span class="token punctuation">[</span>features<span class="token punctuation">]</span>  X_train<span class="token punctuation">,</span> y_train <span class="token operator">=</span> df_train<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'interest_level'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> df_train<span class="token punctuation">[</span><span class="token string">'interest_level'</span><span class="token punctuation">]</span> X_test<span class="token punctuation">,</span> y_test <span class="token operator">=</span> df_test<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'interest_level'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> df_test<span class="token punctuation">[</span><span class="token string">'interest_level'</span><span class="token punctuation">]</span> X_train<span class="token punctuation">[</span><span class="token string">'random'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>X_train<span class="token punctuation">)</span><span class="token punctuation">)</span> X_test<span class="token punctuation">[</span><span class="token string">'random'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>X_test<span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p><strong>构建随机森林分类器：</strong></p> <pre><code class="prism language-python"><span class="token comment"># 构建随机森林分类器</span> rf <span class="token operator">=</span> RandomForestClassifier<span class="token punctuation">(</span>n_estimators<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>                             min_samples_leaf<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>                             n_jobs<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>                             oob_score<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> rf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> </code></pre> <pre><code class="prism language-python">imp <span class="token operator">=</span> importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment"># permutation</span> viz <span class="token operator">=</span> plot_importances<span class="token punctuation">(</span>imp<span class="token punctuation">)</span> viz<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <p><strong>特征重要性显示：</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/5987979a2e6763f1a7002c4c0e32364f.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h3> <a id="2__80" rel="nofollow"></a>2. 特征相关性分析（热图）</h3> <h4> <a id="21__81" rel="nofollow"></a>2.1 热图绘制</h4> <p><strong>数据导入：</strong></p> <pre><code class="prism language-python"><span class="token comment"># 回归分析（regression analysis)指的是确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，分为一元回归和多元回归分析</span> <span class="token comment"># 按照因变量的多少：分为简单回归分析和多重回归分析</span> <span class="token comment"># 按照自变量和因变量之间的关系类型：分为线性回归分析和非线性回归分析</span> <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np <span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> RandomForestRegressor <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error<span class="token punctuation">,</span> mean_squared_error<span class="token punctuation">,</span> mean_absolute_error <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_val_score <span class="token keyword">from</span> rfpimp <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>base <span class="token keyword">import</span> clone  df_all <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"C:/Users/Administrator/Desktop/rent.csv"</span><span class="token punctuation">)</span>   num_features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bathrooms'</span><span class="token punctuation">,</span><span class="token string">'bedrooms'</span><span class="token punctuation">,</span><span class="token string">'latitude'</span><span class="token punctuation">,</span><span class="token string">'longitude'</span><span class="token punctuation">,</span><span class="token string">'price'</span><span class="token punctuation">]</span> target <span class="token operator">=</span> <span class="token string">'interest_level'</span>  df <span class="token operator">=</span> df_all<span class="token punctuation">[</span>num_features <span class="token operator">+</span> <span class="token punctuation">[</span>target<span class="token punctuation">]</span><span class="token punctuation">]</span> </code></pre> <pre><code class="prism language-python"><span class="token comment"># 计算每个卧室的中位数</span> df <span class="token operator">=</span> df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span> df_median_price_per_bedrooms <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'bedrooms'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># reset_index()：会将原来的索引index作为新的一列</span>                                                                                          <span class="token comment"># groupby()[]先以bedrooms进行分组，再提取每组中的price字段</span> beds_to_median <span class="token operator">=</span> df_median_price_per_bedrooms<span class="token punctuation">.</span>to_dict<span class="token punctuation">(</span>orient<span class="token operator">=</span><span class="token string">'dict'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span> <span class="token comment"># to_dict（）：将数据框数据转换为字典形式（字典为可变容器模型且可存储任意类型对象）</span>                                                                               <span class="token comment"># 转换为字典格式，并将price字段提取出</span> df<span class="token punctuation">[</span><span class="token string">'median_price_per_bedrooms'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'bedrooms'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>beds_to_median<span class="token punctuation">)</span>  <span class="token comment"># 合并两个表格</span>  <span class="token comment"># 计算该数量卧室的价格与中间价格的比率</span> df<span class="token punctuation">[</span><span class="token string">'price_to_median_beds'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span> <span class="token operator">/</span> df<span class="token punctuation">[</span><span class="token string">'median_price_per_bedrooms'</span><span class="token punctuation">]</span> <span class="token comment"># 卧室数量与价格的比率</span> df<span class="token punctuation">[</span><span class="token string">"beds_per_price"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"bedrooms"</span><span class="token punctuation">]</span> <span class="token operator">/</span> df<span class="token punctuation">[</span><span class="token string">"price"</span><span class="token punctuation">]</span>   <span class="token comment"># 房间总数(卧室、浴室)</span> df<span class="token punctuation">[</span><span class="token string">"beds_baths"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"bedrooms"</span><span class="token punctuation">]</span><span class="token operator">+</span>df<span class="token punctuation">[</span><span class="token string">"bathrooms"</span><span class="token punctuation">]</span> <span class="token keyword">del</span> df<span class="token punctuation">[</span><span class="token string">'median_price_per_bedrooms'</span><span class="token punctuation">]</span>  df_train<span class="token punctuation">,</span> df_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>df<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.15</span><span class="token punctuation">)</span> </code></pre> <p><strong>热图绘制：</strong></p> <pre><code class="prism language-python"><span class="token keyword">from</span> rfpimp <span class="token keyword">import</span> plot_corr_heatmap viz <span class="token operator">=</span> plot_corr_heatmap<span class="token punctuation">(</span>df_train<span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> viz<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'C:/Users/Administrator/Desktop/corrheatmap.tif'</span><span class="token punctuation">)</span> viz </code></pre> <p><strong>斯皮尔曼相关矩阵:</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/429caa796e5176a9b7e083428fc19821.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <p>    <strong>可以看出，值越大颜色越深，则数据之间的相关性越强。</strong> 比如卧室数量和卧室加浴室相关性为 <strong>0.98</strong>，相关性非常强。</p> <h4> <a id="22__141" rel="nofollow"></a>2.2 构建随机森林模型</h4> <p><strong>模型构建：</strong></p> <pre><code class="prism language-python"><span class="token comment"># 数据集拆分</span> X_train<span class="token punctuation">,</span> y_train <span class="token operator">=</span> df_train<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'interest_level'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> df_train<span class="token punctuation">[</span><span class="token string">'interest_level'</span><span class="token punctuation">]</span> X_test<span class="token punctuation">,</span> y_test <span class="token operator">=</span> df_test<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'interest_level'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> df_test<span class="token punctuation">[</span><span class="token string">'interest_level'</span><span class="token punctuation">]</span>  rf <span class="token operator">=</span> RandomForestClassifier<span class="token punctuation">(</span>n_estimators<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> n_jobs<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">#                            max_features=X_train.shape[1]-1,</span>                             max_features<span class="token operator">=</span><span class="token number">1.0</span><span class="token punctuation">,</span>                             min_samples_leaf<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> oob_score<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment">#训练集拟合</span> rf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> </code></pre> <p><strong>特征重要性训练：</strong></p> <pre><code class="prism language-python"><span class="token comment"># 特征重要性训练</span> I <span class="token operator">=</span> importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> viz <span class="token operator">=</span> plot_importances<span class="token punctuation">(</span>I<span class="token punctuation">)</span> viz<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'C:/Users/Administrator/Desktop/imp.tif'</span><span class="token punctuation">)</span> viz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/edc81ea90c211b394700743161652b06.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h4> <a id="23__164" rel="nofollow"></a>2.3 不同特征合并的重要性</h4> <h5> <a id="231_3_165" rel="nofollow"></a>2.3.1 经纬度合并（分3类）</h5> <pre><code class="prism language-python">I <span class="token operator">=</span> importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">,</span><span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> viz <span class="token operator">=</span> plot_importances<span class="token punctuation">(</span>I<span class="token punctuation">,</span> vscale<span class="token operator">=</span><span class="token number">1.2</span><span class="token punctuation">)</span> viz<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'C:/Users/Administrator/Desktop/subset_imp.tif'</span><span class="token punctuation">)</span> viz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/56b196a1651bd60ea6538ea492dd1722.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h5> <a id="232_2_173" rel="nofollow"></a>2.3.2 经纬度合并（分2类）</h5> <pre><code class="prism language-python">I <span class="token operator">=</span> importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">,</span><span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> viz <span class="token operator">=</span> plot_importances<span class="token punctuation">(</span>I<span class="token punctuation">,</span> vscale<span class="token operator">=</span><span class="token number">1.2</span><span class="token punctuation">)</span> viz<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'C:/Users/Administrator/Desktop/latlong_imp.jpg'</span><span class="token punctuation">)</span> viz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/bd29c49bdc79e73301d4463db6a93e3b.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h5> <a id="233_4_181" rel="nofollow"></a>2.3.3 经纬度合并（分4类）</h5> <pre><code class="prism language-python">features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bathrooms'</span><span class="token punctuation">,</span> <span class="token string">'bedrooms'</span><span class="token punctuation">,</span>              <span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">,</span> <span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>               <span class="token punctuation">[</span><span class="token string">'price_to_median_beds'</span><span class="token punctuation">,</span> <span class="token string">'beds_baths'</span><span class="token punctuation">,</span> <span class="token string">'price'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>              <span class="token punctuation">[</span><span class="token string">'beds_per_price'</span><span class="token punctuation">,</span><span class="token string">'bedrooms'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> I <span class="token operator">=</span> importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">,</span> features<span class="token operator">=</span>features<span class="token punctuation">)</span> viz <span class="token operator">=</span> plot_importances<span class="token punctuation">(</span>I<span class="token punctuation">,</span> vscale<span class="token operator">=</span><span class="token number">1.3</span><span class="token punctuation">)</span> viz<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'C:/Users/Administrator/Desktop/grouped_imp.tif'</span><span class="token punctuation">)</span> viz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/8b96853605b227001554851b163b9b39.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h5> <a id="234_4_194" rel="nofollow"></a>2.3.4 经纬度合并（分4类）</h5> <pre><code class="prism language-python">features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">,</span> <span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>             <span class="token punctuation">[</span><span class="token string">'price_to_median_beds'</span><span class="token punctuation">,</span> <span class="token string">'beds_baths'</span><span class="token punctuation">,</span> <span class="token string">'beds_per_price'</span><span class="token punctuation">,</span> <span class="token string">'bedrooms'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>             <span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">,</span><span class="token string">'beds_per_price'</span><span class="token punctuation">,</span><span class="token string">'bedrooms'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> I <span class="token operator">=</span> importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">,</span> features<span class="token operator">=</span>features<span class="token punctuation">)</span> viz <span class="token operator">=</span> plot_importances<span class="token punctuation">(</span>I<span class="token punctuation">,</span> vscale<span class="token operator">=</span><span class="token number">1.2</span><span class="token punctuation">)</span> viz<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'C:/Users/Administrator/Desktop/grouped_dup_imp.tif'</span><span class="token punctuation">)</span> viz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/c12cd400192cae815db761635850dfab.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h5> <a id="235_oob_206" rel="nofollow"></a>2.3.5 oob重要性</h5> <pre><code class="prism language-python"><span class="token comment"># 兼容性测试 &gt;= 0.22.1</span> I <span class="token operator">=</span> oob_importances<span class="token punctuation">(</span>rf<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span>  plot_importances<span class="token punctuation">(</span>I<span class="token punctuation">,</span> vscale<span class="token operator">=</span><span class="token number">1.2</span><span class="token punctuation">)</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/e7baba962913817eeea9c08a8bf34217.jpg" alt="机器学习笔记 十五：随机森林（Random Forest）评估机器学习模型的特征重要性"></p> <h3> <a id="3__214" rel="nofollow"></a>3. 总结</h3> <p>    在机器学习中使用的<strong>特征很少是完全独立的</strong>，这使得解释特征的重要性十分困难。我们可以计算相关系数，但只能识别线性关系。一种方法是训练一个模型，使用x作为因变量，所有其他特征作为自变量，这样至少可以确定一个特征x是否依赖于其他特征。<br />     因为随机森林给我们一个容易的出袋误差估计（oob），特征依赖函数依赖于随机森林模型。来自模型的 <strong>R2</strong> 预测误差表明使用其他特征预测特征x是很容易的。分数越高，特征x的依赖性越大。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-42905.htm">狗咬了多久过安全期没有打针（狗咬了多久过安全期没有打针了）</a></p>
+                                        <p>下一个：<a href="/news/article-43399.htm">成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-high-speed-nodes.htm" title="10月30日→19.6M/S|2024年最新免费节点V2ray W订阅链接地址">10月30日→19.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-subscribe-node.htm" title="11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月22日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="11月13日→18.1M/S|2024年最新免费节点V2ray W订阅链接地址">11月13日→18.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22832.htm" title="SpringBoot 2.3.x 分层构建 Docker 镜像实践详解">SpringBoot 2.3.x 分层构建 Docker 镜像实践详解</a></li>
+                        <li class="py-2"><a href="/news/article-39453.htm" title="动物疫苗打到人身上有事吗视频播放大全（给动物打的疫苗人注射会有什么后果）">动物疫苗打到人身上有事吗视频播放大全（给动物打的疫苗人注射会有什么后果）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-subscribe-node.htm" title="1月19日→20.6M/S|2025年最新免费节点V2ray W订阅链接地址">1月19日→20.6M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-node-subscribe.htm" title="11月12日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月12日→19.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24214.htm" title="Spring boot整合JPA">Spring boot整合JPA</a></li>
+                        <li class="py-2"><a href="/news/article-33135.htm" title="2021年公务员国考报名时间（2021公务员国考报考时间）">2021年公务员国考报名时间（2021公务员国考报考时间）</a></li>
+                        <li class="py-2"><a href="/news/article-19623.htm" title="解决Error response from daemon: Get “https://registry-1.docker.io/v2/“: read: connection refused问题">解决Error response from daemon: Get “https://registry-1.docker.io/v2/“: read: connection refused问题</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
