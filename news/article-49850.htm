@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-49850.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>C#实现DataTable转TXT、CSV文件_C#教程_</title>
+        <meta name="description" content="转TXT文件  public object DataTableToTXT(DataTable vContent, string vOutputFilePath)          {         " />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-49850.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="C#实现DataTable转TXT、CSV文件_C#教程_" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/368cace80b0dd16be106b93815a3b11e.webp" />
+        <meta property="og:release_date" content="2025-02-02T09:26:35" />
+    <meta property="og:updated_time" content="2025-02-02T09:26:35" />
+        <meta property="og:description" content="转TXT文件  public object DataTableToTXT(DataTable vContent, string vOutputFilePath)          {         " />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C#实现DataTable转TXT、CSV文件_C#教程_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="/">
+                            <span>V2ray W</span>
+                        </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="#">关于</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">联系</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>C#实现DataTable转TXT、CSV文件_C#教程_</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h3>转TXT文件</h3> <div class="ay1code"> <pre class="brush:csharp;">public object DataTableToTXT(DataTable vContent, string vOutputFilePath)          {              object resObj;              StringBuilder sTxtContent;                try              {                  if (File.Exists(vOutputFilePath))                      File.Delete(vOutputFilePath);                    sTxtContent = new StringBuilder();                    //数据                  foreach (DataRow row in vContent.Rows)                  {                      for (int i = 0; i &lt; vContent.Columns.Count; i++)                      {                          sTxtContent.Append(row[i].ToString().Trim());                          sTxtContent.Append(i == vContent.Columns.Count - 1 ? "\r\n" : "\t");                      }                  }                  File.WriteAllText(vOutputFilePath, sTxtContent.ToString(), Encoding.Unicode);                  resObj = new object[] { 0, "OK" };              }              catch (Exception ex)              {                  resObj = new object[] { 0, "OK" };              }              return resObj;          }</pre> </div> <h3>转.CSV文件</h3> <p>将DataTable转换成CSV文件是一种常见的转换形式,主要通过遍历Table的每行，再对每行遍历每列，实现对数据的读取，然后用分隔符分隔Table的每个栏位数据，把读取的字符写入到CSV文件中。这里每个栏位之间用逗号分隔，每行用换行符。实现代码如下：</p> <div class="ay1code"> <pre class="brush:csharp;">public ExecutionResult DataTableToCsv(System.Data.DataTable vContent, string vOutputFilePath)          {              ExecutionResult sResult = new ExecutionResult();              System.Text.StringBuilder sCsvContent;              try              {                  sCsvContent = new System.Text.StringBuilder();                  //栏位                  for (int i = 0; i &lt; vContent.Columns.Count; i++)                  {                      sCsvContent.Append(vContent.Columns[i].ColumnName);                      sCsvContent.Append(i == vContent.Columns.Count - 1 ? "\r\n" : ",");                  }                  //数据                  foreach (System.Data.DataRow row in vContent.Rows)                  {                      for (int i = 0; i &lt; vContent.Columns.Count; i++)                      {                          sCsvContent.Append(row[i].ToString().Trim());                          sCsvContent.Append(i == vContent.Columns.Count - 1 ? "\r\n" : ",");                      }                  }                  File.WriteAllText(vOutputFilePath, sCsvContent.ToString(), Encoding.UTF8);                  sResult.Status = true;              }              catch (Exception ex)              {                  sResult.Message = ex.Message;                  sResult.Status = false;              }              return sResult;          }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49335.htm">附近有没有免费的狗狗领 附近有没有免费的狗狗领养中心</a></p>
+                                        <p>下一个：<a href="/news/article-49851.htm">宠物店猫疫苗多少钱一针（宠物店猫疫苗多少钱一针打）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21467.htm" title="动物疫苗企业名单公示最新（动物疫苗生产厂家排名）">动物疫苗企业名单公示最新（动物疫苗生产厂家排名）</a></li>
+                        <li class="py-2"><a href="/news/article-39921.htm" title="兰州有没有宠物市场（兰州有宠物市场吗）">兰州有没有宠物市场（兰州有宠物市场吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-high-speed-nodes.htm" title="10月8日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址">10月8日→21.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-42905.htm" title="狗咬了多久过安全期没有打针（狗咬了多久过安全期没有打针了）">狗咬了多久过安全期没有打针（狗咬了多久过安全期没有打针了）</a></li>
+                        <li class="py-2"><a href="/news/article-43399.htm" title="成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）">成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-high-speed-nodes.htm" title="10月26日→18M/S|2024年最新免费节点V2ray W订阅链接地址">10月26日→18M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-v2ray-subscribe.htm" title="12月9日→20.9M/S|2024年最新免费节点V2ray W订阅链接地址">12月9日→20.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-subscribe-node.htm" title="10月17日→19.8M/S|2024年最新免费节点V2ray W订阅链接地址">10月17日→19.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-high-speed-nodes.htm" title="12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37961.htm" title="合肥宠物免费领养中心地址（合肥哪里有领养猫狗的地方）">合肥宠物免费领养中心地址（合肥哪里有领养猫狗的地方）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
