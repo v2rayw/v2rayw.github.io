@@ -11,11 +11,38 @@
     <title>解决Redis并发带来的雪崩，击穿和穿透问题，以及搭建一个Redis伪集群</title>
         <meta name="description" content="Redis集群的分类： 1.主从架构（主服务器负责写，从服务器负责读）。 2.哨兵架构（哨兵服务器负责监控主服务器的状态，主服务器如果宕机，将从服务器提升为主）。  &nbsp; 3.集群架构（并发能" />
         <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-28396.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="解决Redis并发带来的雪崩，击穿和穿透问题，以及搭建一个Redis伪集群" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/84d9adbdf567d05c64ac446dd4dd56d7.webp" />
+        <meta property="og:release_date" content="2024-12-20T09:36:52" />
+    <meta property="og:updated_time" content="2024-12-20T09:36:52" />
+        <meta property="og:description" content="Redis集群的分类： 1.主从架构（主服务器负责写，从服务器负责读）。 2.哨兵架构（哨兵服务器负责监控主服务器的状态，主服务器如果宕机，将从服务器提升为主）。  &nbsp; 3.集群架构（并发能" />
+        
     <!-- Mobile Specific Metas
         ================================================== -->
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- theme meta -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="解决Redis并发带来的雪崩，击穿和穿透问题，以及搭建一个Redis伪集群">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Template CSS Files
         ================================================== -->
     <!-- Twitter Bootstrs CSS -->
@@ -143,16 +170,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-v2ray.htm" title="11月21日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址">11月21日→18.9M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-18736.htm" title="梦见抱住别的女人是什么意思（梦见抱着别人的女人是什么意思）">梦见抱住别的女人是什么意思（梦见抱着别人的女人是什么意思）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-high-speed-nodes.htm" title="12月17日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址">12月17日→22.2M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-34093.htm" title="动物疫苗接种途径有哪些类型的（动物疫苗接种方法及注意事项）">动物疫苗接种途径有哪些类型的（动物疫苗接种方法及注意事项）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-22-node-share-links.htm" title="12月22日→22.4M/S|2024年最新免费节点V2ray W订阅链接地址">12月22日→22.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-high-speed-nodes.htm" title="12月19日→20.8M/S|2024年最新免费节点V2ray W订阅链接地址">12月19日→20.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-v2ray-subscribe.htm" title="11月6日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址">11月6日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-27935.htm" title="被野猫抓轻微出血（被野猫抓轻微出血怎么处理）">被野猫抓轻微出血（被野猫抓轻微出血怎么处理）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-node-subscribe-links.htm" title="10月16日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址">10月16日→19.7M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-19623.htm" title="解决Error response from daemon: Get “https://registry-1.docker.io/v2/“: read: connection refused问题">解决Error response from daemon: Get “https://registry-1.docker.io/v2/“: read: connection refused问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-free-subscribe-node.htm" title="1月24日→21.9M/S|2025年最新免费节点V2ray W订阅链接地址">1月24日→21.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43399.htm" title="成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）">成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-22832.htm" title="SpringBoot 2.3.x 分层构建 Docker 镜像实践详解">SpringBoot 2.3.x 分层构建 Docker 镜像实践详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-node-subscribe.htm" title="12月4日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址">12月4日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-40424.htm" title="广州宠物狗批发（广州哪里有宠物狗买）">广州宠物狗批发（广州哪里有宠物狗买）</a></li>
+                        <li class="py-2"><a href="/news/article-21911.htm" title="vue路由守卫，限制前端页面访问权限">vue路由守卫，限制前端页面访问权限</a></li>
+                        <li class="py-2"><a href="/news/article-23745.htm" title="圭贤今日退伍 十年等待 韩流帝王super junior终于完整合体了！(曺圭贤入伍退伍日期)">圭贤今日退伍 十年等待 韩流帝王super junior终于完整合体了！(曺圭贤入伍退伍日期)</a></li>
+                        <li class="py-2"><a href="/news/article-18735.htm" title="当我们更改小于当前序列号的AUTO_INCREMENT值时，MySQL将返回什么？">当我们更改小于当前序列号的AUTO_INCREMENT值时，MySQL将返回什么？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-node-share-links.htm" title="1月7日→21.9M/S|2025年最新免费节点V2ray W订阅链接地址">1月7日→21.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-45401.htm" title="动物疫苗贵吗现在多少钱啊一针（动物疫苗要打几针）">动物疫苗贵吗现在多少钱啊一针（动物疫苗要打几针）</a></li>
                     </ul>
     </div>
 </div>
@@ -164,19 +191,16 @@ About Section Start
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
