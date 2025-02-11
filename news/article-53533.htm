@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-53533.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>使用CreateThreadPool创建线程池</title>
+        <meta name="description" content="使用Windows API函数来创建线程池，可以极大的方便了自己编写线程池的繁琐步骤。 使用CreateThreadPool来创建一个线程池，需要在创建完成后，初始化线程池的状态，并且在不需要的时候清" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-53533.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="使用CreateThreadPool创建线程池" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/db1c58c2b18fb8bbc49d0fc2120d7852.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:03:56" />
+    <meta property="og:updated_time" content="2025-02-09T10:03:56" />
+        <meta property="og:description" content="使用Windows API函数来创建线程池，可以极大的方便了自己编写线程池的繁琐步骤。 使用CreateThreadPool来创建一个线程池，需要在创建完成后，初始化线程池的状态，并且在不需要的时候清" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用CreateThreadPool创建线程池">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>使用CreateThreadPool创建线程池</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>使用Windows API函数来创建线程池，可以极大的方便了自己编写线程池的繁琐步骤。</p> <p>使用CreateThreadPool来创建一个线程池，需要在创建完成后，初始化线程池的状态，并且在不需要的时候清理线程池所占用的资源。</p> <p>相关代码：</p> <div class="cnblogs_code"> <pre>    auto m_ptp_pool = CreateThreadpool(NULL);<span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 创建线程池</span>     SetThreadpoolThreadMaximum(m_ptp_pool,<span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(0, 0, 0, 1)">);     SetThreadpoolThreadMinimum(m_ptp_pool,</span><span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">);     InitializeThreadpoolEnvironment(</span>&amp;m_tp_callback_environ);</pre> </div> <p>以上代码第一行表示，1.我们创建一个线程池，2.设置线程池的最大个数，3.设置线程池的最小个数，4.设置线程池的环境资源对象</p> <p>在满足以上条件后我们就可以将我们的任务添加到线程池中进行运行。线程池的函数要求必须是一个全局变量。</p> <p>线程池任务函数要求规格：</p> <div class="cnblogs_code"> <pre>typedef VOID (NTAPI *<span style="color: rgba(0, 0, 0, 1)">PTP_SIMPLE_CALLBACK)(     _Inout_     PTP_CALLBACK_INSTANCE Instance,     _Inout_opt_ PVOID                 Context     );</span></pre> </div> <p>将任务添加到线程池：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">if</span>(TrySubmitThreadpoolCallback(func,<span style="color: rgba(0, 0, 255, 1)">this</span>, &amp;m_tp_callback_environ)==<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">)         m_box.InsertString(</span><span style="color: rgba(128, 0, 128, 1)">0</span>, TEXT(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">线程失败！</span><span style="color: rgba(128, 0, 0, 1)">"</span>));</pre> </div> <p>func函数示例：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> func(PTP_CALLBACK_INSTANCE a, LPVOID args) {     CMyMfcSdiView</span>* obj = (CMyMfcSdiView*<span style="color: rgba(0, 0, 0, 1)">)args;        // 由于我的测试是在MFC下使用的，故采用MFC对象进行显示，但是不影响线程池的使用     obj</span>-&gt;m_box.InsertString(<span style="color: rgba(128, 0, 128, 1)">0</span>, TEXT(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">线程写入</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">)); }</span></pre> </div> <p>使用TrySubmitThreadpoolCallback函数将任务添加到创建好的线程池，并且线程立即执行。可以多次调用该函数将需要的任务添加到线程池中执行。</p> <p>如果我们不再需要线程池，需要将线程池的环境资源对象释放，并且关闭线程池句柄，来优化系统资源。</p> <div class="cnblogs_code"> <pre>    DestroyThreadpoolEnvironment(&amp;<span style="color: rgba(0, 0, 0, 1)">m_tp_callback_environ);     CloseThreadpool(m_ptp_pool);</span></pre> </div> <p>至此，一个线程池的创建，使用，销毁就结束了，至于API函数的参数类型，可以参考在键入api函数时参考参数提示</p> <p>或者参考以下两个变量，在上述代码中用到：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">　　 PTP_POOL m_ptp_pool;     TP_CALLBACK_ENVIRON m_tp_callback_environ;</span></pre> </div> <p>以上测试用例在VS2022中运行，如果您有什么问题，欢迎提问</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53532.htm">SpringBoot 简洁明了将导入Excel到数据库</a></p>
+                                        <p>下一个：<a href="/news/article-54075.htm">RestTemplate微服务调用捕捉服务端异常</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-24215.htm" title="广州宠物领养中心具体地址电话号码（广州市宠物领养中心）">广州宠物领养中心具体地址电话号码（广州市宠物领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-27937.htm" title="动物医疗市场 动物医疗市场分析">动物医疗市场 动物医疗市场分析</a></li>
+                        <li class="py-2"><a href="/news/article-54616.htm" title="宠物粮食品牌起名大全图片及价格 宠物粮食品牌起名大全图片及价格表">宠物粮食品牌起名大全图片及价格 宠物粮食品牌起名大全图片及价格表</a></li>
+                        <li class="py-2"><a href="/news/article-34568.htm" title="宠物医院好评评语200字 给宠物医院好评怎么写">宠物医院好评评语200字 给宠物医院好评怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-28865.htm" title="Vertica集成Apache Hudi指南">Vertica集成Apache Hudi指南</a></li>
+                        <li class="py-2"><a href="/news/article-50375.htm" title="买一个宠物狗粮食（买一点普通的狗粮多少钱一斤）">买一个宠物狗粮食（买一点普通的狗粮多少钱一斤）</a></li>
+                        <li class="py-2"><a href="/news/article-43399.htm" title="成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）">成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-v2ray-subscribe.htm" title="11月6日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址">11月6日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-clash-v2ray-ss-ssr.htm" title="12月31日→18.5M/S|2025年最新免费节点V2ray W订阅链接地址">12月31日→18.5M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-node-subscribe.htm" title="1月8日→21.9M/S|2025年最新免费节点V2ray W订阅链接地址">1月8日→21.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

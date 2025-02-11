@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-53532.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>SpringBoot 简洁明了将导入Excel到数据库</title>
+        <meta name="description" content="以下有两种构建工程看看你选择哪个 maven依赖 &lt;dependency&gt; 	&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 	&lt;arti" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-53532.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="SpringBoot 简洁明了将导入Excel到数据库" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/84d9adbdf567d05c64ac446dd4dd56d7.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:03:56" />
+    <meta property="og:updated_time" content="2025-02-09T10:03:56" />
+        <meta property="og:description" content="以下有两种构建工程看看你选择哪个 maven依赖 &lt;dependency&gt; 	&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 	&lt;arti" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot 简洁明了将导入Excel到数据库">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>SpringBoot 简洁明了将导入Excel到数据库</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>以下有两种构建工程看看你选择哪个</p> <p>maven依赖</p> <pre><code>&lt;dependency&gt; 	&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 	&lt;artifactId&gt;poi&lt;/artifactId&gt; 	&lt;version&gt;3.17&lt;/version&gt; &lt;/dependency&gt; 		 &lt;dependency&gt; 	&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 	&lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt; 	&lt;version&gt;3.17&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>Gradle依赖</p> <pre><code>compile group: 'org.apache.poi', name: 'poi', version: '3.17' compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'</code></pre> <p>控制层代码</p> <pre><code class="language-java">    @ApiOperation(value = "导入", notes = "导入", produces = "text/plain")     @PostMapping("/v2/payable/importOrder")     @PreAuthorize("hasRole('importOrder-payable-v2')")     public JSONResult importOrder(MultipartFile file) throws Exception {         orderService.importOrder(Long.parseLong(SecurityContextHolder.getSubject().getId()),file);         return JSONResult.ok();     }</code></pre> <p>&nbsp;</p> <p>服务层代码</p> <pre><code class="language-java">    /**      * 导入      * @param file 文件      */     void importOrder(Long userId,MultipartFile file) throws Exception;</code></pre> <p>实现层代码（这里是我多表添加操作数据）</p> <pre><code class="language-java">@Override     @Transactional     public void importOrder(Long userId, MultipartFile file) throws Exception {         //调用封装好的工具         ExcelImportUtil importUtil = new ExcelImportUtil(file);         //调用导入的方法，获取sheet表的内容         List&lt;Map&lt;String, String&gt;&gt; maps = importUtil.readExcelContent();         //获取自定义表头标题数据         Map&lt;String, Object&gt; someTitle = importUtil.readExcelSomeTitle();         //导入订单表         PayableOrder payableOrder = PayableOrder.builder()                 .entryTime(someTitle.get("date").toString())                 .remark(someTitle.get("remark").toString())                 .createTime(DateTimeUtils.dateTimeToString(LocalDateTime.now()))                 .createBy(String.valueOf(userId))                 .status(1)                 .type(1)                 .build();         //执行添加到数据库         payableOrderDao.save(payableOrder);          //获取订单号         Long id = payableOrder.getId();         //导入订单详情表         List&lt;PayableOrderDetail&gt; orderDetails = maps.stream().filter(Objects::nonNull).map(map -&gt; {             Customer customer = customerDao.findByEnCode(map.get("供应商编码"));             if (Objects.isNull(customer)) throw new HandleException("供应商不存在");             return PayableOrderDetail.builder()                     .qPayableId(id)                     .supplierCode(map.get("供应商编码"))                     .cCustomerId(customer.getId())                     .supplierName(map.get("供应商名称"))                     .registerAddr(map.get("注册地址"))                     .bankAccount(map.get("银行账号"))                     .openBank(map.get("开户行"))                     .telephone(map.get("联系方式"))                     .contact(map.get("主联系人"))                     .remark(map.get("备注"))                     .payAmount(BigDecimal.valueOf(Double.parseDouble(map.get("期初应付金额"))))                     .createTime(DateTimeUtils.dateTimeToString(LocalDateTime.now()))                     .createBy(String.valueOf(userId))                     .status(1).build();         }).collect(Collectors.toList());          //批量添加到订单详情         orderDetailDao.saveAll(orderDetails);     }</code></pre> <p>导入工具类</p> <pre><code class="language-java">package com.softwarebr.ashe.util;  import org.apache.poi.hssf.usermodel.HSSFWorkbook; import org.apache.poi.ss.usermodel.*; import org.apache.poi.xssf.usermodel.XSSFWorkbook; import org.springframework.web.multipart.MultipartFile; import java.io.InputStream; import java.text.DecimalFormat; import java.text.SimpleDateFormat; import java.util.*;  /**  * @author ZHY  * @date 2020/6/17 15:56  */ public class ExcelImportUtil {     private Workbook wb;     private Sheet sheet;     private Row row;      /**      * 读取Excel      *      * @author ZHY      */     public ExcelImportUtil(MultipartFile file) throws Exception {         String filename = file.getOriginalFilename();         String ext = filename.substring(filename.lastIndexOf("."));         InputStream is = file.getInputStream();         if (".xls".equals(ext)) {             wb = new HSSFWorkbook(is);         } else if (".xlsx".equals(ext)) {             wb = new XSSFWorkbook(is);         } else {             wb = null;         }     }      /**      * 读取Excel表格表头的内容输出      *      */     public List&lt;Map&lt;String, Object&gt;&gt; readExcelTitleOut() {         List&lt;Map&lt;String, Object&gt;&gt; list = new ArrayList&lt;Map&lt;String, Object&gt;&gt;();         if (wb != null) {             sheet = wb.getSheetAt(0);             row = sheet.getRow(0);             // 标题总列数             int colNum = row.getPhysicalNumberOfCells();              System.out.println("colNum:" + colNum);              Map&lt;String, Object&gt; map = new LinkedHashMap&lt;String, Object&gt;();              for (int i = 0; i &lt; colNum; i++) {                 String stringCellValue = row.getCell(i).getStringCellValue();                 map.put(stringCellValue, null);             }             list.add(map);             return list;         }         return list;     }      /**      * 读取Excel表格表头      *      */     public String[] readExcelTitle() {         String[] title = {};         if (wb != null) {             sheet = wb.getSheetAt(0);             row = sheet.getRow(4);             // 标题总列数             int colNum = row.getPhysicalNumberOfCells();              System.out.println("colNum:" + colNum);              title = new String[colNum];              for (int i = 0; i &lt; colNum; i++) {                 title[i] = row.getCell(i).getStringCellValue().replaceAll("\\s+", "");             }         }         return title;     }      /**      * 读取Excel表格的某一个数值      * @return      */     public  Map&lt;String, Object&gt; readExcelSomeTitle(){         Map&lt;String, Object&gt; map = new LinkedHashMap&lt;&gt;();         if (wb != null) {             sheet = wb.getSheetAt(0);             String title = parseExcel(sheet.getRow(2).getCell(1));             String remark = parseExcel(sheet.getRow(3).getCell(1));             map.put("date",title);             map.put("remark",remark);         }         return map;     }      /**      * 读取Excel数据内容      *      */     public List&lt;Map&lt;String, String&gt;&gt; readExcelContent() {         List&lt;Map&lt;String, String&gt;&gt; list = new ArrayList&lt;&gt;();         if (wb != null) {             //获取sheet表             sheet = wb.getSheetAt(0);             // 得到总行数             int rowNum = sheet.getLastRowNum();             //获取表头的标题             String[] readExcelTitle = readExcelTitle();             // 正文内容应该从第二行开始,第一行为表头的标题             for (int i = 5; i &lt;= rowNum; i++) {                 row = sheet.getRow(i);                 if (row == null) {                     continue;                 }                 Map&lt;String, String&gt; map = new LinkedHashMap&lt;&gt;();                 for (int j = 0; j &lt; readExcelTitle.length; j++) {                     //获取每一列的数据值                     String str = parseExcel(row.getCell(j));                     //判断对应行的列值是否为空                     if (StringUtils.isNotBlank(str)) {                         //表头的标题为键值，列值为值                         map.put(readExcelTitle[j], str);                     }                 }                 //判段添加的对象是否为空                 if (!map.isEmpty()){                     list.add(map);                 }             }         }         return list;     }      /**      *      * 根据Cell类型设置数据      *      */     private String parseExcel(Cell cell) {         String result = "";         if (cell != null) {             SimpleDateFormat sdf = null;             switch (cell.getCellTypeEnum()) {                 case NUMERIC:// 数字类型                     if (DateUtil.isCellDateFormatted(cell)) {// 处理日期格式、时间格式                         if (cell.getCellStyle().getDataFormat() == 20) {                             sdf = new SimpleDateFormat("HH:mm");                         } else {// 日期                             sdf = new SimpleDateFormat("yyyy-MM-dd");                         }                         String dateFormat = sdf.format(cell.getDateCellValue());                         result = dateFormat;                     } else if (cell.getCellStyle().getDataFormat() == 58) {                         // 处理自定义日期格式：m月d日(通过判断单元格的格式id解决，id的值是58)                         sdf = new SimpleDateFormat("yyyy-MM-dd");                         double value = cell.getNumericCellValue();                         Date date = DateUtil.getJavaDate(value);                         result = sdf.format(date);                     } else {                         double value = cell.getNumericCellValue();                         DecimalFormat format = new DecimalFormat("#.###########");                         String strVal = format.format(value);                         result = strVal;                     }                     break;                 case STRING:// String类型                     result = cell.getRichStringCellValue().toString();                     break;                 default:                     break;             }         }         return result;     } } </code></pre> <p>&nbsp;</p> <pre><code class="language-html hljs">操作的excel文件，如图：</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="643" src="http://img.555519.xyz/uploads/20221229/2a8a6aa4a20c8e42dc469379250c7bee.jpg"></p> <p>&nbsp;</p> <p>以上就是操作导入excel文件数据到数据库，我操作的是MySQL数据库，其他的数据没有试过，你们可以试试。</p> <p>不懂的可以问我，联系方式：18679691390@163.com</p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-52990.htm">动物疫苗多长时间内打一次 动物疫苗多长时间内打一次最好</a></p>
+                                        <p>下一个：<a href="/news/article-53533.htm">使用CreateThreadPool创建线程池</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45864.htm" title="让猫挠了一下出了一点血有事吗（让猫挠了出血有什么症状）">让猫挠了一下出了一点血有事吗（让猫挠了出血有什么症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-high-speed-nodes.htm" title="12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-54616.htm" title="宠物粮食品牌起名大全图片及价格 宠物粮食品牌起名大全图片及价格表">宠物粮食品牌起名大全图片及价格 宠物粮食品牌起名大全图片及价格表</a></li>
+                        <li class="py-2"><a href="/news/article-27468.htm" title="这几种方法帮你快速实现回到页面顶部">这几种方法帮你快速实现回到页面顶部</a></li>
+                        <li class="py-2"><a href="/news/article-51930.htm" title="天津市宠物领养中心地址 天津市宠物领养中心地址电话">天津市宠物领养中心地址 天津市宠物领养中心地址电话</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-node-share-links.htm" title="12月26日→22.6M/S|2024年最新免费节点V2ray W订阅链接地址">12月26日→22.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-high-speed-nodes.htm" title="12月19日→20.8M/S|2024年最新免费节点V2ray W订阅链接地址">12月19日→20.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22376.htm" title="jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑">jpa mysql乐观锁_JPA @Lock(value = LockModeType.PESSIMISTIC_WRITE) 悲观锁防坑</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-node-subscribe.htm" title="12月4日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址">12月4日→22.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-node-share.htm" title="12月14日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址">12月14日→20.1M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
