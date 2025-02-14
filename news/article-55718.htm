@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-55718.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Spring boot将图片转成base64,使用sun.misc.BASE64Decoder转换图片</title>
+        <meta name="description" content="本来项目要求的是后台给前端返回文件的地址，前端可以读取文件，图片或者pdf文件都能读取到，pdf根据浏览器会有显示和下载两种情况，doc等其他类型需要联网使用微软公司的接口。但是这样就暴露了服务器存放" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-55718.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="Spring boot将图片转成base64,使用sun.misc.BASE64Decoder转换图片" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/84d9adbdf567d05c64ac446dd4dd56d7.webp" />
+        <meta property="og:release_date" content="2025-02-13T03:08:58" />
+    <meta property="og:updated_time" content="2025-02-13T03:08:58" />
+        <meta property="og:description" content="本来项目要求的是后台给前端返回文件的地址，前端可以读取文件，图片或者pdf文件都能读取到，pdf根据浏览器会有显示和下载两种情况，doc等其他类型需要联网使用微软公司的接口。但是这样就暴露了服务器存放" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring boot将图片转成base64,使用sun.misc.BASE64Decoder转换图片">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Spring boot将图片转成base64,使用sun.misc.BASE64Decoder转换图片</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>本来项目要求的是后台给前端返回文件的地址，前端可以读取文件，图片或者pdf文件都能读取到，pdf根据浏览器会有显示和下载两种情况，doc等其他类型需要联网使用微软公司的接口。但是这样就暴露了服务器存放文件的地址，所以更改为把图片大小限制后转成base64编码持久化保存。</p> </h1> <p>pom文件直接导入：</p> <pre><code>&lt;!-- 图片转base64 --&gt;         &lt;!-- https://mvnrepository.com/artifact/com.slzx.third/sun.misc.BASE64Decoder --&gt; 		&lt;dependency&gt; 		    &lt;groupId&gt;com.slzx.third&lt;/groupId&gt; 		    &lt;artifactId&gt;sun.misc.BASE64Decoder&lt;/artifactId&gt; 		    &lt;version&gt;1.0&lt;/version&gt; 		&lt;/dependency&gt;</code></pre> <p>就是文件下载不下来，就直接把jar包下载下来放到本地mvn库中<br /> 路径不变<br /> 进cmd后输入</p> <pre><code>mvn install:install-file -DgroupId=com.slzx.third -DartifactId=sun.misc.BASE64Decoder -Dversion=1.0 -Dpackaging=jar -Dfile=D:\software\sunmiscbase64decoder\sun.misc.BASE64Decoder.jar</code></pre> </h1> <p>@param imgFilePath 待处理图片的地址<br /> @return 注意这里只返回图片的base64编码，没有文件类型》》data:image/png;base64,添加类型信息后可以在img标签中显示</p> <pre><code>package com.psbc.pfpj.utils;  import java.io.File; import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.IOException; import java.io.InputStream; import java.io.OutputStream;  import Decoder.BASE64Decoder; import Decoder.BASE64Encoder;  public class ImgTypeConvert { 	 	/** 	 * 将图片转换成Base64编码 	 *  	 * @param imgFilePath  待处理图片文件的地址 	 * @return 注意这里只返回图片的base64编码，没有文件类型》》data:image/png;base64,添加类型信息后可以在img标签中显示 	 */ 	public static String getImgStr(String imgFilePath) { 		// 将图片文件转化为字节数组字符串，并对其进行Base64编码处理 		File file=new File(imgFilePath); 		InputStream in = null; 		byte[] data = null; 		// 读取图片字节数组 		try { 			in = new FileInputStream(file); 			data = new byte[in.available()]; 			in.read(data); 			in.close(); 			if(data!=null&amp;&amp;data.length&gt;0){ 				//删除图片 //				file.delete(); 			} 		} catch (IOException e) { 			e.printStackTrace(); 		} 		 		BASE64Encoder encoder = new BASE64Encoder(); 		return encoder.encode(data); 	} 	          public static void main(String[] args) {     	String base64 = ImgTypeConvert.getImgStr("C:\\Users\\28054\\Pictures\\QQ浏览器截图\\QQ浏览器截图20210112094524.png"); 		System.out.println(base64); 		System.out.println(ImgTypeConvert.GenerateImage(base64, "D:\\a.jpg")); 		 	}          /** 	 * @Description: 将base64编码字符串转换为图片 	 * @Author:  	 * @CreateTime:  	 * @param imgStr base64编码字符串 	 * @param path 图片路径-文件名自己定义 	 * @return 	*/      public static boolean GenerateImage(String imgStr,String imgFilePath)       {   //对字节数组字符串进行Base64解码并生成图片           if (imgStr == null) //图像数据为空               return false;           BASE64Decoder decoder = new BASE64Decoder();           try            {               //Base64解码               byte[] b = decoder.decodeBuffer(imgStr);               for(int i=0;i&lt;b.length;++i)               {                   if(b[i]&lt;0)                   {//调整异常数据                       b[i]+=256;                   }               }               //生成图片               OutputStream out = new FileOutputStream(imgFilePath);                   out.write(b);               out.flush();               out.close();               return true;           }            catch (Exception e)            {               return false;           }       }               }</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55167.htm">宠物领养协议书范本（宠物领养协议书怎么写）</a></p>
+                                        <p>下一个：<a href="/news/article-55719.htm">开宠物店盈利如何避税（开宠物店盈利如何避税赚钱）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-50885.htm" title="Python 垃圾回收机制原理详解">Python 垃圾回收机制原理详解</a></li>
+                        <li class="py-2"><a href="/news/article-29813.htm" title="宠物粮在哪里买好一点（买宠物粮食去哪个网站比较好）">宠物粮在哪里买好一点（买宠物粮食去哪个网站比较好）</a></li>
+                        <li class="py-2"><a href="/news/article-20539.htm" title="宠物寄养合同协议书（宠物寄养合同协议书模板）">宠物寄养合同协议书（宠物寄养合同协议书模板）</a></li>
+                        <li class="py-2"><a href="/news/article-24682.htm" title="合肥宠物领养救助站电话地址（合肥宠物领养合肥宠物赠送）">合肥宠物领养救助站电话地址（合肥宠物领养合肥宠物赠送）</a></li>
+                        <li class="py-2"><a href="/news/article-23281.htm" title="java中集合的Collection集合">java中集合的Collection集合</a></li>
+                        <li class="py-2"><a href="/news/article-43399.htm" title="成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）">成人自考兽医专业学校（成人自学兽医专科可以考兽医资格证吗?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-high-speed-nodes.htm" title="12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址">12月12日→18.8M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24683.htm" title="动物疫苗打到人身上有事吗会传染吗视频（动物打的疫苗）">动物疫苗打到人身上有事吗会传染吗视频（动物打的疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-19170.htm" title="MySQL数据库生成某一年的日历存储过程_在线工具">MySQL数据库生成某一年的日历存储过程_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-26091.htm" title="python读取HDFS文件">python读取HDFS文件</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
