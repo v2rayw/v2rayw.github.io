@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-60276.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Spring Security核心组件详解</title>
+        <meta name="description" content="1.SecurityContextHolder SecurityContextHolder持有安全上下文（security context）的信息，可以通过SecurityContextHolder." />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-60276.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="Spring Security核心组件详解" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/37b7061287debd4491c38e6ec7344ea1.webp" />
+        <meta property="og:release_date" content="2025-02-21T09:19:04" />
+    <meta property="og:updated_time" content="2025-02-21T09:19:04" />
+        <meta property="og:description" content="1.SecurityContextHolder SecurityContextHolder持有安全上下文（security context）的信息，可以通过SecurityContextHolder." />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Security核心组件详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Spring Security核心组件详解</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> </h1> <h2><a id="1SecurityContextHolder_1" rel="nofollow"></a>1.SecurityContextHolder</h2> <p>SecurityContextHolder<strong>持有安全上下文（security context）的信息</strong>，可以通过SecurityContextHolder.getContext静态方法获取。<br /> 当前操作的用户是谁，该用户是否已经被认证，他拥有哪些角色权等等，这些都被保存在SecurityContextHolder中。<br /> SecurityContextHolder默认使用ThreadLocal 策略来存储认证信息。看到ThreadLocal 也就意味着，这是一种与线程绑定的策略。在web环境下，Spring Security在用户登录时自动绑定认证信息到当前线程，在用户退出时，自动清除当前线程的认证信息。<br /> 在Spring Security中，在请求之间存储SecurityContext的责任落在SecurityContextPersistenceFilter上，默认情况下，该上下文将上下文存储为HTTP请求之间的HttpSession属性。它会为每个请求恢复上下文SecurityContextHolder，并且最重要的是，在请求完成时清除SecurityContextHolder。SecurityContextHolder是一个类，他的功能方法都是静态的（static）。</p> <p>SecurityContextHolder可以设置指定JVM策略（SecurityContext的存储策略），这个策略有三种：<br /> MODE_THREADLOCAL：SecurityContext 存储在线程中。<br /> MODE_INHERITABLETHREADLOCAL：SecurityContext 存储在线程中，但子线程可以获取到父线程中的 SecurityContext。<br /> MODE_GLOBAL：SecurityContext 在所有线程中都相同。</p> <p>SecurityContextHolder默认使用MODE_THREADLOCAL模式，即存储在当前线程中。</p> <h2><a id="2SecurityContext_13" rel="nofollow"></a>2.SecurityContext</h2> <p><strong>安全上下文信息</strong>接口，用户通过Spring Security 的校验之后，验证信息存储在SecurityContext中。<br /> SecurityContext接口只定义了两个方法，实际上其主要作用就是<strong>获取Authentication对象</strong>（getAuthentication()方法），如果用户未鉴权，那Authentication对象将会是空的。</p> <h2><a id="3Authentication_17" rel="nofollow"></a>3.Authentication</h2> <p>Authentication是一个接口，用来表示<strong>用户认证信息</strong>。<br /> 该对象主要包含了用户的详细信息（UserDetails）和用户鉴权时所需要的信息，如用户提交的用户名密码、Remember-me Token，或者digest hash值等。按不同鉴权方式使用不同的Authentication实现。<br /> 在用户登录认证之前相关信息会封装为一个Authentication具体实现类的对象，在登录认证成功之后又会生成一个信息更全面，包含用户权限等信息的Authentication对象，然后把它保存在 SecurityContextHolder所持有的SecurityContext中，供后续的程序进行调用，如访问权限的鉴定等。</p> <p>接口中的方法：<br /> 从这个接口中，我们可以得到用户身份信息，密码，细节信息，认证信息，以及权限列表，具体的详细解读如下：</p> <ol> <li> <p>getAuthorities(): 用户权限信息（权限列表）,通常是代表权限的字符串列表；</p> </li> <li> <p>getCredentials(): 用户认证信息（密码信息）,由用户输入的密码凭证，认证之后会移出，来保证安全性；</p> </li> <li> <p>getDetails(): 细节信息，Web应用中一般是访问者的ip地址和sessionId；</p> </li> <li> <p>getPrincipal(): 用户身份信息，在未认证的情况下获取到的是用户名，在已认证的情况下获取到的是 UserDetails (UserDetails也是一个接口，里边的方法有getUsername,getPassword等)；</p> </li> <li> <p>isAuthenticated: 获取当前 Authentication 是否已认证；</p> </li> <li> <p>setAuthenticated: 设置当前 Authentication 是否已认证（true or false）。</p> </li> </ol> <p>官方文档里说过，当用户提交登陆信息时，会将用户名和密码进行组合成一个实例UsernamePasswordAuthenticationToken，而这个类是Authentication的一个常用的实现类，用来进行用户名和密码的认证，类似的还有RememberMeAuthenticationToken，它用于记住我功能。</p> <h2><a id="4GrantedAuthority_38" rel="nofollow"></a>4.GrantedAuthority</h2> <p>Authentication的getAuthorities()方法返回一个 GrantedAuthority 对象数组。</p> <p>GrantedAuthority该接口表示了当前用户所拥有的权限（或者角色）信息，用于配置 web授权、方法授权、域对象授权等。该属性通常由UserDetailsService 加载给 UserDetails。这些信息由授权负责对象AccessDecisionManager来使用，并决定最终用户是否可以访问某资源（URL或方法调用或域对象）。鉴权时并不会使用到该对象。<br /> 如果一个用户有几千个这种权限，内存的消耗将会是非常巨大的。</p> <h2><a id="5UserDetails_43" rel="nofollow"></a>5.UserDetails</h2> <p>UserDetails存储的就是用户信息，它和Authentication接口类似，都包含了用户名，密码以及权限信息。</p> <p>而区别就是Authentication中的getCredentials来源于用户提交的密码凭证，而UserDetails中的getPassword取到的则是用户正确的密码信息，认证的第一步就是比较两者是否相同，除此之外，Authentication#getAuthorities是认证用户名和密码成功之后，由UserDetails#getAuthorities传递而来。而Authentication中的getDetails信息是经过了AuthenticationProvider认证之后填充的。</p> <p>其接口方法含义如下：</p> <p>getAuthorites：获取用户权限，本质上是用户的角色信息。</p> <p>getPassword: 获取密码。</p> <p>getUserName: 获取用户名。</p> <p>isAccountNonExpired: 账户是否过期。</p> <p>isAccountNonLocked: 账户是否被锁定。</p> <p>isCredentialsNonExpired: 密码是否过期。</p> <p>isEnabled: 账户是否可用。</p> <h2><a id="6UserDetailsService_63" rel="nofollow"></a>6.UserDetailsService</h2> <p>提到了UserDetails就必须得提到UserDetailsService, UserDetailsService也是一个接口。<br /> 接口只有一个方法<br /> loadUserByUsername：用来获取UserDetails。</p> <p>通常在spring security应用中，我们会自定义一个CustomUserDetailsService来实现UserDetailsService接口，并实现其public UserDetails loadUserByUsername(final String login);方法。我们在实现loadUserByUsername方法的时候，就可以通过查询数据库（或者是缓存、或者是其他的存储形式）来获取用户信息，然后组装成一个UserDetails,(通常是一个org.springframework.security.core.userdetails.User，它继承自UserDetails) 并返回。</p> <p>用户登陆时传递的用户名和密码也是通过这里这查找出来的用户名和密码进行校验，但是真正的校验不在这里，而是由AuthenticationManager以及AuthenticationProvider负责的，需要强调的是，如果用户不存在，不应返回NULL，而要抛出异常org.springframework.security.core.userdetails.UsernameNotFoundException。</p> <p>UserDetails这个接口，它代表了最详细的用户信息，这个接口涵盖了一些必要的用户信息字段，我们一般都需要对它进行必要的扩展。它和Authentication接口很类似，比如它们都拥有username，authorities，区分他们也是本文的重点内容之一。Authentication的getCredentials()与UserDetails中的getPassword()需要被区分对待，前者是用户提交的密码凭证，后者是用户正确的密码，认证器其实就是对这两者的比对。Authentication中的getAuthorities()实际是由UserDetails的getAuthorities()传递而形成的。还记得Authentication接口中的getUserDetails()方法吗？其中的UserDetails用户详细信息便是经过了AuthenticationProvider之后被填充的<br /> UserDetailsService和AuthenticationProvider两者的职责常常被人们搞混，UserDetailsService只负责从特定的地方加载用户信息，可以是数据库、redis缓存、接口等。</p> <h2><a id="7AuthenticationManager_74" rel="nofollow"></a>7.AuthenticationManager</h2> <p>AuthenticationManager（接口）是认证相关的核心接口，它的作用就是校验Authentication,如果验证失败会抛出AuthenticationException异常。AuthenticationException是一个抽象类，因此代码逻辑并不能实例化一个AuthenticationException异常并抛出，实际上抛出的异常通常是其实现类，如DisabledException,LockedException,BadCredentialsException等。BadCredentialsException可能会比较常见，即密码错误的时候。</p> <p>这个接口只有一个方法：<br /> authenticate：认证。<br /> 方法运行后可能会有三种情况：<br /> 验证成功，返回一个带有用户信息的Authentication。<br /> 验证失败，抛出一个AuthenticationException异常。<br /> 无法判断，返回null。</p> <p>AuthenticationManager是发起认证的出发点，因为在实际需求中，我们可能会允许用户使用用户名+密码登录，同时允许用户使用邮箱+密码，手机号码+密码登录，甚至，可能允许用户使用指纹登录（还有这样的操作？没想到吧），所以说AuthenticationManager一般不直接认证，AuthenticationManager接口的常用实现类ProviderManager 内部会维护一个List列表，存放多种认证方式，实际上这是委托者模式的应用（Delegate）。也就是说，核心的认证入口始终只有一个：AuthenticationManager，不同的认证方式：用户名+密码（UsernamePasswordAuthenticationToken），邮箱+密码，手机号码+密码登录则对应了三个AuthenticationProvider。其中有一个重要的实现类是ProviderManager。</p> <h2><a id="8ProviderManager_85" rel="nofollow"></a>8.ProviderManager</h2> <p>ProviderManager是上面的AuthenticationManager最常见的实现，它也不自己处理验证，而是将验证委托给其所配置的AuthenticationProvider列表，然后会依次调用每一个 AuthenticationProvider进行认证，或者通过简单地返回null来跳过验证。如果所有实现都返回null，那么ProviderManager将抛出一个ProviderNotFoundException。这个过程中只要有一个AuthenticationProvider验证成功，就不会再继续做更多验证，会直接以该认证结果作为ProviderManager的认证结果。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/45865722fd0cab460bb13495fba5fcb2.jpg" alt="Spring Security核心组件详解"></p> <h2><a id="9AuthenticationProvider_88" rel="nofollow"></a>9.AuthenticationProvider</h2> <p>AuthenticationProvider接口提供了两个方法，一个是真正的认证，另一个是满足什么样的身份信息才进行如上认证。<br /> Spring 提供了几种AuthenticationProvider的实现：</p> <ol> <li>DaoAuthenticationProvider从数据库中读取用户信息验证身份</li> <li>AnonymousAuthenticationProvider匿名用户身份认证</li> <li>RememberMeAuthenticationProvider已存cookie中的用户信息身份认证</li> <li>AuthByAdapterProvider使用容器的适配器验证身份</li> <li>CasAuthenticationProvider根据Yale中心认证服务验证身份,用于实现单点登陆</li> <li>JaasAuthenticationProvider从JASS登陆配置中获取用户信息验证身份</li> <li>RemoteAuthenticationProvider根据远程服务验证用户身份</li> <li>RunAsImplAuthenticationProvider对身份已被管理器替换的用户进行验证</li> <li>X509AuthenticationProvider从X509认证中获取用户信息验证身份</li> <li>TestingAuthenticationProvider单元测试时使用</li> </ol> <p>当然也可以自己实现AuthenticationProvider接口来自定义认证。</p> <p>这里我们基于最常用的DaoAuthenticationProvider来详细解释一下：</p> <p>Dao正是数据访问层的缩写，也暗示了这个身份认证器的实现思路。主要作用：它获取用户提交的用户名和密码，比对其正确性，如果正确，返回一个数据库中的用户信息（假设用户信息被保存在数据库中）。</p> <p>在Spring Security中。提交的用户名和密码，被封装成了UsernamePasswordAuthenticationToken，而根据用户名加载用户的任务则是交给了UserDetailsService，在DaoAuthenticationProvider中，对应的方法便是retrieveUser，虽然有两个参数，但是retrieveUser只有第一个参数起主要作用，返回一个UserDetails。还需要完成UsernamePasswordAuthenticationToken和UserDetails密码的比对，这便是交给additionalAuthenticationChecks方法完成的，如果这个void方法没有抛异常，则认为比对成功。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/0cc87c712e0b25dcf772a447b5c728ee.jpg" alt="Spring Security核心组件详解"></p> </h1> <h2><a id="_113" rel="nofollow"></a>如何完成身份认证</h2> <ol> <li>用户使用用户名和密码进行登录，Spring Security将获取到的用户名和密码封装成一个Authentication接口的实现类，比如常用的UsernamePasswordAuthenticationToken。</li> <li>将上述产生的Authentication对象传递给AuthenticationManager的实现类ProviderManager进行认证。</li> <li>ProviderManager依次调用各个AuthenticationProvider进行认证，认证成功后返回一个封装了用户权限等信息的Authentication对象。</li> <li>将AuthenticationManager返回的Authentication对象赋予给当前的SecurityContext。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/50a9af7b0f5cb5ef5cf23cc53f490b07.jpg" alt="Spring Security核心组件详解"></li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/df52580234acb3d2ed59583d268659c2.jpg" alt="Spring Security核心组件详解"></p> <h3><a id="1Http_Request_121" rel="nofollow"></a>1.Http Request</h3> <p>Spring security 定义了一个过滤器链, 当认证请求到达这个链时, 该请求将会穿过这个链条用于认证和授权. 这个链上的可以定义1…N个过滤器, 过滤器的用途是获取请求中的认证信息, 根据认证方式进行路由, 把认证信息传递给对应的认证处理程序进行处理. 下面的示例图显示了Spring security中常用的认证过滤器<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/343c2a8a0e207b54f13c18c2665d8e45.jpg" alt="Spring Security核心组件详解"><br /> 不同的过滤器处理不同的认证信息. 例如：</p> <ol> <li>HTTP Basic 认证请通过过滤器链, 到达 BasicAuthenticationFilter；</li> <li>HTTP Digest 认证被 DigestAuthenticationFilter 识别,拦截并处理；</li> <li>表单登录认证被 UsernamePasswordAuthenticationFilter 识别,拦截并处理。</li> </ol> <h3><a id="2_AuthenticationToken_128" rel="nofollow"></a>2.基于用户凭证创建 AuthenticationToken</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/d52131e1ca345b7991d0cfff2ea06281.jpg" alt="Spring Security核心组件详解"><br /> 这里我们以最常用表单登录为例子, 用户在登录表单中输入用户名和密码, 并点击确定, 浏览器提交POST请求到服务器, 穿过过滤器链, 被 UsernamePasswordAuthenticationFilter 识别, UsernamePasswordAuthenticationFilter 提取请求中的用户名和密码来创建 UsernamePasswordAuthenticationToken 对象.</p> <h3><a id="3_AuthenticationToken__AuthenticationManagager_131" rel="nofollow"></a>3.把组装好的 AuthenticationToken 传递给 AuthenticationManagager</h3> <p>组装好的 UsernamePasswordAuthenticationToken 对象被传递给 AuthenticationManagager 的 authenticate 方法进行认证决策.AuthenticationManager 只是一个接口, 实际的实现是 ProviderManager</p> <p>ProviderManager 有一个配置好的认证提供者列表(AuthenticationProvider), ProviderManager 会把收到的 UsernamePasswordAuthenticationToken 对象传递给列表中的每一个 AuthenticationProvider 进行认证.</p> <h3><a id="4_136" rel="nofollow"></a>4.进行认证处理</h3> <pre><code>public interface AuthenticationProvider {     Authentication authenticate(Authentication authentication) throws AuthenticationException;     boolean supports(Class&lt;?&gt; authentication); }</code></pre> <p>AuthenticationProvider提供了以下的实现类：</p> <p>CasAuthenticationProvider<br /> JaasAuthenticationProvider<br /> DaoAuthenticationProvider<br /> OpenIDAuthenticationProvider<br /> RememberMeAuthenticationProvider<br /> LdapAuthenticationProvider</p> <p>上面我们说了, ProviderManager 会把收到的 UsernamePasswordAuthenticationToken 对象传递给列表中的每一个 AuthenticationProvider 进行认证.那到底 UsernamePasswordAuthenticationToken 会被哪一个接收和处理呢?是由supports方法来决定的。</p> <h3><a id="5UserDetailsService_155" rel="nofollow"></a>5.UserDetailsService获取用户信息</h3> <p>UserDetailsService 获取的对象是一个 UserDetails. 框架中自带一个 User 实现, 但是一般我们需要对 UserDetails 进行定制, 内置的 User 太过简单实际项目无法满足需要.案例说明（基于jpa实现）：</p> <pre><code>@Service public class JpaReactiveUserDetailsService implements ReactiveUserDetailsService {     private UserRepository userRepository;      @Autowired     public void setUserRepository(UserRepository userRepository) {         this.userRepository = userRepository;     }      /**      * @param s 用户名      * @return Mono&lt;UserDetails&gt;      */     @Override     public Mono&lt;UserDetails&gt; findByUsername(String s) {         // 从用户Repository中获取一个User Jpa实体对象         Optional&lt;User&gt; optionalUser = userRepository.findByUsername(s);         if (!optionalUser.isPresent()) {             return Mono.empty();         }         User user = optionalUser.get();                  // 填充权限         List&lt;SimpleGrantedAuthority&gt; authorities = new ArrayList&lt;&gt;();         for (Role role : user.getRoles()) {             authorities.add(new SimpleGrantedAuthority(role.getName()));         }                  // 返回 UserDetails         return Mono.just(new org.springframework.security.core.userdetails.User(             user.getUsername(), user.getPassword(), authorities         ));     } } @Repository public interface UserRepository extends JpaRepository&lt;User, Long&gt; {     User findByEmail(String email);     @Override     void delete(User user);     Optional&lt;User&gt; findByUsername(String username); }</code></pre> <h3><a id="6_201" rel="nofollow"></a>6.认证结果处理</h3> <p>如果认证成功(用户名,密码完全正确), AuthenticationProvider 将会返回一个完全有效的 Authentication 对象(UsernamePasswordAuthenticationToken). 否则抛出 AuthenticationException 异常.完全有效的 Authentication 对象定义如下:</p> <p>authenticated属性为 true<br /> 已授权的权限列表(GrantedAuthority列表)<br /> 用户凭证(仅用户名)</p> <h3><a id="7_208" rel="nofollow"></a>7.认证完成</h3> <p>认证完成后, AuthenticationManager 将会返回该认证对象(UsernamePasswordAuthenticationToken)返回给过滤器</p> <h3><a id="8_211" rel="nofollow"></a>8.存储认证对象</h3> <p>相关的过滤器获得一个认证对象后, 把它存储在安全上下文中(SecurityContext) 用于后续的授权判断(比如查询,修改等操作).</p> <p>SecurityContextHolder.getContext().setAuthentication(authentication);<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/6e7dfed1d6cac08b4a06b3562f10f291.jpg" alt="Spring Security核心组件详解"></p> <h2><a id="_217" rel="nofollow"></a>自定义验证</h2> <p>实际上真正来做验证操作的是一个个的AuthenticationProvider，所以如果要自定义验证方法，只需要实现一个自己的AuthenticationProvider然后再将其添加进ProviderManager里就行了。</p> <h3><a id="AuthenticationProvider_219" rel="nofollow"></a>自定义AuthenticationProvider</h3> <pre><code>@Component public class CustomAuthenticationProvider   implements AuthenticationProvider {       @Override     public Authentication authenticate(Authentication authentication)        throws AuthenticationException {            String name = authentication.getName();         String password = authentication.getCredentials().toString();                   if (shouldAuthenticateAgainstThirdPartySystem()) {                // use the credentials             // and authenticate against the third-party system             return new UsernamePasswordAuthenticationToken(               name, password, new ArrayList&lt;&gt;());         } else {             return null;         }     }       @Override     public boolean supports(Class&lt;?&gt; authentication) {         return authentication.equals(           UsernamePasswordAuthenticationToken.class);     } }</code></pre> <p>其中的supports()方法接受一个authentication参数，用来判断传进来的authentication是不是该AuthenticationProvider能够处理的类型。</p> <h3><a id="AuthenticationProvider_252" rel="nofollow"></a>注册AuthenticationProvider</h3> <p>现在再将刚创建的AuthenticationProvider在与ProviderManager里注册，所有操作就完成了。</p> <pre><code>@Configuration @EnableWebSecurity @ComponentScan("org.baeldung.security") public class SecurityConfig extends WebSecurityConfigurerAdapter {        @Autowired     private CustomAuthenticationProvider authProvider;       @Override     protected void configure(       AuthenticationManagerBuilder auth) throws Exception {            auth.authenticationProvider(authProvider);     }       @Override     protected void configure(HttpSecurity http) throws Exception {         http.authorizeRequests().anyRequest().authenticated()             .and()             .httpBasic();     } }</code></pre> </h1> <p>一旦认证成功，我们可以继续进行授权，授权是通过AccessDecisionManager来实现的。框架有三种实现，默认是AffirmativeBased，通过AccessDecisionVoter决策，有点像ProviderManager委托给AuthenticationProviders来认证。<br /> 用户可以享受哪一种权限可以自己配置或者读取数据库设置</p> <p>参考文章<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/xz816111/p/8528896.html"  rel="nofollow">Spring Security验证流程剖析及自定义验证方法</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/sinat_29899265/article/details/80653167"  rel="nofollow">Spring Security详解（一）认证之核心组件和服务</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/7b87ec108405"  rel="nofollow">spring security系列一：核心组件</a></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59689.htm">同安宠物领养中心在哪里啊电话 同安宠物领养中心在哪里啊电话号码</a></p>
+                                        <p>下一个：<a href="/news/article-60277.htm">小猫养多久才认主人猫咪不喜欢睡怀里是不相信的意思吗（猫多久不认得主人）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-subscribe-node.htm" title="12月3日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址">12月3日→18.4M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-56841.htm" title="动物疫苗有什么用途和作用禁忌（动物疫苗包括哪些）">动物疫苗有什么用途和作用禁忌（动物疫苗包括哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-node-subscribe.htm" title="12月2日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址">12月2日→21.6M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-node-subscribe-links.htm" title="2月1日→19.1M/S|2025年最新免费节点V2ray W订阅链接地址">2月1日→19.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34566.htm" title="创建TypeScript代码模板(NVS+Yarn+ESLint+Prettier+Husky)">创建TypeScript代码模板(NVS+Yarn+ESLint+Prettier+Husky)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-subscribe-node.htm" title="12月28日→21.5M/S|2024年最新免费节点V2ray W订阅链接地址">12月28日→21.5M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27008.htm" title="高端宠物品牌有哪些（高端宠物品牌有哪些牌子）">高端宠物品牌有哪些（高端宠物品牌有哪些牌子）</a></li>
+                        <li class="py-2"><a href="/news/article-47339.htm" title="十大山茶油品牌(山茶油排行榜)">十大山茶油品牌(山茶油排行榜)</a></li>
+                        <li class="py-2"><a href="/news/article-34568.htm" title="宠物医院好评评语200字 给宠物医院好评怎么写">宠物医院好评评语200字 给宠物医院好评怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-60276.htm" title="Spring Security核心组件详解">Spring Security核心组件详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

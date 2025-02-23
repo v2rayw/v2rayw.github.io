@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-60858.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>windows 使用pyenv-win 管理多python 版本</title>
+        <meta name="description" content="&nbsp;链接：GitHub - pyenv-win/pyenv-win: pyenv for Windows. pyenv is a simple python version managemen" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-60858.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="windows 使用pyenv-win 管理多python 版本" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/84d9adbdf567d05c64ac446dd4dd56d7.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:10:34" />
+    <meta property="og:updated_time" content="2025-02-22T07:10:34" />
+        <meta property="og:description" content="&nbsp;链接：GitHub - pyenv-win/pyenv-win: pyenv for Windows. pyenv is a simple python version managemen" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="windows 使用pyenv-win 管理多python 版本">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>windows 使用pyenv-win 管理多python 版本</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp;链接：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/pyenv-win/pyenv-win"  title="GitHub - pyenv-win/pyenv-win: pyenv for Windows. pyenv is a simple python version management tool. It lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well." rel="nofollow">GitHub - pyenv-win/pyenv-win: pyenv for Windows. pyenv is a simple python version management tool. It lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.</a></p> <h2>简介</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp; pyenv-win 是windows 下的一个python 多版本管理工具。</p> <h2>使用</h2> <table border="1" cellpadding="1" cellspacing="1" style="width:500px;"> <tbody> <tr> <td style="width:216px;"> <pre style="text-align:center;">命令</pre> </td> <td style="text-align:center;width:282px;">用法</td> </tr> <tr> <td style="text-align:center;width:216px;">local</td> <td style="text-align:center;width:282px;">&nbsp;Set or show the local application-specific Python version</td> </tr> <tr> <td style="text-align:center;width:216px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; global</td> <td style="text-align:center;width:282px;">&nbsp;Set or show the global Python version</td> </tr> <tr> <td style="text-align:center;width:216px;">shell</td> <td style="text-align:center;width:282px;">&nbsp; Set or show the shell-specific Python version</td> </tr> <tr> <td style="text-align:center;width:216px;">install</td> <td style="text-align:center;width:282px;">&nbsp; Install 1 or more versions of Python</td> </tr> <tr> <td style="text-align:center;width:216px;">uninstall</td> <td style="text-align:center;width:282px;">&nbsp;Uninstall 1 or more versions of Python</td> </tr> <tr> <td style="text-align:center;width:216px;">update</td> <td style="text-align:center;width:282px;">Update the cached version DB</td> </tr> <tr> <td style="text-align:center;width:216px;">rehash</td> <td style="text-align:center;width:282px;">Rehash pyenv shims (run this after switching Python versions)</td> </tr> <tr> <td style="text-align:center;width:216px;">vname</td> <td style="text-align:center;width:282px;">Show the current Python version</td> </tr> <tr> <td style="text-align:center;width:216px;">version</td> <td style="text-align:center;width:282px;">&nbsp;Show the current Python version and its origin</td> </tr> <tr> <td style="text-align:center;width:216px;">version-name</td> <td style="text-align:center;width:282px;">Show the current Python version</td> </tr> <tr> <td style="text-align:center;width:216px;">versions</td> <td style="text-align:center;width:282px;">List all Python versions available to pyenv</td> </tr> <tr> <td style="text-align:center;width:216px;">exec</td> <td style="text-align:center;width:282px;">&nbsp; Runs an executable by first preparing PATH so that the selected Python</td> </tr> <tr> <td style="text-align:center;width:216px;">which</td> <td style="text-align:center;width:282px;">&nbsp;Display the full path to an executable</td> </tr> <tr> <td style="text-align:center;width:216px;">whence</td> <td style="text-align:center;width:282px;">&nbsp;List all Python versions that contain the given executable</td> </tr> </tbody> </table> <h2>下载</h2> <p>一. windows terminal</p> <p>windows shell 使用 powershell 。&nbsp; 直接Microsoft Store 搜索 windows terminal 。 点击下载安装即可。</p> <p>二. 通过pip下载 pyenv-win</p> <p>首先下载一个python 版本。<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.python.org/downloads/windows/"  title="https://www.python.org/downloads/windows/" rel="nofollow">https://www.python.org/downloads/windows/</a>&nbsp;。下载后点击安装</p> <p>然后在python 的bin 目录里面执行&nbsp;pip install pyenv-win --target [your path where&nbsp; to store pyenv]</p> <p>三. 为 pyenv 配置系统变量</p> <p>操作 过程： 1.【此电脑】&nbsp; -&gt; 【属性】-&gt; 【高级系统设置】-&gt; 【环境变量】（以下操作更改的都是系统变量）-&gt; 【系统变量】-&gt; 【新建变量】</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220905/5a376ce4b84c3d365eb65ed6bec053d4.jpg"></p> <p>2. 【双击系统变量的path】 -&gt; 【新建】</p> <p style="text-align:center;"> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220905/bd309ed844c375d9a9c46b0bd3192789.jpg"></p> <h2>测试</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp; 重启当前 cmd 或 powershell。&nbsp; 执行 pyenv --version ,能输出版本号即配置成功。如果有错误，再检查一遍有没有遗漏或拼写错误。</p> <h2>PS : powershell 执行pyenv 可能有个问题</h2> <blockquote> <p>无法加载文件 C:\Users\DH\Desktop\cs\rename.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。</p> </blockquote> <p>此时 执行下<strong>set-executionpolicy remotesigned 。 再重新执行命令即可。</strong></p> <p><strong>具体看：</strong><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/4eaad2163567"  title="PowerShell：因为在此系统上禁止运行脚本，解决方法 - 简书" rel="nofollow">PowerShell：因为在此系统上禁止运行脚本，解决方法 - 简书</a></p> <p style="text-align:center;"> <p style="text-align:center;"> <p style="text-align:center;"> <p style="text-align:center;"> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60277.htm">小猫养多久才认主人猫咪不喜欢睡怀里是不相信的意思吗（猫多久不认得主人）</a></p>
+                                        <p>下一个：<a href="/news/article-60859.htm">宠物医院培训记录（宠物医院培训记录表模板）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-high-speed-nodes.htm" title="11月17日→22M/S|2024年最新免费节点V2ray W订阅链接地址">11月17日→22M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48278.htm" title="国产猫粮品牌推荐（国产猫粮品牌推荐大全）">国产猫粮品牌推荐（国产猫粮品牌推荐大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-high-speed-nodes.htm" title="2月4日→19M/S|2025年最新免费节点V2ray W订阅链接地址">2月4日→19M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52463.htm" title="养猫对人的巨大危害案例（养猫对人的健康有什么影响?）">养猫对人的巨大危害案例（养猫对人的健康有什么影响?）</a></li>
+                        <li class="py-2"><a href="/news/article-45865.htm" title="动物疫苗的意义 动物疫苗的意义是什么">动物疫苗的意义 动物疫苗的意义是什么</a></li>
+                        <li class="py-2"><a href="/news/article-44882.htm" title="动物防疫站打针免费吗多少钱 动物防疫站打针免费吗多少钱一针">动物防疫站打针免费吗多少钱 动物防疫站打针免费吗多少钱一针</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-clash-v2ray-ss-ssr.htm" title="2月6日→21.4M/S|2025年最新免费节点V2ray W订阅链接地址">2月6日→21.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-v2ray-subscribe.htm" title="1月21日→18.6M/S|2025年最新免费节点V2ray W订阅链接地址">1月21日→18.6M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19624.htm" title="带你进⼊ OpenAI 的世界">带你进⼊ OpenAI 的世界</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-subscribe-node.htm" title="12月18日→20.3M/S|2024年最新免费节点V2ray W订阅链接地址">12月18日→20.3M/S|2024年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
