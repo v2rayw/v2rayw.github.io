@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-67571.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>vue在table表中悬浮显示数据及右键菜单_vue.js_</title>
+        <meta name="description" content="本文实例为大家分享了vue在table表中悬浮显示数据及右键菜单的具体代码，供大家参考，具体内容如下 悬浮显示 这个文档里是存在的，但很容易被忽略，先看看效果图  鼠标放在哪行，就会弹出相对应的描述。" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-67571.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="vue在table表中悬浮显示数据及右键菜单_vue.js_" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/8e3fc6b9bb6b9bfcbe2920efc2cfcf6c.webp" />
+        <meta property="og:release_date" content="2025-03-05T11:11:19" />
+    <meta property="og:updated_time" content="2025-03-05T11:11:19" />
+        <meta property="og:description" content="本文实例为大家分享了vue在table表中悬浮显示数据及右键菜单的具体代码，供大家参考，具体内容如下 悬浮显示 这个文档里是存在的，但很容易被忽略，先看看效果图  鼠标放在哪行，就会弹出相对应的描述。" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue在table表中悬浮显示数据及右键菜单_vue.js_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>vue在table表中悬浮显示数据及右键菜单_vue.js_</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>本文实例为大家分享了vue在table表中悬浮显示数据及右键菜单的具体代码，供大家参考，具体内容如下</p> <h2>悬浮显示</h2> <p>这个文档里是存在的，但很容易被忽略，先看看效果图</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/7a400b4dc651affdce965f42b77b65aa.jpg"></p> <p>鼠标放在哪行，就会弹出相对应的描述。</p> <p>直接看代码</p> <div class="ay1code"> <pre class="brush:js;">//列名及属性名  &lt;el-table-column prop="member"  label="构件名称"&gt;  //从json数据调取      &lt;template slot-scope="scope"&gt;      //悬浮显示数据      &lt;el-popover trigger="hover" placement="top" &gt;        &lt;p&gt;构建描述: {{ scope.row.memberTxt }}&lt;/p&gt;        &lt;p&gt;创建时间: {{ scope.row.date2 }}&lt;/p&gt;        &lt;div slot="reference" class="name-wrapper"&gt;        //行显示数据          &lt;el-tag size="medium" &gt;       {{ scope.row.member }}       //数据后加删除按钮       &lt;el-button icon="el-icon-delete" type="text" class="red" @click="handleDelete(scope.$index,scope.row)"&gt;       &lt;/el-button&gt;       &lt;/el-tag&gt;          &lt;/div&gt;      &lt;/el-popover&gt;      &lt;/template&gt;  &lt;/el-table-column&gt;</pre> </div> <p>只是这些就足够了，表的设置无需做更改，用到右键菜单时才会更改；</p> <h2><strong>右键菜单</strong></h2> <p>这与上个可以没有关系，也可是同一个，取决于自己！<br />依旧是先看图</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/7a400b4dc651affdce965f42b77b65aa.jpg"></p> <p>右下角的菜单就是右键的菜单了；<br />我们来看具体实现：<br /><strong>首先就是表格的设置</strong><br />文档中表格有这个事件，</p> <div class="ay1code"> <pre class="brush:js;">&lt;el-table :data="tableData"     type="expand"     class="table"      ref="multipleTable"      header-cell-class-name="table-header"     @row-contextmenu="rowContextmenu"//主要就是这个事件     @selection-change="handleSelectionChange"&gt;</pre> </div> <p>当然，在表格下面，还要写重要的一步</p> <div class="ay1code"> <pre class="brush:js;">&lt;context-button v-if="menuVisible" @foo="foo" ref="contextbutton"       @handleOne="handleOne" @handleTwo="handleTwo" @handleThree="handleThree"       @handleFour="handleFour" @handleFive="handleFive"&gt;&lt;/context-button&gt;</pre> </div> <p>这些@handle对应点击事件</p> <p><strong>接下来就是methods</strong></p> <div class="ay1code"> <pre class="brush:js;">rowContextmenu (row, column, event) {              this.menuVisible = false              this.menuVisible = true              // 阻止右键默认行为              event.preventDefault()              this.$nextTick(() =&gt; {                this.$refs.contextbutton.init(row,column,event)          this.updForm = row;              })                    },            foo() { // 取消鼠标监听事件 菜单栏              this.menuVisible = false             /* document.removeEventListener('click', this.foo) */            },             handleTwo () {                    },          handleThree () {                    },    handleFour (){               },    handleFive (row){        }</pre> </div> <p>那些handle开头的方法是右键菜单的方法，我自己写的就不公布了，知道是点击按钮事件就可以了<br /><strong>重点，上面我们在表格下面写了神秘代码就要用到了<br />在你使用的vue界面的目录下创建一个“contextButton”文件夹，对应 上面的ref即可，注意大小写！<br />在文件夹下创建vue页面</strong><br />首先是html，也就是右键菜单显示的内容了</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div id="contextmenu" class="contextmenu"&gt;      &lt;div class="contextmenu__item" @click="handleTwo()"&gt;设计信息&lt;/div&gt;      &lt;div class="contextmenu__item" @click="handleThree()"&gt;查看图纸&lt;/div&gt;    &lt;div class="contextmenu__item" @click="handleFour()"&gt;查看模型&lt;/div&gt;     &lt;div class="contextmenu__item" @click="handleFive()"&gt;修改信息&lt;/div&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <p>然后就是script</p> <div class="ay1code"> <pre class="brush:js;">export default {        name: "index",        data () {          return {              collapse: false,                                                                                                                                                                                                                      }        },  methods: {          init (row, column,event) {           let menu = document.querySelector('#contextmenu')            let cha = document.body.clientHeight - event.clientY            console.log(document.body.clientHeight,event.clientY,cha)            if (cha &lt; 150) {              menu.style.top = event.clientY -0 + 'px'            } else {              menu.style.top = event.clientY -60 + 'px'            }            menu.style.left = event.clientX - 200 + 'px'               document.addEventListener('click', this.foo)                },          foo () {            this.$emit('foo')          },           handleTwo () {            this.$emit('handleTwo')          },          handleThree () {            this.$emit('handleThree')          },    handleFour (){     this.$emit('handleFour')          },    handleFive (row){     this.$emit('handleFive')    }    }      }</pre> </div> <p><strong>位置的话是随着你右键的不同位置二不同的</strong><br />如果不喜欢这个位置，可以自己改变<br /><strong>最后就是样式了</strong></p> <div class="ay1code"> <pre class="brush:css;"> .contextmenu__item {      display: block;      line-height: 34px;      text-align: center;    }     .contextmenu__item:not(:last-child) {      border-bottom: 1px solid rgba(64,158,255,.2);    }    .contextmenu {      position: absolute;      background-color: #ecf5ff;      width: 100px;  font-size: 12px;      color: #409EFF;      border-radius: 4px;      -webkit-box-sizing: border-box;      box-sizing: border-box;      border: 1px solid rgba(64,158,255,.2);      white-space: nowrap;      z-index: 1000;    }    .contextmenu__item:hover {      cursor: pointer;      background: #66b1ff;      border-color: #66b1ff;      color: #fff;    }</pre> </div> <p>颜色什么的都是我喜欢的，不喜欢的话可以自己改变。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66959.htm">成年猫咪打疫苗一共几针?多少钱?（成年猫咪打疫苗一共几针?多少钱一次）</a></p>
+                                        <p>下一个：<a href="/news/article-67572.htm">动物疫苗厂家查询电话（动物疫苗经销商）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-43888.htm" title="动物疫苗的保存温度是多少度（动物疫苗在常温下能放多久）">动物疫苗的保存温度是多少度（动物疫苗在常温下能放多久）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-high-speed-nodes.htm" title="3月3日→21.2M/S|2025年最新免费节点V2ray W订阅链接地址">3月3日→21.2M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50885.htm" title="Python 垃圾回收机制原理详解">Python 垃圾回收机制原理详解</a></li>
+                        <li class="py-2"><a href="/news/article-57403.htm" title="动物疫苗注射器图片（动物疫苗注射的作用）">动物疫苗注射器图片（动物疫苗注射的作用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-clash-v2ray-ss-ssr.htm" title="2月22日→18.4M/S|2025年最新免费节点V2ray W订阅链接地址">2月22日→18.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-59118.htm" title="动物医院英语短语怎么写的呀（动物医院的拼音）">动物医院英语短语怎么写的呀（动物医院的拼音）</a></li>
+                        <li class="py-2"><a href="/news/article-63838.htm" title="学宠物医生上什么大学（学宠物医生上什么大学好）">学宠物医生上什么大学（学宠物医生上什么大学好）</a></li>
+                        <li class="py-2"><a href="/news/article-49334.htm" title="动物疫苗种类及类型分类表（动物疫苗接种技术）">动物疫苗种类及类型分类表（动物疫苗接种技术）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-clash-v2ray-ss-ssr.htm" title="1月27日→18.1M/S|2025年最新免费节点V2ray W订阅链接地址">1月27日→18.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37457.htm" title="宠物打完疫苗之后多久可以洗澡（宠物打完疫苗后多久检测抗体）">宠物打完疫苗之后多久可以洗澡（宠物打完疫苗后多久检测抗体）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
