@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-80958.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>url传参的编码与解码</title>
+        <meta name="description" content="开发过程中遇到一个问题，就是在用GET方法请求接口的时候，传入的参数值中，+号会被转化为空格，传给后台。 传入的参数是:“aaa++++bbb–@%&amp;”，被url编码和解码后，传入后台就变成了" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-80958.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="url传参的编码与解码" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/13cf24be9c5d1f1159839faf43fbf389.webp" />
+        <meta property="og:release_date" content="2025-03-25T08:17:35" />
+    <meta property="og:updated_time" content="2025-03-25T08:17:35" />
+        <meta property="og:description" content="开发过程中遇到一个问题，就是在用GET方法请求接口的时候，传入的参数值中，+号会被转化为空格，传给后台。 传入的参数是:“aaa++++bbb–@%&amp;”，被url编码和解码后，传入后台就变成了" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="url传参的编码与解码">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>url传参的编码与解码</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>开发过程中遇到一个问题，就是在用GET方法请求接口的时候，传入的参数值中，+号会被转化为空格，传给后台。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/1ffa7a8ae3896c3759702f873f65c88e.jpg" alt="url传参的编码与解码"><br /> 传入的参数是:“aaa++++bbb–@%&amp;”，被url编码和解码后，传入后台就变成了截图所示。加号全部被转为空格。截图的请求方式之所以展示为post，是因为前端做了接口拦截设置，把所有的GET请求转为了POST请求。</p> <p>后来把请求方式改为post，content-type设置为xxx-form-urlencoded，+号依然被转化为空格传给了后台，如下方截图所示<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/0fac9d0fa083966b4e0e9699ca87ab68.jpg" alt="url传参的编码与解码"><br /> 刚开始以为只是content-type:xxx-form-urlencoded导致的。<br /> 后来在chrome的url搜索栏输入www.baidu.com/aa+bb?cc=e+f然后按enter键看了下接口请求，如下图<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/d7dad2eefd3a499d6e12744f724afdf2.jpg" alt="url传参的编码与解码"><br /><strong>最终的解决方案是:后台修改了传参类型，前台用POST，改为JSON传参。</strong></p> <p>后面查了一些资料。以下是查询所得:</p> <p>对于Url来说，之所以要进行编码，是因为Url中有些字符会引起歧义。</p> <p>例如，Url参数字符串中使用key=value键值对这样的形式来传参，键值对之间以&amp;符号分隔，如/s?q=abc&amp;ie=utf-8。如果你的value字符串中包含了=或者&amp;，那么势必会造成接收Url的服务器解析错误，<strong>因此必须将引起歧义的&amp;和=符号进行转义，也就是对其进行编码。</strong></p> <p>又如，**Url的编码格式采用的是ASCII码，而不是Unicode，这也就是说你不能在Url中包含任何非ASCII字符，例如中文。**否则如果客户端浏览器和服务端浏览器支持的字符集不同的情况下，中文可能会造成问题。</p> <p><strong>Url编码的原则就是使用安全的字符（没有特殊用途或者特殊意义的可打印字符）去表示那些不安全的字符。</strong></p> <p>哪些字符需要编码?<br /> **RFC3986文档规定，Url中只允许包含英文字母（a-zA-Z）、数字（0-9）、-_.~4个特殊字符以及所有保留字符。**RFC3986文档对Url的编解码问题做出了详细的建议，指出了哪些字符需要被编码才不会引起Url语义的转变，以及对为什么这些字符需要编码做出了相应的解释。</p> <p>US-ASCII字符集中没有对应的可打印字符：Url中只允许使用可打印字符。US-ASCII码中的10-7F字节全都表示控制字符，这些字符都不能直接出现在Url中。同时，对于80-FF字节（ISO-8859-1），由于已经超出了US-ACII定义的字节范围，因此也不可以放在Url中。</p> <p><strong>保留字符：Url可以划分成若干个组件，协议、主机、路径等。有一些字符（?????#[]@）是用作分隔不同组件的。例如：冒号用于分隔协议和主机，/用于分隔主机和路径，?用于分隔路径和查询参数，等等。还有一些字符（!$&amp;’()*+,;=）用于在每个组件中起到分隔作用的，如=用于表示查询参数中的键值对，&amp;符号用于分隔查询多个键值对。当组件中的普通数据包含这些特殊字符时，需要对其进行编码。</strong></p> <p><strong>RFC3986中指定了以下字符为保留字符：! * ’ ( ) ; : @ &amp; = + $ , / ? # [ ]</strong></p> <p>注意：大多数人不知道"+"在路径部分是被允许的并且特指正号而不是空格。其他类似的有：<br /> "?"在查询部分允许不被转义，<br /> "/"在查询部分允许不被转义，<br /> "="在作为路径参数或者查询参数值以及在路径部分允许不被转义，<br /> "????-._~!<span class="katex--inline">KaTeX parse error: Expected 'EOF', got '&amp;' at position 1: &amp;̲'()*+,;="等字符在路径…</span>&amp;’()*+,;="等字符在任何段中允许不被转义。(验证过’作为查询参数还是会被编码)<br /> 不安全字符：还有一些字符，当他们直接放在Url中的时候，可能会引起解析程序的歧义。这些字符被视为不安全字符，原因有很多。<br /> 空格：Url在传输的过程，或者用户在排版的过程，或者文本处理程序在处理Url的过程，都有可能引入无关紧要的空格，或者将那些有意义的空格给去掉。<br /> 引号以及&lt;&gt;：引号和尖括号通常用于在普通文本中起到分隔Url的作用<br /> #：通常用于表示书签或者锚点<br /> %：百分号本身用作对不安全字符进行编码时使用的特殊字符，因此本身需要编码<br /> {}|^[]`~：某一些网关或者传输代理会篡改这些字符</p> <p><strong>需要注意的是，对于Url中的合法字符，编码和不编码是等价的，但是对于上面提到的这些字符，如果不经过编码，那么它们有可能会造成Url语义的不同。</strong></p> <p><strong>因此对于Url而言，只有普通英文字符和数字，特殊字符$-_.+!*’()还有保留字符，才能出现在未经编码的Url之中。其他字符均需要经过编码之后才能出现在Url中。</strong></p> <p>但是由于历史原因，目前尚存在一些不标准的编码实现。例如对于<sub>符号，虽然RFC3986文档规定，对于波浪符号</sub>，不需要进行Url编码，但是还是有很多老的网关或者传输代理会进行编码。</p> <p>如何对Url中的非法字符进行编码?<br /><strong>Url编码通常也被称为百分号编码</strong>（Url Encoding，also known as percent-encoding），是因为它的编码方式非常简单，使用%百分号加上两位的字符——0123456789ABCDEF——代表一个字节的十六进制形式。Url编码默认使用的字符集是US-ASCII。例如a在US-ASCII码中对应的字节是0x61，那么Url编码之后得到的就是%61，我们在地址栏上输入http://g.cn/search?q=%61%62%63，实际上就等同于在google上搜索abc了。又如@符号在ASCII字符集中对应的字节为0x40，经过Url编码之后得到的是%40。</p> <p>**对于非ASCII字符，需要使用ASCII字符集的超集进行编码得到相应的字节，然后对每个字节执行百分号编码。**对于Unicode字符，RFC文档建议使用utf-8对其进行编码得到相应的字节，然后对每个字节执行百分号编码。如"中文"使用UTF-8字符集得到的字节为0xE4 0xB8 0xAD 0xE6 0x96 0x87，经过Url编码之后得到"%E4%B8%AD%E6%96%87"。</p> <p><strong>如果某个字节对应着ASCII字符集中的某个非保留字符，则此字节无需使用百分号表示。例如"Url编码"</strong>，使用UTF-8编码得到的字节是0x55 0x72 0x6C 0xE7 0xBC 0x96 0xE7 0xA0 0x81，由于前三个字节对应着ASCII中的非保留字符"Url"，因此这三个字节可以用非保留字符"Url"表示。最终的Url编码可以简化成"Url%E7%BC%96%E7%A0%81" ，当然，如果你用"%55%72%6C%E7%BC%96%E7%A0%81"也是可以的。</p> <p>由于历史的原因，有一些Url编码实现并不完全遵循这样的原则，下面会提到。</p> <blockquote> <p>Javascript中的escape, encodeURI和encodeURIComponent的区别</p> </blockquote> <p>JavaScript中提供了3对函数用来对Url编码以得到合法的Url，它们分别是escape / unescape, encodeURI / decodeURI和encodeURIComponent / decodeURIComponent。由于解码和编码的过程是可逆的，因此这里只解释编码的过程。</p> <p>这三个编码的函数——escape，encodeURI，encodeURIComponent——都是用于将不安全不合法的Url字符转换为合法的Url字符表示，它们有以下几个不同点。</p> <p>安全字符不同：<br /> 下面列出了这三个函数的安全字符（即函数不会对这些字符进行编码）<br /> escape（69个）：<em>/@±._0-9a-zA-Z<br /> encodeURI（82个）：!#$&amp;’()</em>+,/:;=?@-.<em>~0-9a-zA-Z<br /> encodeURIComponent（71个）：!’()*-.</em>~0-9a-zA-Z</p> <p>兼容性不同：escape函数是从Javascript 1.0的时候就存在了，其他两个函数是在Javascript 1.5才引入的。但是由于Javascript 1.5已经非常普及了，所以实际上使用encodeURI和encodeURIComponent并不会有什么兼容性问题。</p> <p>对Unicode字符的编码方式不同：这三个函数对于ASCII字符的编码方式相同，均是使用百分号+两位十六进制字符来表示。但是对于Unicode字符，escape的编码方式是%uxxxx，其中的xxxx是用来表示unicode字符的4位十六进制字符。这种方式已经被W3C废弃了。但是在ECMA-262标准中仍然保留着escape的这种编码语法。encodeURI和encodeURIComponent则使用UTF-8对非ASCII字符进行编码，然后再进行百分号编码。这是RFC推荐的。因此建议尽可能的使用这两个函数替代escape进行编码。</p> <p>**适用场合不同：encodeURI被用作对一个完整的URI进行编码，而encodeURIComponent被用作对URI的一个组件进行编码。**从上面提到的安全字符范围表格来看，我们会发现，encodeURIComponent编码的字符范围要比encodeURI的大。我们上面提到过，保留字符一般是用来分隔URI组件（一个URI可以被切割成多个组件）或者子组件（如URI中查询参数的分隔符），如：号用于分隔scheme和主机，?号用于分隔主机和路径。由于encodeURI操纵的对象是一个完整的的URI，这些字符在URI中本来就有特殊用途，因此这些保留字符不会被encodeURI编码，否则意义就变了。<br /> 组件内部有自己的数据表示格式，但是这些数据内部不能包含有分隔组件的保留字符，否则就会导致整个URI中组件的分隔混乱。因此对于单个组件使用encodeURIComponent，需要编码的字符就更多了。</p> <p>表单提交<br /> 当Html的表单被提交时，每个表单域都会被Url编码之后才在被发送。由于历史的原因，表单使用的Url编码实现并不符合最新的标准。<strong>例如对于空格使用的编码并不是%20，而是+号</strong>，如果表单使用的是Post方法提交的，我们可以在HTTP头中看到有一个Content-Type的header，值为application/x-www-form-urlencoded。</p> <p>还有，对于非ASCII字符，使用的编码字符集取决于当前文档使用的字符集。例如我们在Html头部加上</p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span><span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=gb2312<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span></code></pre> <p>这样浏览器就会使用gb2312去渲染此文档（注意，当HTML文档中没有设置此meta标签，则浏览器会根据当前用户喜好去自动选择字符集，用户也可以强制当前网站使用某个指定的字符集）。当提交表单时，Url编码使用的字符集就是gb2312。</p> <p>对于包含中文的Url的处理问题，不同浏览器有不同的表现。例如对于IE，如果你勾选了高级设置"总是以UTF-8发送Url"，<strong>那么Url中的路径部分的中文会使用UTF-8进行Url编码之后发送给服务端，而查询参数中的中文部分使用系统默认字符集进行Url编码。为了保证最大互操作性，建议所有放到Url中的组件全部显式指定某个字符集进行Url编码，而不依赖于浏览器的默认实现。</strong></p> <p>另外，很多HTTP监视工具或者浏览器地址栏等在显示Url的时候会自动将Url进行一次解码（使用UTF-8字符集），这就是为什么当你在Firefox中访问Google搜索中文的时候，地址栏显示的Url包含中文的缘故。但实际上发送给服务端的原始Url还是经过编码的。你可以在地址栏上使用Javascript访问location.href就可以看出来了。在研究Url编解码的时候千万别被这些假象给迷惑了。</p> <p>当URL地址里包含非西欧字符的字符串时，浏览器都会将这些非西欧字符串转换成application/x-www-form-urlencoded MIME 字符串。在开发过程中，我们可能涉及将普通字符串和这种特殊字符串的相关转换，这就需要使用 URLDecoder 和 URLEncoder类进行实现，其中：</p> <ul> <li>URLDecoder类包含一个decode(String s,String<br /> enc)静态方法，它可以将application/x-www-form-urlencoded MIME字符串转成普通字符串；</li> <li>URLEncoder类包含一个encode(String s,String<br /> enc)静态方法，它可以将普通字符串转换成application/x-www-form-urlencoded MIME字符串。</li> </ul> <p>下面程序示范了普通字符串转与 application/x-www-form-urlencoded MIME 字符串之间的转化。</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">URLDecoderTest</span><span class="token punctuation">{<!-- --></span><span class="token keyword">public</span><span class="token keyword">static</span><span class="token keyword">void</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">Exception</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 将application/x-www-form-urlencoded字符串转换成普通字符串</span><span class="token comment">// 其中的字符串直接从上图所示窗口复制过来,chrome 默认用 UTF-8 字符集进行编码，所以也应该用对应的字符集解码</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"采用UTF-8字符集进行解码:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> keyWord<span class="token operator">=</span><span class="token class-name">URLDecoder</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token string">"%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6+Rico"</span><span class="token punctuation">,</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>keyWord<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\n 采用GBK字符集进行解码:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">URLDecoder</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token string">"%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6+Rico"</span><span class="token punctuation">,</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 将普通字符串转换成application/x-www-form-urlencoded字符串</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\n 采用utf-8字符集:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> urlStr<span class="token operator">=</span><span class="token class-name">URLEncoder</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token string">"天津大学"</span><span class="token punctuation">,</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>urlStr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\n 采用GBK字符集:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> urlStr2<span class="token operator">=</span><span class="token class-name">URLEncoder</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token string">"天津大学"</span><span class="token punctuation">,</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>urlStr2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <pre><code class="prism language-xml">/* Output:          采用UTF-8字符集进行解码:         天津大学 Rico          采用GBK字符集进行解码:         澶╂触澶у Rico          采用utf-8字符集:         %E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6          采用GBK字符集:         %CC%EC%BD%F2%B4%F3%D1%A7</code></pre> <p>特别地，仅包含西欧字符的普通字符串和application/x-www-form-urlencoded MIME字符串无须转换，而包含中文字符的普通字符串则需要转换，转换的方法是每个中文字符占2个字节，每个字节可以转换成2个十六进制的数字，所以每个中文字符将转换成“%XX%XX”的形式。当然，采用不同的字符集时，每个中文字符对应的字节数并不完全相同，所以使用URLEncoder和URLDecoder进行转换时也需要指定字符集。特别地，字符串应以同样的字符集进行编码和解码，否则会产生意想不到的结果，如上述程序示例所示。</p> <p>三. URLEncoder &amp; URLDecoder</p> <blockquote> <p>对 String 编码时，使用以下规则：</p> </blockquote> <p><strong>字母、数字和字符， “a” 到 “z”、”A” 到 “Z” 和 “0” 到 “9” 保持不变；<br /> 特殊字符 “.”、”-“、”*” 和 “_” 保持不变；<br /> 空格字符 ” ” 转换为一个加号 “+”。</strong><br /> 除此之外，所有的其他字符都是不安全的。因此需要使用一些编码机制将它们转换为一个或多个字节，每个字节用一个包含 3 个字符的字符串 “%xy” 表示，其中 xy 为该字节的两位十六进制表示形式，推荐的编码机制是 UTF-8。例如，使用 UTF-8 编码机制，字符串 “The string ü@foo-bar” 将转换为 “The+string+%C3%BC%40foo-bar”，因为在 UTF-8 中，字符 ü 编码为两个字节，C3 （十六进制）和 BC （十六进制），字符 @ 编码为一个字节 40 （十六进制）。<br /> 　关于 URLDecoder 类的使用，转换过程正好与 URLEncoder 类使用的过程相反，此不赘述。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80274.htm">宠物店培训学校在哪里报名（宠物培训班收费多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-80959.htm">我被猫咬了没出血要***吗（我被猫咬了没出血要***吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-21-node-share-links.htm" title="2月21日→19M/S|2025年最新免费节点V2ray W订阅链接地址">2月21日→19M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-56282.htm" title="vue实现列表拖拽排序的示例代码_vue.js">vue实现列表拖拽排序的示例代码_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-67572.htm" title="动物疫苗厂家查询电话（动物疫苗经销商）">动物疫苗厂家查询电话（动物疫苗经销商）</a></li>
+                        <li class="py-2"><a href="/news/article-76825.htm" title="vue项目中package.json中的版本号">vue项目中package.json中的版本号</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-v2ray-ss-ssr.htm" title="1月9日→18.6M/S|2025年最新免费节点V2ray W订阅链接地址">1月9日→18.6M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36489.htm" title="酒精是跳蚤的天敌（家里有跳蚤喷什么杀虫剂）">酒精是跳蚤的天敌（家里有跳蚤喷什么杀虫剂）</a></li>
+                        <li class="py-2"><a href="/news/article-77507.htm" title="符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）">符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-45864.htm" title="让猫挠了一下出了一点血有事吗（让猫挠了出血有什么症状）">让猫挠了一下出了一点血有事吗（让猫挠了出血有什么症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-subscribe-node.htm" title="1月19日→20.6M/S|2025年最新免费节点V2ray W订阅链接地址">1月19日→20.6M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-66957.htm" title="动物疫苗的种类及特点有哪些呢英语（动物疫苗有哪几种）">动物疫苗的种类及特点有哪些呢英语（动物疫苗有哪几种）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-82343.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>linux磁盘文件清理</title>
+        <meta name="description" content="docker system prune (遍历)&nbsp;Linux查找指定目录下超过100M的文件并排序，并显示其大小（Human Friendly） find /var/ -type f -si" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-82343.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="linux磁盘文件清理" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/25a6df7a5afb41b4cb49a18f296326e9.webp" />
+        <meta property="og:release_date" content="2025-03-27T08:13:18" />
+    <meta property="og:updated_time" content="2025-03-27T08:13:18" />
+        <meta property="og:description" content="docker system prune (遍历)&nbsp;Linux查找指定目录下超过100M的文件并排序，并显示其大小（Human Friendly） find /var/ -type f -si" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="linux磁盘文件清理">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>linux磁盘文件清理</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>docker system prune</p> <p>(遍历)&nbsp;Linux查找指定目录下超过100M的文件并排序，并显示其大小（Human Friendly）</p> <p>find /var/ -type f -size +100M&nbsp;&nbsp;-print0 | xargs -0 ls -lh</p> <p>(遍历) 获取某个目录下的大于50M的文件</p> <p>find . -type f -size +50M</p> <p> (非遍历)&nbsp;显示指定文件夹下10个占用空间最大的文件或目录<br /> sudo du -s /var/* | sort -rn | head -10</p> <p>搜索文件Find命令<br /> find -name "*.txt" -print 查找txt结尾的文件并输出到屏幕上<br /> find /cmd ".sh" -print 查找/cmd目录下所有sh文件，并输出<br /> find . -perm 755 -print 查找当前目录下权限为755的文件，并输出<br /> find `pwd` -user root -print 查找当前目录下属主为root的文件，并输出<br /> find ./ -group sunwill -print 查找当前目录下所属主是sunwill的文件<br /> find /var -mtime -5 -print 查找/var目录下更改时间为5天内的所有文件<br /> find /var -mtime +5 -print 查找/var目录下更改时间为5天以前的所有文件<br /> find /var -newer "myfile1" ! -newer "myfile2" -print 查找/var目录下比myfile1新，但是比myfile2旧的所有文件。<br /> find /var -type d -print 查找/var目录下所有目录<br /> find /var -type l -print 查找/var目录下所有的符号链接文件。<br /> find . -size +1000000c -print 查找当前目录下大于1000000字节的文件<br /> find / -name "con.file" -depth -print 查找根目录下有无"con.file",若无则在其子目录中查找<br /> find . -type f -exec ls -l {} \; 查找当前目录下是否有普通文件，若有则执行ls -l</p> <p> Linux中查看当前目录下所有子目录空间占用情况的命令<br /> du -shc *</p> <p> 跳转到指定路径<br /> cd /tmp/</p> <p>查看当前路径<br /> pwd</p> <p> 查看当前文件夹的空间大小<br /> du -sh .</p> <p> 查看当前路径下的文件列表（非遍历）<br /> ls -lash</p> <p> Linux创建文件夹<br /> mkdir /tmp/dir</p> <p> 在 /tmp/dir/ 创建a.txt文件<br /> touch /tmp/dir/a.txt</p> <p> 复制文件<br /> cp /root/a.txt&nbsp;&nbsp;/tmp/</p> <p> 复制文件夹<br /> cp -r dir/ /tmp/</p> <p> 移动文件（同时也可以重命名）<br /> mv /tmp/hello.log /another/Dir/<br /> mv /tmp/hello.log /another/Dir/one.log</p> <p> 移动文件夹（同时也可以重命名）<br /> mv /root/dir/ /home/new/dir/</p> <p> 查看文件内容<br /> cat /etc/services.txt</p> <p> 删除文件或文件夹<br /> rm /tmp/a.txt<br /> rm -r /tmp/test/</p> <p> Linux中修改文件（夹）权限</p> <p> sudo chmod 777 /path/to/file.sh<br /> sudo chmod +x xx.sh<br /> ...</p> <p>Linux中修改文件所有者<br /> sudo chown yourUserName:yourGroup /path/to/file/xx.php<br /> sudo chown -R yourUserName:yourGroup /path/to/Dir/</p> <p> 查看指定文件信息<br /> ls -lash /path/to/your/file</p> <p> (难)linux删除指定文件之外的所有文件<br /> http://blog.csdn.net/taiyang1987912/article/details/41488395</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81621.htm">动物疫苗是什么单位负责的 动物疫苗是什么单位负责的呢</a></p>
+                                        <p>下一个：<a href="/news/article-82344.htm">被猫抓伤怎么确定有没有狂犬病毒感染（被猫抓伤怎么确定有没有狂犬病毒感染呢）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-67571.htm" title="vue在table表中悬浮显示数据及右键菜单_vue.js_">vue在table表中悬浮显示数据及右键菜单_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-72128.htm" title="动物医院名字怎么取好听（动物医院名字怎么取好听一点）">动物医院名字怎么取好听（动物医院名字怎么取好听一点）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-free-high-speed-nodes.htm" title="2月28日→21.8M/S|2025年最新免费节点V2ray W订阅链接地址">2月28日→21.8M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-node-share.htm" title="3月2日→19.1M/S|2025年最新免费节点V2ray W订阅链接地址">3月2日→19.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41411.htm" title="动物医院需要几个执业兽医证书呢英语（动物医院诊疗许可证需要提供什么）">动物医院需要几个执业兽医证书呢英语（动物医院诊疗许可证需要提供什么）</a></li>
+                        <li class="py-2"><a href="/news/article-57973.htm" title="猫猫为什么不能打头（为什么说猫不能打）">猫猫为什么不能打头（为什么说猫不能打）</a></li>
+                        <li class="py-2"><a href="/news/article-38929.htm" title="不能养什么狗的英文（不能养的狗品种）">不能养什么狗的英文（不能养的狗品种）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-clash-v2ray-ss-ssr.htm" title="1月27日→18.1M/S|2025年最新免费节点V2ray W订阅链接地址">1月27日→18.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-free-high-speed-nodes.htm" title="2月18日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址">2月18日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-node-share.htm" title="3月11日→18.9M/S|2025年最新免费节点V2ray W订阅链接地址">3月11日→18.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
