@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-84473.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Java 树形结构数据生成导出excel文件</title>
+        <meta name="description" content="效果    用法 String jsonStr = "{\"name\":\"aaa\",\"children\":[{\"name\":\"bbb\",\"children\":[{\"name\"" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-84473.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="Java 树形结构数据生成导出excel文件" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/f8358d8e41ebbcb20a7f5cad18427c4b.webp" />
+        <meta property="og:release_date" content="2025-03-30T09:32:35" />
+    <meta property="og:updated_time" content="2025-03-30T09:32:35" />
+        <meta property="og:description" content="效果    用法 String jsonStr = "{\"name\":\"aaa\",\"children\":[{\"name\":\"bbb\",\"children\":[{\"name\"" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java 树形结构数据生成导出excel文件">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Java 树形结构数据生成导出excel文件</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <ol> <li> <h3>效果<br /><img fetchpriority="high" decoding="async" alt="" height="484" src="http://img.555519.xyz/uploads/20230118/741dce55a5c2c9e146a1c463bdee5d5d.jpg"><br /> </h3> </li> <li> <h3>用法</h3> <pre><code class="language-java">String jsonStr = "{\"name\":\"aaa\",\"children\":[{\"name\":\"bbb\",\"children\":[{\"name\":\"eee\"},{\"name\":\"fff\",\"children\":[{\"name\":\"iii\"},{\"name\":\"jjj\",\"children\":[{\"name\":\"qqq\"},{\"name\":\"ttt\"}]}]},{\"name\":\"www\"}]},{\"name\":\"ccc\",\"children\":[{\"name\":\"ggg\"},{\"name\":\"hhh\",\"children\":[{\"name\":\"kkk\",\"children\":[{\"name\":\"ttt\"},{\"name\":\"mmm\"}]},{\"name\":\"uuu\"}]},{\"name\":\"ooo\"}]},{\"name\":\"ddd\",\"children\":[{\"name\":\"ggg\"},{\"name\":\"hhh\",\"children\":[{\"name\":\"kkk\"},{\"name\":\"uuu\"}]}]}]}"; Map tree = JSONObject.parseObject(jsonStr, Map.class); tree2Excel(tree, "E:\\" + System.currentTimeMillis() + ".xls", "name", "children");</code></pre> </li> <li> <h3>源码<br /> &nbsp;</h3> <pre><code class="language-java">package pers.xxx.demo.tree2excel;  import org.apache.poi.hssf.usermodel.HSSFWorkbook; import org.apache.poi.ss.usermodel.*; import org.apache.poi.xssf.usermodel.XSSFWorkbook;  import java.io.Closeable; import java.io.File; import java.io.FileOutputStream; import java.io.IOException; import java.util.List; import java.util.Map;  /**  * 树形结构数据导出excel工具  * &lt;p&gt;  * Created by lzy on 2021/2/24 14:09  */ @SuppressWarnings("ALL") public class Tree2ExcelUtil {      /**      * 树形结构数据生成excel文件      *      * @param tree     树形数据      * @param filePath 文件路径      * @return      */     public static boolean tree2Excel(Map tree, String filePath) {         return tree2Excel(tree, filePath, null, null);     }      /**      * 树形结构数据生成excel文件      *      * @param tree         树形数据      * @param filePath     文件路径      * @param lableName    标签Key名称      * @param childrenName 子节点Key名称      * @return      */     public static boolean tree2Excel(Map tree, String filePath, String lableName, String childrenName) {         if (isBlank(filePath)) {             System.err.println("文件名称不能为空");             return false;         }         try {             doSame(tree, lableName, childrenName);             createExcel(filePath, tree);             return true;         } catch (IOException e) {             e.printStackTrace();         }         return false;     }      /**      * 树形结构数据生成Workbook对象      *      * @param tree    树形数据      * @param fileSuf 文件后缀，xls/xlsx      * @return      */     public static Workbook tree2Worbook(Map tree, String fileSuf) {         return tree2Worbook(tree, fileSuf, null, null);     }      /**      * 树形结构数据生成Workbook对象      *      * @param tree         树形数据      * @param fileSuf      文件后缀，xls/xlsx      * @param lableName    标签Key名称      * @param childrenName 子节点Key名称      * @return      */     public static Workbook tree2Worbook(Map tree, String fileSuf, String lableName, String childrenName) {         if (isBlank(fileSuf)) {             System.err.println("必须指定文件后缀");             return null;         }         try {             doSame(tree, lableName, childrenName);             return procesData(tree, fileSuf);         } catch (Exception e) {             e.printStackTrace();         }         return null;     }       //具体实现      /**      * 标识最大列      */     private static int maxCol = 0;     private static String lableName = "lable";     private static String childrenName = "children";     private static final String COL = "col";     private static final String ROW = "row";     private static final String ROW_OFT = "rowOft";     private static final String ROW_SIZE = "rowSize";       private static void doSame(Map tree, String lableName, String childrenName) {         if (!isBlank(lableName)) {             Tree2ExcelUtil.lableName = lableName;         }         if (!isBlank(childrenName)) {             Tree2ExcelUtil.childrenName = childrenName;         }         coreAlgoCol(tree, 1);         coreAlgoRow(tree);     }      /**      * 主要算法，计算列的坐标，计算每个节点所占行      *      * @param tree  数据      * @param col   递增的列      * @param trees 把高级别向下传递计算递增的行高      */     private static void coreAlgoCol(Map tree, int col, Map... trees) {         tree.put(COL, col);         Object childrenObj = tree.get(childrenName);         if (childrenObj != null) {             List&lt;Map&gt; children = (List&lt;Map&gt;) childrenObj;             if (children.size() &gt; 0) {                 int size = children.size() * 2 - 1;                 tree.put(ROW_SIZE, size);                 int len = trees != null ? trees.length + 1 : 1;                 Map[] arrData = new Map[len];                  if (trees != null &amp;&amp; trees.length &gt; 0) {                     for (int i = 0; i &lt; trees.length; i++) {                         Map tree1 = trees[i];                         tree1.put(ROW_SIZE, toInt(tree1.get(ROW_SIZE), 1) + size - 1);                         arrData[i] = tree1;                     }                 }                 arrData[len - 1] = tree;                 for (Map tree1 : children) {                     int newCol = col + 1;                     if (newCol &gt; maxCol) {                         maxCol = newCol;                     }                     coreAlgoCol(tree1, newCol, arrData);                 }             }         }     }      /**      * 主要算法，计算行的坐标      *      * @param tree      */     private static void coreAlgoRow(Map tree) {         if (toInt(tree.get(ROW)) == 0) {             tree.put(ROW, Math.round(toInt(tree.get(ROW_SIZE), 1) / 2.0f));         }         Object childrenObj = tree.get(childrenName);         if (childrenObj != null) {             List&lt;Map&gt; children = (List&lt;Map&gt;) childrenObj;             if (children.size() &gt; 0) {                 int tempOft = toInt(tree.get(ROW_OFT));                 for (Map tree1 : children) {                     int rowSize = toInt(tree1.get(ROW_SIZE), 1);                     tree1.put(ROW_OFT, tempOft);                     tree1.put(ROW, tempOft + Math.round(rowSize / 2.0f));                     tempOft += rowSize + 1;                     coreAlgoRow(tree1);                 }             }         }     }      /**      * 创建excel文件      *      * @param filePath 文件路径，具体路径到文件名      * @param tree     数据      * @throws IOException      */     private static void createExcel(String filePath, Map tree) throws IOException {         File file = new File(filePath);         boolean bfile = file.createNewFile();         // 复制模板到新文件         if (bfile) {             Workbook wk = procesData(tree, filePath);             if (wk != null) {                 FileOutputStream fos = null;                 try {                     fos = new FileOutputStream(file);                     wk.write(fos);                      fos.flush();                 } finally {                     closeStream(fos);                     wk.close();                 }             }         }     }       /**      * 处理excel数据      *      * @param tree 数据      * @return 工作表对象      */     private static Workbook procesData(Map tree, String fileName) {          Workbook wk = null;         if (fileName.endsWith("xls")) {             wk = new HSSFWorkbook();         }         if (fileName.endsWith("xlsx")) {             wk = new XSSFWorkbook();         }         if (wk == null) {             System.err.println("文件名称不正确");             return null;         }          //创建一个sheet页         Sheet sheet = wk.createSheet("Sheet1");          int colSize = maxCol * 2 + 2;         int rowSize = toInt(tree.get(ROW_SIZE), 1);         for (int i = 0; i &lt;= rowSize; i++) {             Row row = sheet.createRow(i);             for (int j = 0; j &lt;= colSize; j++) {                 row.createCell(j);             }         }         //配置单元格背景色         CellStyle style1 = wk.createCellStyle();         style1.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());         style1.setFillPattern(FillPatternType.SOLID_FOREGROUND);         CellStyle style2 = wk.createCellStyle();         style2.setFillForegroundColor(IndexedColors.LIGHT_YELLOW.getIndex());         style2.setFillPattern(FillPatternType.SOLID_FOREGROUND);          dealCell(sheet, tree, style1, style2);          return wk;     }      /**      * 根据计算好的坐标填充每一个单元格      *      * @param sheet  #      * @param tree   数据      * @param style1 单元格格式      * @param style2 单元格格式      */     private static void dealCell(Sheet sheet, Map tree, CellStyle style1, CellStyle style2) {         Row row = sheet.getRow(toInt(tree.get(ROW)));         int oftCol = (toInt(tree.get(COL)) - 1) * 2 + 1;         Cell cell = row.getCell(oftCol);         cell.setCellStyle(style1);         cell.setCellValue(String.valueOf(tree.get(lableName)));          sheet.setColumnWidth(oftCol, 256 * 20);          Object childrenObj = tree.get(childrenName);         if (childrenObj != null) {             List&lt;Map&gt; children = (List&lt;Map&gt;) childrenObj;             if (children.size() &gt; 0) {                 int size = children.size();                  int startRow = toInt(children.get(0).get(ROW));                 int endRow = toInt(children.get(size - 1).get(ROW));                 int col = oftCol + 1;                 sheet.setColumnWidth(col, 256);                 for (; startRow &lt;= endRow; startRow++) {                     sheet.getRow(startRow).getCell(col).setCellStyle(style2);                 }                  for (Map child : children) {                     dealCell(sheet, child, style1, style2);                 }             }         }     }      private static int toInt(Object val) {         return toInt(val, 0);     }      private static int toInt(Object val, Integer defVal) {         try {             return Integer.parseInt(String.valueOf(val));         } catch (NumberFormatException ignored) {         }         return defVal;     }      private static boolean isBlank(String str) {         return str == null || str.trim().length() == 0;     }      /**      * 关闭流      *      * @param closeables 不定长数组 流对象      */     public static void closeStream(Closeable... closeables) {         for (Closeable closeable : closeables) {             if (closeable != null) {                 try {                     closeable.close();                 } catch (IOException e) {                     e.printStackTrace();                 }             }         }     }  }</code></pre> </li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-83755.htm">领养宠物后要办什么手续呢（领养宠物需要哪些手续）</a></p>
+                                        <p>下一个：<a href="/news/article-84474.htm">宠物粮食店一年利润怎么样啊多少钱啊 宠物粮食店一年利润怎么样啊多少钱啊</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72785.htm" title="领养宠物狗免费的地方在哪里 领养宠物狗免费的地方在哪里啊">领养宠物狗免费的地方在哪里 领养宠物狗免费的地方在哪里啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-23-free-v2ray.htm" title="2月23日→21.8M/S|2025年最新免费节点V2ray W订阅链接地址">2月23日→21.8M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-80273.htm" title="宠物粮食批发市场兰州在哪里啊（兰州卖狗粮的地方）">宠物粮食批发市场兰州在哪里啊（兰州卖狗粮的地方）</a></li>
+                        <li class="py-2"><a href="/news/article-36976.htm" title="IDEA启动：Internal error. Please refer to https://jb.gg/ide/critical-startup-errors">IDEA启动：Internal error. Please refer to https://jb.gg/ide/critical-startup-errors</a></li>
+                        <li class="py-2"><a href="/news/article-52464.htm" title="中牧股份动物疫苗（中牧疫苗生物官网）">中牧股份动物疫苗（中牧疫苗生物官网）</a></li>
+                        <li class="py-2"><a href="/news/article-50376.htm" title="华畜兽药有限公司官网招聘（华畜兽药厂家地址在哪里）">华畜兽药有限公司官网招聘（华畜兽药厂家地址在哪里）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-v2ray-subscribe.htm" title="3月8日→22.9M/S|2025年最新免费节点V2ray W订阅链接地址">3月8日→22.9M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-node-share-links.htm" title="1月6日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址">1月6日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-high-speed-nodes.htm" title="3月13日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址">3月13日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-49851.htm" title="宠物店猫疫苗多少钱一针（宠物店猫疫苗多少钱一针打）">宠物店猫疫苗多少钱一针（宠物店猫疫苗多少钱一针打）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
