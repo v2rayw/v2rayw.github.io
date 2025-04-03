@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-87347.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Vue假数据应用——表格的添加、删除、搜索</title>
+        <meta name="description" content="Vue实现假数据的添加、删除、搜索 HTML &lt;html&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;script type="text/" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-87347.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="Vue假数据应用——表格的添加、删除、搜索" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/8c213f04de65875fd49f90f2a89b298e.webp" />
+        <meta property="og:release_date" content="2025-04-03T08:30:02" />
+    <meta property="og:updated_time" content="2025-04-03T08:30:02" />
+        <meta property="og:description" content="Vue实现假数据的添加、删除、搜索 HTML &lt;html&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;script type="text/" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue假数据应用——表格的添加、删除、搜索">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Vue假数据应用——表格的添加、删除、搜索</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>Vue实现假数据的添加、删除、搜索</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/212a3e2b3e84eb72c8bd5cd0b09873ed.jpg" alt="Vue假数据应用——表格的添加、删除、搜索"></p> <p><strong>HTML</strong></p> <pre><code>&lt;html&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;script type="text/javascript" src="../lib/vue.js" &gt;&lt;/script&gt; &lt;link  href="../lib/bootstrap.min.css" /&gt; &lt;!--引入bootstrap框架来写样式--&gt; &lt;/head&gt; &lt;body&gt; &lt;div id="app"&gt;  			&lt;div class="panl panel-primary"&gt; 				&lt;div class="panel-heading"&gt; 					&lt;h3 class="panel-title"&gt;添加品牌&lt;/h3&gt; 				&lt;/div&gt;  				&lt;div class="panel-body"&gt; 					&lt;div class="panle-body form-inline"&gt;  						&lt;lebel&gt; 							Id:&lt;input type="text" class="form-control" v-model="id" /&gt; 						&lt;/lebel&gt;  						&lt;lebel&gt; 							name:&lt;input type="text" class="form-control" v-model="name" /&gt; 						&lt;/lebel&gt;  						&lt;!---在vue中，使用事件绑定机制，为元素，指定处理函数的时候，如果加了小括号，就可以给函数传参了--&gt; 						&lt;input type="button" value="添加" class="btn btn-primary" @click="add()" /&gt;  						&lt;lebel&gt; 							搜索名称关键字:&lt;input type="text" class="form-control" v-model="keywords" /&gt; 						&lt;/lebel&gt;  					&lt;/div&gt; 				&lt;/div&gt; 			&lt;/div&gt;  			&lt;table class="table table-bordered table-hover table-striped"&gt; 				&lt;thead&gt; 					&lt;tr&gt; 						&lt;th&gt;ID&lt;/th&gt; 						&lt;th&gt;Name&lt;/th&gt; 						&lt;th&gt;Ctime&lt;/th&gt; 						&lt;th&gt;Operation&lt;/th&gt;  					&lt;/tr&gt; 				&lt;/thead&gt;  				&lt;tbody&gt; 					&lt;!--之前，v-for中的数据，都是直接从data上的list中直接渲染过来的 			  		现在，我们自定义了一个search方法，同时，把所有的关键字，通过传参的形式，传递给了search方法 			  		在search方法内部，通过执行for循环，把所有符合搜索关键字的数据，保存到一个一个新的数组中，返回， 			  	--&gt; 					&lt;tr v-for="item in search(keywords)" :key="item.id"&gt; 						&lt;td&gt;{<!-- -->{item.id}}&lt;/td&gt; 						&lt;td v-text="item.name"&gt;&lt;/td&gt; 						&lt;td&gt;{<!-- -->{ item.ctime }}&lt;/td&gt; 						&lt;td&gt; 							&lt;a href="" @click.prevent="del(item.id)"&gt;删除&lt;/a&gt; 						&lt;/td&gt; 					&lt;/tr&gt; 				&lt;/tbody&gt; 			&lt;/table&gt;  		&lt;/div&gt;  &lt;/body&gt; &lt;/html&gt; </code></pre> <p><strong>Javascript</strong></p> <pre><code>&lt;script&gt;  var vm=new Vue({ el:'#app', data:{   id:'',   name:'',   keywords:'',   list:[{      id:1,      name: "大众", 	ctime: new Date() 	}, 	{ 	id: 2, 	name: "宝马", 	ctime: new Date() 	}, 	{ 	id: 3, 	name: "奔驰", 	ctime: new Date() 	}   ] }, methods: { 	add() {            var car = { 			id: this.id, 			name: this.name, 			ctime: new Date() 			} 			this.list.push(car) 			this.id = this.name = '' //添加后就为空 		},  /* 根据id删除数据(两个方法) 方法1,如何根据id,找到要删这一项的索引 方法2,如果找到索引了,直接调用数组的splice方法 */ del(id){   /*         this.list.some((item,i)=&gt;{			//数组some（）方法中，返回true，就终止这个数组的后续循环 			if(item.id==id){ 			   this.list.splice(i,1) 					return true; 				} 			  })   */ 	var index = this.list.findIndex(item =&gt; { 			if(item.id == id) { 					return true; 			} 			}) 			 this.list.splice(index, 1)      },       search(keywords) { //根据关键字，进行数据的搜索    return this.list.filter(item =&gt; {    	//在ES6中，为字符串提供了个新方法，加做String.prototype.includes('要包含的字符串') 	//如果包含，则返回true，否则返回false 			if(item.name.includes(keywords)) { 				return item; 			}   })  }   } })  &lt;/script&gt; </code></pre> <p><strong>（时间格式那边可能不太标准，可用过滤器替换）</strong></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-86615.htm">24小时营业的动物医院 全天24小时营业动物医院(宠物医院)</a></p>
+                                        <p>下一个：<a href="/news/article-87348.htm">宠物零食加工厂要投资多少钱 宠物零食加工厂要投资多少钱呢</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe.htm" title="4月1日→22M/S|2025年最新免费节点V2ray W订阅链接地址">4月1日→22M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-81621.htm" title="动物疫苗是什么单位负责的 动物疫苗是什么单位负责的呢">动物疫苗是什么单位负责的 动物疫苗是什么单位负责的呢</a></li>
+                        <li class="py-2"><a href="/news/article-76825.htm" title="vue项目中package.json中的版本号">vue项目中package.json中的版本号</a></li>
+                        <li class="py-2"><a href="/news/article-81620.htm" title="动物疫苗的了解和认识怎么写（动物疫苗的了解和认识怎么写作文）">动物疫苗的了解和认识怎么写（动物疫苗的了解和认识怎么写作文）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-clash-v2ray-ss-ssr.htm" title="3月21日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址">3月21日→22.7M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-65701.htm" title="动物医院诊疗范围有哪些内容（动物医院诊疗范围有哪些内容呢）">动物医院诊疗范围有哪些内容（动物医院诊疗范围有哪些内容呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-free-subscribe-node.htm" title="3月26日→20.7M/S|2025年最新免费节点V2ray W订阅链接地址">3月26日→20.7M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67572.htm" title="动物疫苗厂家查询电话（动物疫苗经销商）">动物疫苗厂家查询电话（动物疫苗经销商）</a></li>
+                        <li class="py-2"><a href="/news/article-68231.htm" title="宠物领养条约内容 宠物领养条约内容是什么">宠物领养条约内容 宠物领养条约内容是什么</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="3月25日→19.4M/S|2025年最新免费节点V2ray W订阅链接地址">3月25日→19.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
