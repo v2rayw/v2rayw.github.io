@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-91786.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>企业应用架构研究系列十九：Docker开发环境</title>
+        <meta name="description" content="　　软件行业流行这样一个说法，由于Docker 技术的成熟和该技术被广大厂商的普遍应用，成就了微服务领域的快速成长，衍生了云原生技术和公有云的进一步推广。我个人认为Dockers 技术、微服务技术、云" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-91786.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="企业应用架构研究系列十九：Docker开发环境" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/13cf24be9c5d1f1159839faf43fbf389.webp" />
+        <meta property="og:release_date" content="2025-04-09T09:16:42" />
+    <meta property="og:updated_time" content="2025-04-09T09:16:42" />
+        <meta property="og:description" content="　　软件行业流行这样一个说法，由于Docker 技术的成熟和该技术被广大厂商的普遍应用，成就了微服务领域的快速成长，衍生了云原生技术和公有云的进一步推广。我个人认为Dockers 技术、微服务技术、云" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="企业应用架构研究系列十九：Docker开发环境">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>企业应用架构研究系列十九：Docker开发环境</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>　　软件行业流行这样一个说法，由于Docker 技术的成熟和该技术被广大厂商的普遍应用，成就了微服务领域的快速成长，衍生了云原生技术和公有云的进一步推广。我个人认为Dockers 技术、微服务技术、云原生技术乃至领域模型概念其实是彼此相互相吸，互相依赖，组成了当今软件行业的一个新的生态链。作为软件行业从业者，虽然不能精通每一项新兴技术，但是我们要对主流技术应保持一颗积极探索的心。</p> <p>　　本章节开始对Dockers领域的技术探索之路开始总结，之前身处项目，没有太多精力对它进行全面总结，但是，软件开发人员对技术的研究和总结是应该保持的良好习惯。</p> <p><img fetchpriority="high" decoding="async" src="http://img.555519.xyz/uploads3/20220510/d72ed661bf3abdf1f95ed73c630e412a.jpg" alt="企业应用架构研究系列十九：Docker开发环境"></p> <p>&nbsp;　　闲话少说，开始Docker 探索的的一个步骤，Docker 环境的搭建。首先我们需要在本地开发环境安装Docker 的运行环境，我的开发环境是Windows 10 ，开发工具使用的是VS2022。</p> <p>　　第一步安装&nbsp;Docker Desktop for Windows, 可以从官网（https://www.docker.com/get-started）直接下载，Windows10 需要最新的企业版本或专业版本，安装的过程中需要安装WSL2(它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件)。安装过程基本比较简单，都是One By One. 此处就省略了，特别强调一点，第一次启动的时候特别慢，不要担心，是Docker Desktop 进行更新和检查所需组件，并进行相关的自动配置。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/0efdb983973499c987a1a5c775284a5a.jpg" alt="企业应用架构研究系列十九：Docker开发环境"></p> <p>　　安装完毕后，启动界面如上图，就可以在本地进行开心的玩耍Docker了。本篇文章不再对docker 的专业名词进行解释，可以自行进行度娘。如果你有Linux环境，最后使用Linux环境进行搭建，安装过程也是非常简单，此处不再描述了。Docker Desktop 工具有一个可视化的界面，左侧菜单分别为容器、镜像、卷标三大常规操作提供界面，适合初学者，但，不建议开发人员使用该界面，而是建议大家使用Powershell进行操作。由于安装了WSL2 和Docker 环境，Powershell 里面就可以使用Bush风格的命令了，其实就是Bush操作命令。在Powershell 运行&nbsp;docker run -d -p 80:80 docker/getting-started 命令就可以下载并允许了你的第一个Docker 容器了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/364113bf68fd7ca24ba3890b0f60c26b.jpg" alt="企业应用架构研究系列十九：Docker开发环境"></p> <p>　　开发环境正常运行起来了，我们后续就可以将自己的代码打包成Docker镜像，发布到本地的环境，我们也可以将开发好的镜像发布到DockerHub 上面或者Azure 上面的企业自己的容器注册表，可参考文档：https://docs.microsoft.com/zh-cn/azure/container-registry。</p> <p><img loading="lazy" decoding="async" src="http://img.555519.xyz/uploads3/20220510/d7afec5c5f0a39fdb33cfb0e337185e3.jpg" alt="企业应用架构研究系列十九：Docker开发环境"></p> <p>　　Docker Desktop 工具是对个人和小型企业免费的，我们也可以使用Docker Desktop 进行K8s 环境在本地搭建，后续文章我对K8s 的搭建和配置进行详细描述，本章节只先粗略的对本地dockers开发环境搭建进行了描述，希望能够帮助你开启dockers开心研究之旅。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-91345.htm">上门收购宠物猫电话长春（长春哪里收宠物猫）</a></p>
+                                        <p>下一个：<a href="/news/article-91788.htm">C语言数据结构之算法的时间复杂度_C 语言</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-free-node-subscribe.htm" title="4月7日→19.3M/S|2025年最新免费节点V2ray W订阅链接地址">4月7日→19.3M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83754.htm" title="Minikube使用文档">Minikube使用文档</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-node-share-links.htm" title="3月28日→19.1M/S|2025年最新免费节点V2ray W订阅链接地址">3月28日→19.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-86614.htm" title="Pytorch 加载多gpu模型+解决加载模型测试结果不正确">Pytorch 加载多gpu模型+解决加载模型测试结果不正确</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-subscribe-node.htm" title="3月22日→23M/S|2025年最新免费节点V2ray W订阅链接地址">3月22日→23M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-91345.htm" title="上门收购宠物猫电话长春（长春哪里收宠物猫）">上门收购宠物猫电话长春（长春哪里收宠物猫）</a></li>
+                        <li class="py-2"><a href="/news/article-80274.htm" title="宠物店培训学校在哪里报名（宠物培训班收费多少钱）">宠物店培训学校在哪里报名（宠物培训班收费多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="3月25日→19.4M/S|2025年最新免费节点V2ray W订阅链接地址">3月25日→19.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-88774.htm" title="宠物粮市场前景如何发展（宠物粮行业分析）">宠物粮市场前景如何发展（宠物粮行业分析）</a></li>
+                        <li class="py-2"><a href="/news/article-77507.htm" title="符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）">符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

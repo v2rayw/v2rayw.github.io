@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-91788.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>C语言数据结构之算法的时间复杂度_C 语言</title>
+        <meta name="description" content="目录  1、算法的复杂度 2、时间复杂度  2.1 时间复杂度的定义 2.2 大O的渐进表示法  3、常见时间复杂度计算举例  3.1 冒泡排序的时间复杂度 3.2 二分查找的时间复杂度 3.3 阶乘" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-91788.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="C语言数据结构之算法的时间复杂度_C 语言" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/368cace80b0dd16be106b93815a3b11e.webp" />
+        <meta property="og:release_date" content="2025-04-09T09:16:42" />
+    <meta property="og:updated_time" content="2025-04-09T09:16:42" />
+        <meta property="og:description" content="目录  1、算法的复杂度 2、时间复杂度  2.1 时间复杂度的定义 2.2 大O的渐进表示法  3、常见时间复杂度计算举例  3.1 冒泡排序的时间复杂度 3.2 二分查找的时间复杂度 3.3 阶乘" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言数据结构之算法的时间复杂度_C 语言">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>C语言数据结构之算法的时间复杂度_C 语言</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">1、算法的复杂度</a></li> <li><a href="#_label1" rel="nofollow">2、时间复杂度</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_0" rel="nofollow">2.1 时间复杂度的定义</a></li> <li><a href="#_lab2_1_1" rel="nofollow">2.2 大O的渐进表示法</a></li> </ul> <li><a href="#_label2" rel="nofollow">3、常见时间复杂度计算举例</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_2_2" rel="nofollow">3.1 冒泡排序的时间复杂度</a></li> <li><a href="#_lab2_2_3" rel="nofollow">3.2 二分查找的时间复杂度</a></li> <li><a href="#_lab2_2_4" rel="nofollow">3.3 阶乘(递归)的时间复杂度</a></li> <li><a href="#_lab2_2_5" rel="nofollow">3.4菲波那切数列的时间复杂度</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>1、算法的复杂度</h2> <p>算法在编写成可执行程序后，运行时需要耗费时间资源和空间(内存)资源 。因此<strong>衡量一个算法的好坏，一般是从时间和空间两个维度来衡量的</strong>，即时间复杂度和空间复杂度。</p> <p><strong>时间复杂度主要衡量一个算法的运行快慢，而空间复杂度主要衡量一个算法运行所需要的额外空间。</strong>在计算机发展的早期，计算机的存储容量很小。所以对空间复杂度很是在乎。但是经过计算机行业的迅速发展，计算机的存储容量已经达到了很高的程度。所以我们如今已经不需要再特别关注一个算法的空间复杂度。（本篇文章主要讨论时间复杂度）</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>2、时间复杂度</h2> <p class="maodian"><a name="_lab2_1_0" rel="nofollow"></a></p> <h3>2.1 时间复杂度的定义</h3> <p>时间复杂度的定义：在计算机科学中，<strong>算法的时间复杂度是一个函数</strong>，它定量描述了该算法的运行时间。一个算法执行所耗费的时间，从理论上说，是不能算出来的，只有你把你的程序放在机器上跑起来，才能知道。但是我们需要每个算法都上机测试吗？是可以都上机测试，但是这很麻烦，所以才有了时间复杂度这个分析方式。一个算法所花费的时间与其中语句的执行次数成正比例，<strong>算法中的基本操作的执行次数，为算法的时间复杂度。</strong></p> <p><strong>举例：</strong></p> <p>请计算一下Func1中++count语句总共执行了多少次？</p> <div class="ay1code"> <pre class="brush:cpp;">void Func1(int N)  {  int count = 0;  for (int i = 0; i &lt; N; ++i)  {  for (int j = 0; j &lt; N; ++j)  {  ++count;  }  }  for (int k = 0; k &lt; 2 * N; ++k)  {  ++count;  }  int M = 10;  while (M--)  {  ++count;  }  printf("%d\n", count);  }</pre> </div> <blockquote> <p>时间复杂度函数：F(N)=N*N+2*N+10 </p> </blockquote> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220504/01732ff2a7baa861499415cdb5493698.jpg"></p> <p> 实际中我们计算时间复杂度时，我们其实并不一定要计算精确的执行次数，而只需要大概执行次数，那么这里我们使用<strong>大O的渐进表示法。</strong></p> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>2.2 大O的渐进表示法</h3> <p>大O符号（Big O notation）：是用于描述函数渐进行为的数学符号</p> <blockquote> <p>1、用1来代替常数,F(N)函数只有常数  O(1)<br />2、在运行次数中，只保留最高阶。 F(N)=N^3+N^2  --&gt; O(N^3)<br />3、最高项系数化为1。F(N) = 2*N  --&gt; O(N)</p> </blockquote> <p><strong> 注：复杂度不固定时，时间复杂度看的是最坏的情况（悲观的估算）</strong></p> <p>例如：在一个长度为N数组中搜索一个数据x</p> <ul> <li> <strong>最好情况：</strong>1次找到</li> <li> <strong>最坏情况：</strong>N次找到</li> <li> <strong>平均情况：</strong>N/2次找到</li> </ul> <p>在实际中一般情况关注的是算法的最坏运行情况，所以数组中搜索数据时间复杂度为O(N)</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>3、常见时间复杂度计算举例</h2> <p class="maodian"><a name="_lab2_2_2" rel="nofollow"></a></p> <h3>3.1 冒泡排序的时间复杂度</h3> <div class="ay1code"> <pre class="brush:cpp;">void BubbleSort(int* a, int n)  {  assert(a);  for (size_t end = n; end &gt; 0; --end)  {  int exchange = 0;  for (size_t i = 1; i &lt; end; ++i)  {  if (a[i - 1] &gt; a[i])  {  Swap(&amp;a[i - 1], &amp;a[i]);  exchange = 1;  }  }  if (exchange == 0)  break;  }  }</pre> </div> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220504/2a4283838a2091ab3a46a2da8d8369f6.jpg"></p> <p><strong> 经分析的：</strong>F(N)= O(N^2)</p> <p class="maodian"><a name="_lab2_2_3" rel="nofollow"></a></p> <h3>3.2 二分查找的时间复杂度</h3> <div class="ay1code"> <pre class="brush:cpp;">//左闭右开  int BinarySearch(int* a, int n, int x)  {  assert(a);  int begin = 0;  int end = n ;  while (begin &lt; end)  {  int mid = begin + ((end - begin) &gt;&gt; 1);  if (a[mid] &lt; x)  begin = mid + 1;  else if (a[mid] &gt; x)  end = mid;  else  return mid;  }  return -1;  }    //左闭右闭  int BinarySearch(int* a, int n, int x)  {  assert(a);  int begin = 0;  int end = n-1;  while (begin &lt;= end)  {  int mid = begin + ((end - begin) &gt;&gt; 1);  if (a[mid] &lt; x)  begin = mid + 1;  else if (a[mid] &gt; x)  end = mid-1;  else  return mid;  }  return -1;  }</pre> </div> <p><strong>假设找了x次：</strong></p> <blockquote> <p>1*2*2*2*2......*2 = N </p> <p>2^x = N</p> <p>x = log2 N</p> </blockquote> <p><strong>最坏：</strong>O(log2 N)  简写成 log(N)</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220504/33bd4770d92c91600453ec77acb39cc7.jpg"></p> <p class="maodian"><a name="_lab2_2_4" rel="nofollow"></a></p> <h3>3.3 阶乘(递归)的时间复杂度</h3> <ul> <li>1、每次函数调用是O(1),那么就要看他的递归次数。</li> <li>2、每次函数调用不是O(n),那么就看他的递归调用中次数的累加。</li> </ul> <div class="ay1code"> <pre class="brush:cpp;">long long Fac(size_t N)  {  if (0 == N)  return 1;  return Fac(N - 1) * N;  }</pre> </div> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220504/36dbabe19d9dcc94fcb207fc7ae557a4.jpg"></p> <blockquote> <p> F(N) = O(N)</p> </blockquote> <p class="maodian"><a name="_lab2_2_5" rel="nofollow"></a></p> <h3>3.4菲波那切数列的时间复杂度</h3> <div class="ay1code"> <pre class="brush:cpp;">long long Fib(size_t N)  {  if (N &lt; 3)  return 1;  return Fib(N - 1) + Fib(N - 2);  }</pre> </div> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220504/cb6eabd54ef936e9ee0bedd28b920787.jpg"></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220504/0b682ae4bdb6480a138328457039471f.jpg"></p> <p>通过计算分析发现基本操作递归了2^N次，时间复杂度为O(2^N)。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-91786.htm">企业应用架构研究系列十九：Docker开发环境</a></p>
+                                        <p>下一个：<a href="/news/article-92514.htm">URL编码及解码</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-71474.htm" title="@DateTimeFormat和@JsonFormat浅解">@DateTimeFormat和@JsonFormat浅解</a></li>
+                        <li class="py-2"><a href="/news/article-77507.htm" title="符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）">符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-72786.htm" title="动物疫苗行业排名（动物疫苗行业排名前十名）">动物疫苗行业排名（动物疫苗行业排名前十名）</a></li>
+                        <li class="py-2"><a href="/news/article-90275.htm" title="动物预防接种的注意事项有哪些内容和要求（动物防疫注射注意事项）">动物预防接种的注意事项有哪些内容和要求（动物防疫注射注意事项）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-free-subscribe-node.htm" title="4月8日→20.4M/S|2025年最新免费节点V2ray W订阅链接地址">4月8日→20.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-68871.htm" title="动物疫苗的正确使用方法有哪些图片 动物疫苗的正确使用方法有哪些图片大全">动物疫苗的正确使用方法有哪些图片 动物疫苗的正确使用方法有哪些图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-90271.htm" title="被猫咬了一下红色凸起没流血（被猫咬了一下红色凸起没流血没破皮）">被猫咬了一下红色凸起没流血（被猫咬了一下红色凸起没流血没破皮）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-free-node-subscribe.htm" title="4月2日→20.1M/S|2025年最新免费节点V2ray W订阅链接地址">4月2日→20.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-89520.htm" title="北京宠物领养中心官网58（北京宠物领养吧）">北京宠物领养中心官网58（北京宠物领养吧）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-node-subscribe-links.htm" title="3月9日→20.8M/S|2025年最新免费节点V2ray W订阅链接地址">3月9日→20.8M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
