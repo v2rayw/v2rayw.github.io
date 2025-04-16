@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-94786.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>Java和matlab混合编程时Java代码参数不一致的问题</title>
+        <meta name="description" content="先说结论：源码是可变参数，可以传递多个参数给它，第一个参数是要返回的值的个数。  问题描述：  在Matlab中，我写了如下的代码：   可以看到，这个函数需要传递两个参数。  在IDEA里导入jar" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-94786.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="Java和matlab混合编程时Java代码参数不一致的问题" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/0d5e741f02a5dc72bdd378464c6f3ed2.webp" />
+        <meta property="og:release_date" content="2025-04-13T07:18:20" />
+    <meta property="og:updated_time" content="2025-04-13T07:18:20" />
+        <meta property="og:description" content="先说结论：源码是可变参数，可以传递多个参数给它，第一个参数是要返回的值的个数。  问题描述：  在Matlab中，我写了如下的代码：   可以看到，这个函数需要传递两个参数。  在IDEA里导入jar" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java和matlab混合编程时Java代码参数不一致的问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Java和matlab混合编程时Java代码参数不一致的问题</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>先说结论：源码是可变参数，可以传递多个参数给它，第一个参数是要返回的值的个数。</p> <h6> <a id="_5" rel="nofollow"></a>问题描述：</h6> <ol> <li>在Matlab中，我写了如下的代码：</li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230113/687bdda1e0e83d78ee0eedd39ed59306.jpg" alt="Java和matlab混合编程时Java代码参数不一致的问题"></p> <p>可以看到，这个函数需要传递两个参数。</p> <ol start="2"> <li>在IDEA里导入jar包，试图调用函数的时候，报错。</li> </ol> <p>调用代码如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230113/bb87da7077d47a40d052f65d1b7b48a7.jpg" alt="Java和matlab混合编程时Java代码参数不一致的问题"></p> <p>报错如下:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230113/23adccb4a12c528570148ac8e3ce094c.jpg" alt="Java和matlab混合编程时Java代码参数不一致的问题"></p> <ol start="3"> <li>提示输入参数太多。点进去源码：</li> </ol> <pre><code class="prism language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">lagrange</span><span class="token punctuation">(</span>List var1<span class="token punctuation">,</span> List var2<span class="token punctuation">)</span> <span class="token keyword">throws</span> MWException <span class="token punctuation">{<!-- --></span>     <span class="token keyword">this</span><span class="token punctuation">.</span>fMCR<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var2<span class="token punctuation">,</span> sLagrangeSignature<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">lagrange</span><span class="token punctuation">(</span>Object<span class="token punctuation">[</span><span class="token punctuation">]</span> var1<span class="token punctuation">,</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> var2<span class="token punctuation">)</span> <span class="token keyword">throws</span> MWException <span class="token punctuation">{<!-- --></span>     <span class="token keyword">this</span><span class="token punctuation">.</span>fMCR<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>var1<span class="token punctuation">)</span><span class="token punctuation">,</span> Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>var2<span class="token punctuation">)</span><span class="token punctuation">,</span> sLagrangeSignature<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token keyword">public</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">lagrange</span><span class="token punctuation">(</span><span class="token keyword">int</span> var1<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> var2<span class="token punctuation">)</span> <span class="token keyword">throws</span> MWException <span class="token punctuation">{<!-- --></span>     Object<span class="token punctuation">[</span><span class="token punctuation">]</span> var3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span>var1<span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token keyword">this</span><span class="token punctuation">.</span>fMCR<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>var3<span class="token punctuation">)</span><span class="token punctuation">,</span> MWMCR<span class="token punctuation">.</span><span class="token function">getRhsCompat</span><span class="token punctuation">(</span>var2<span class="token punctuation">,</span> sLagrangeSignature<span class="token punctuation">)</span><span class="token punctuation">,</span> sLagrangeSignature<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token keyword">return</span> var3<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <h6> <a id="_47" rel="nofollow"></a>解决方案</h6> <p>可以看到，第二个函数好像是我们需要的函数，但其实不然。我们真正要用的是第三个函数(int var1,Object…var2)，其中的参数 var1 表示我们的函数最后返回几个值，而后面用到了可变参数。所以我们调用函数正确的方式是:</p> <pre><code class="prism language-java"> func<span class="token punctuation">.</span><span class="token function">lagrange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>Y<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-94239.htm">安卓夜间模式开发【深色主题适配】</a></p>
+                                        <p>下一个：<a href="/news/article-94789.htm">.Net IDE智能提示汉化(.Net6、AspNetCore)</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-74796.htm" title="vue2设置保存自动执行run lint配置步骤">vue2设置保存自动执行run lint配置步骤</a></li>
+                        <li class="py-2"><a href="/news/article-75468.htm" title="无锡宠物狗批发市场（无锡宠物狗批发市场比熊多少钱）">无锡宠物狗批发市场（无锡宠物狗批发市场比熊多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="3月20日→20.8M/S|2025年最新免费节点V2ray W订阅链接地址">3月20日→20.8M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-96973.htm" title="炸酱面的炸鸡蛋酱怎么做(炸酱面怎样鸡蛋炸酱)">炸酱面的炸鸡蛋酱怎么做(炸酱面怎样鸡蛋炸酱)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-free-v2ray-subscribe.htm" title="3月15日→23M/S|2025年最新免费节点V2ray W订阅链接地址">3月15日→23M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-94239.htm" title="安卓夜间模式开发【深色主题适配】">安卓夜间模式开发【深色主题适配】</a></li>
+                        <li class="py-2"><a href="/news/article-87348.htm" title="宠物零食加工厂要投资多少钱 宠物零食加工厂要投资多少钱呢">宠物零食加工厂要投资多少钱 宠物零食加工厂要投资多少钱呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-v2ray.htm" title="4月10日→22.8M/S|2025年最新免费节点V2ray W订阅链接地址">4月10日→22.8M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-91786.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/news/article-78867.htm" title="颗粒狗粮制作方法（颗粒狗粮制作方法图片）">颗粒狗粮制作方法（颗粒狗粮制作方法图片）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">47</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

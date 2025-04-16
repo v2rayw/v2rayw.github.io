@@ -157,6 +157,7 @@ About Section Start
                   				  				  				<div id="content_views" class="htmledit_views"> <h3>1.创建文件夹</h3> <p>就在res 下新建 values-night目录，创建对应的colors.xml文件。如果适配图片的话，就创建对应的 drawable-night目录。</p> <p style="text-align:center;"><img fetchpriority="high" decoding="async" alt="" height="790" src="http://img.555519.xyz/uploads/20221223/663af67cd545c3adecfeb67fee2e2ae4.jpg"></p> <p>&nbsp;正常情况下，系统会调用values里面的颜色还有主题等信息，当切换到深色模式的时候，系统就会调用“-night”的文件夹里面的信息，所以当你需要深色模式的图片时，对应就需要创建“mipmap-xxhdpi-night”等等</p> <h3>2.主题设置</h3> <p>在<span style="color:#f33b45;">values</span>和<span style="color:#f33b45;">values-night</span>里面把你的主题设置为继承“Theme.AppCompat.DayNight”或者是它的子类“Theme.AppCompat.DayNight.NoActionBar”等，这是我的主题</p> <p style="text-align:center;"><img decoding="async" alt="" height="201" src="http://img.555519.xyz/uploads/20221223/5e1cbb86f98325955e7bf14d2e388e17.jpg"></p> <p>&nbsp;<span style="color:#f33b45;"><strong>colors.xml</strong></span>这个文件，要保证在values和values-night这两个文件夹里面是一样的，<strong><span style="color:#f33b45;">里面参数的名字要保证一模一样&nbsp;</span></strong>参数值可以设置为不一样，白天模式的颜色值可以设置在<span style="color:#f33b45;">values</span>的color里面，深色模式的颜色值设置在<span style="color:#f33b45;">values-night</span>里面。</p> <p style="text-align:center;"><img decoding="async" alt="" height="785" src="http://img.555519.xyz/uploads/20221223/62ca30fa946863db753d2f1c42e15ead.jpg"></p> <p>&nbsp;这是我获取到的微信的颜色设置，如果有需要的话，可以使用一下。</p> <h3>3.监听深色主题是否开启</h3> <p>我们还可以监听到暗黑的主题是否开启<br /> （1）在清单文件中给对应的Activity配置 android:configChanges=“uiMode”：</p> <pre><code class="language-java">&lt;activity android:name=".MainActivity"             android:configChanges="uiMode"&gt;             &lt;intent-filter&gt;                 &lt;action android:name="android.intent.action.MAIN" /&gt;                  &lt;category android:name="android.intent.category.LAUNCHER" /&gt;             &lt;/intent-filter&gt; &lt;/activity&gt; </code></pre> <p>（2）在onConfigurationChanged方法中获取：</p> <pre><code class="language-java">@Override     public void onConfigurationChanged(Configuration newConfig) {         super.onConfigurationChanged(newConfig);         int currentNightMode = newConfig.uiMode &amp; Configuration.UI_MODE_NIGHT_MASK;         switch (currentNightMode) {             case Configuration.UI_MODE_NIGHT_NO:                 //关闭夜间模式                 Log_Ma.e("=======", "=====关闭夜间模式====");                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);                 ActivityManager.getAppManager().finishAllActivity();                 startActivity(MainActivity.class);                 break;             case Configuration.UI_MODE_NIGHT_YES:                 //打开夜间模式                 Log_Ma.e("=======", "=====开启夜间模式====");                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);                 ActivityManager.getAppManager().finishAllActivity();                 startActivity(MainActivity.class);                 break;             default:                 break;         }     }</code></pre> <p>这时，可以通过系统的设置切换暗黑模式的关闭和开启。</p> <pre><code class="language-html">setDefaultNightMode参数有以下几种模式： 浅色 - MODE_NIGHT_NO 深色 - MODE_NIGHT_YES 由省电模式设置 - MODE_NIGHT_AUTO_BATTERY 系统默认 - MODE_NIGHT_FOLLOW_SYSTEM</code></pre> <h3>4.总结</h3> <p>其实现在还有点问题，微信可以在设置深色模式之后直接在后台切换不崩溃，但是这种方式只能在桌面重新打开才可以，目前还没有找到一个更好的方式解决，我再想想看吧</p> </h1> <p><strong>一旦在manifest里面设置了</strong><span style="color:#f33b45;"><strong>android:configChanges</strong></span><strong>的话，那么在代码里面设置的屏幕方向就不好使了，必须要在manifest里重新设置！！切记，像这样</strong></p> <p style="text-align:center;"><img loading="lazy" decoding="async" alt="" height="109" src="http://img.555519.xyz/uploads/20221223/0789f243e28dfe3c57c894f75947bc09.jpg"></p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-94238.htm">纳尼！ROOT修改权限不足？提示Operation not permitted？</a></p>
+                                        <p>下一个：<a href="/news/article-94786.htm">Java和matlab混合编程时Java代码参数不一致的问题</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -166,16 +167,16 @@ About Section Start
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-89520.htm" title="北京宠物领养中心官网58（北京宠物领养吧）">北京宠物领养中心官网58（北京宠物领养吧）</a></li>
-                        <li class="py-2"><a href="/news/article-82344.htm" title="被猫抓伤怎么确定有没有狂犬病毒感染（被猫抓伤怎么确定有没有狂犬病毒感染呢）">被猫抓伤怎么确定有没有狂犬病毒感染（被猫抓伤怎么确定有没有狂犬病毒感染呢）</a></li>
-                        <li class="py-2"><a href="/news/article-91788.htm" title="C语言数据结构之算法的时间复杂度_C 语言">C语言数据结构之算法的时间复杂度_C 语言</a></li>
-                        <li class="py-2"><a href="/news/article-83754.htm" title="Minikube使用文档">Minikube使用文档</a></li>
-                        <li class="py-2"><a href="/news/article-76157.htm" title="猫三联一共几针（猫三联一共几针,间隔多久）">猫三联一共几针（猫三联一共几针,间隔多久）</a></li>
-                        <li class="py-2"><a href="/news/article-92514.htm" title="URL编码及解码">URL编码及解码</a></li>
+                        <li class="py-2"><a href="/news/article-96281.htm" title="学生没钱怎么开网店拼多多买东西（学生怎么在拼多多上开店）">学生没钱怎么开网店拼多多买东西（学生怎么在拼多多上开店）</a></li>
+                        <li class="py-2"><a href="/news/article-94239.htm" title="安卓夜间模式开发【深色主题适配】">安卓夜间模式开发【深色主题适配】</a></li>
+                        <li class="py-2"><a href="/news/article-75469.htm" title="动物防疫中心站（动物防疫中心站是干嘛）">动物防疫中心站（动物防疫中心站是干嘛）</a></li>
+                        <li class="py-2"><a href="/news/article-78867.htm" title="颗粒狗粮制作方法（颗粒狗粮制作方法图片）">颗粒狗粮制作方法（颗粒狗粮制作方法图片）</a></li>
                         <li class="py-2"><a href="/news/article-67572.htm" title="动物疫苗厂家查询电话（动物疫苗经销商）">动物疫苗厂家查询电话（动物疫苗经销商）</a></li>
-                        <li class="py-2"><a href="/news/article-76825.htm" title="vue项目中package.json中的版本号">vue项目中package.json中的版本号</a></li>
+                        <li class="py-2"><a href="/news/article-85916.htm" title="宠物医院好评200字通用评论怎么写 宠物医院好评200字通用评论怎么写的">宠物医院好评200字通用评论怎么写 宠物医院好评200字通用评论怎么写的</a></li>
+                        <li class="py-2"><a href="/news/article-83754.htm" title="Minikube使用文档">Minikube使用文档</a></li>
                         <li class="py-2"><a href="/news/article-72128.htm" title="动物医院名字怎么取好听（动物医院名字怎么取好听一点）">动物医院名字怎么取好听（动物医院名字怎么取好听一点）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-subscribe-node.htm" title="3月14日→22.5M/S|2025年最新免费节点V2ray W订阅链接地址">3月14日→22.5M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-74796.htm" title="vue2设置保存自动执行run lint配置步骤">vue2设置保存自动执行run lint配置步骤</a></li>
+                        <li class="py-2"><a href="/news/article-88084.htm" title="国内宠物粮生产厂家有哪些品牌（中国宠物粮品牌）">国内宠物粮生产厂家有哪些品牌（中国宠物粮品牌）</a></li>
                     </ul>
     </div>
 </div>
@@ -187,7 +188,7 @@ About Section Start
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
