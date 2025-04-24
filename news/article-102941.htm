@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+    <link rel="canonical" href="https://v2rayw.github.io/news/article-102941.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>前端零：基本知识</title>
+        <meta name="description" content="文章目录  前端零：基本知识 1 像素、视口、移动端适配   1.1 像素和视口 1.2 完美视口 1.3 移动端vw适配   2 跨域   2.1 同源策略 2.2 jsonp实现跨域 2.3 使用" />
+        <link rel="icon" href="/assets/website/img/v2rayw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray W机场节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayw.github.io/news/article-102941.htm" />
+    <meta property="og:site_name" content="V2ray W机场节点订阅官网" />
+    <meta property="og:title" content="前端零：基本知识" />
+    <meta property="og:image" content="https://v2rayw.github.io/uploads/20240908-1/37b7061287debd4491c38e6ec7344ea1.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:16:37" />
+    <meta property="og:updated_time" content="2025-04-24T09:16:37" />
+        <meta property="og:description" content="文章目录  前端零：基本知识 1 像素、视口、移动端适配   1.1 像素和视口 1.2 完美视口 1.3 移动端vw适配   2 跨域   2.1 同源策略 2.2 jsonp实现跨域 2.3 使用" />
+        
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="前端零：基本知识">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="/assets/website/js/frontend/v2rayw/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="/assets/website/css/v2rayw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0WY1DJL68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0WY1DJL68');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">
+                                                <span>V2ray W</span>
+                                                </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/">首页</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/client.htm">客户端</a>
+                                </li>
+                                                                <li class="nav-item">
+                                    <a class="nav-link" href="/news/">新闻资讯</a>
+                                </li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>前端零：基本知识</h1>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="/">
+                                    <i class="ion-ios-home"></i>
+                                    首页 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/news/">
+                                    <i class="ion-ios-home"></i>
+                                    新闻资讯 &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">正文</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <div class="toc"> <h3>文章目录</h3> <ul> <li>前端零：基本知识</li> <li>1 像素、视口、移动端适配</li> <li> <ul> <li>1.1 像素和视口</li> <li>1.2 完美视口</li> <li>1.3 移动端vw适配</li> </ul> </li> <li>2 跨域</li> <li> <ul> <li>2.1 同源策略</li> <li>2.2 jsonp实现跨域</li> <li>2.3 使用CORS实现跨域</li> </ul> </li> <li>3 HTTP协议、请求本文和响应报文的结构</li> </ul> </div> <hr color="#000000" size="1&quot;"/> </h1> <h2>1.1 像素和视口</h2> <pre><code class="prism language-css">&lt;!--          像素：             - 屏幕是由一个一个发光的小点构成，这一个个的小点就是像素             - 分辨率：1920 x 1080 说的就是屏幕中小点的数量             - 在前端开发中像素要分成两种情况讨论：CSS像素 和 物理像素             - 物理像素，上述所说的小点点就属于物理像素             - CSS像素，编写网页时，我们所用像素都是CSS像素                 - 浏览器在显示网页时，需要将CSS像素转换为物理像素然后再呈现                 - 一个css像素最终由几个物理像素显示，由浏览器决定：                     默认情况下在pc端，一个css像素 = 一个物理像素          视口（viewport）             - 视口就是屏幕中用来显示网页的区域<span class="token punctuation">(</span>简单来说视口就是游览器的窗口<span class="token punctuation">)</span>             - 可以通过查看视口的大小，来观察CSS像素和物理像素的比值             - 默认情况下：                 视口宽度 1920px（CSS像素）                         1920px（物理像素）                         - 此时，css像素和物理像素的比是 1<span class="token punctuation">:</span>1              - 放大两倍的情况：                 视口宽度 960px（CSS像素）                         1920px（物理像素）                         -<span class="token property">此时，css像素和物理像素的比是1</span><span class="token punctuation">:</span>2              - 我们可以通过改变视口的大小，来改变CSS像素和物理像素的比值      --&gt;</code></pre> <h2>1.2 完美视口</h2> <pre><code class="prism language-css">    &lt;!--          移动端默认的视口大小是<span class="token function">980px</span><span class="token punctuation">(</span>css像素<span class="token punctuation">)</span>，             默认情况下，移动端的像素比就是  980/移动端宽度  （980/750）             如果我们直接在网页中编写移动端代码，这样在980的视口下，像素比是非常不好，                 导致网页中的内容非常非常的小             编写移动页面时，必须要确保有一个比较合理的像素比：                 1css像素 对应 2个物理像素                 1css像素 对应 3个物理像素              - 可以通过meta标签来设置视口大小              - 每一款移动设备设计时，都会有一个最佳的像素比，                 一般我们只需要将像素比设置为该值即可得到一个最佳效果                 将像素比设置为最佳像素比的视口大小我们称其为完美视口                  将网页的视口设置为完美视口                 &lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"width=device-width, initial-scale=1.0"</span>&gt;                  结论：以后再写移动端的页面，就把上边这个玩意先写上      --&gt;</code></pre> <h2>1.3 移动端vw适配</h2> <pre><code class="prism language-html"><span class="token comment">&lt;!--          1、不同的设备完美视口的大小是不一样的             iphone6 -- 375             iphone6plus -- 414          由于不同设备视口和像素比不同，所以同样的375个像素在不同的设备下意义是不一样，             比如在iphone6中 375就是全屏，而到了plus中375就会缺一块          所以在移动端开发时，就不能再使用px来进行布局了          2、vw 表示的是视口的宽度（viewport width），vw对于PC端兼容性不太好，老版游览器并不支持，单移动端都使用，所以移动端可以使用vw。             - 100vw = 一个视口的宽度             - 1vw = 1%视口宽度              vw这个单位永远相当于视口宽度进行计算              设计图的宽度                 750px 1125px              设计图                  750px                使用vw作为单位                 100vw              创建一个 48px x 35px 大小的元素              100vw = 750px(设计图的像素) 0.1333333333333333vw = 1px             6.4vw = 48px(设计图像素)             4.667vw = 35px      --&gt;</span></code></pre> </h1> <h2>2.1 同源策略</h2> <p>同源策略：最早有Netscape公司提出，是游览器的一种安全机制，同源即来源必须相同，当前网页的url和请求目标资源的url的协议、域名、端口号都必须一致，违背同源策略就是跨域，Ajax策略默认支持同源策略。</p> <h2>2.2 jsonp实现跨域</h2> <p>Jsonp(JSON with padding)，是一个非官方的跨域解决方案，纯粹是凭借程序员的聪明才智开发出来的，<mark>只支持get请求</mark>。</p> <p>网页中有一些标签天生就具有跨域能力，比如：img，link，iframe，script等。<br /><mark>JSONP就是利用script标签的跨域能力来发送Ajax请求的，通过script的src属性获取的是一个函数调用的字符串，同时这个字符串在script标签中需要有定义</mark>。</p> <ul> <li>1 通过原生的JS来实现JSONP：</li> </ul> <p><mark>script标签为什么能够实现跨域？？？ajax请求存在跨域的问题，是由游览器中的Ajax引擎来判定的，script的src属性发的请求是由游览器引擎发的普通的http请求，不会受到Ajax引擎的限制，不存在跨域的问题。</mark></p> <pre><code class="prism language-javascript"><span class="token comment">//前端页面</span><span class="token operator">&lt;</span>body<span class="token operator">&gt;</span> 请输入用户名：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span><span class="token operator">&gt;</span> 请输入密码：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"password"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>提交<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">&gt;</span><span class="token keyword">function</span><span class="token function">hasUser</span><span class="token punctuation">(</span><span class="token parameter">username<span class="token punctuation">,</span> password</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">if</span><span class="token punctuation">(</span>username<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token operator">&amp;</span> password<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"用户名和密码重复"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> str<span class="token operator">=</span> username<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token operator">||</span> password<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token operator">?</span><span class="token string">"用户名重复"</span><span class="token operator">:</span><span class="token string">"密码重复"</span>       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span>   window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> btn<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>     btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> username<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token keyword">var</span> password<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token comment">//使用原生的js来实现jsonp</span><span class="token comment">//1 创建一个script标签</span><span class="token keyword">var</span> script<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"script"</span><span class="token punctuation">)</span><span class="token comment">//2 设置script标签的src,即url,jsonp只能实现get请求，如果要将数据发送给后端服务器，</span><span class="token comment">//只能进行url的拼接，将数据放在url中发送给后端</span>       url<span class="token operator">=</span><span class="token string">"http://127.0.0.1:8000/jsonp?username="</span><span class="token operator">+</span> username<span class="token operator">+</span><span class="token string">"&amp;password="</span><span class="token operator">+</span> password       script<span class="token punctuation">.</span>src<span class="token operator">=</span> url<span class="token comment">//3 将script标签添加到页面中</span>       document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token comment">// console.log(`用户名为${username},密码为${password}`)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre> <pre><code class="prism language-javascript"><span class="token comment">//后端页面</span><span class="token comment">//1.引入express</span><span class="token keyword">const</span> express<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token comment">//2. 创建应用对象</span><span class="token keyword">const</span> app<span class="token operator">=</span><span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//设置使用原生的js来实现jsonp进行跨域,判断用户名和密码是否已经存在</span> app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"/jsonp"</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> usernames<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"张三"</span><span class="token punctuation">,</span><span class="token string">"李四"</span><span class="token punctuation">,</span><span class="token string">"王五"</span><span class="token punctuation">]</span><span class="token keyword">const</span> passwords<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token string">"666666"</span><span class="token punctuation">,</span><span class="token string">"0a2345"</span><span class="token punctuation">]</span><span class="token keyword">var</span> username<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>username<span class="token keyword">var</span> password<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>password<span class="token keyword">var</span> uindex<span class="token operator">=</span>usernames<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token keyword">var</span> pindex<span class="token operator">=</span> passwords<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span>   response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hasUser(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>uindex<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>pindex<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token comment">//最终返回给前端页面的是类似hasUser(1,0)的函数调用</span><span class="token punctuation">}</span><span class="token punctuation">)</span>  app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"服务已启动，8000端口监听中"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <ul> <li>2 通过jQuery来实现JSONP：</li> </ul> <pre><code class="prism language-javascript"><span class="token comment">//前端页面</span><span class="token operator">&lt;</span>body<span class="token operator">&gt;</span> 请输入用户名：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span><span class="token operator">&gt;</span> 请输入密码：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"password"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>提交<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">&gt;</span><span class="token comment">//  2 使用jQuery来实现JSONP</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> username<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token keyword">var</span> password<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token comment">//在jQuery中url后必须带callback=?这个参数，这个就相当于原生中的hasUser()使得不再需要自己定义处理的函数了，</span><span class="token comment">//只需要在回调函数中对返回的数据进行处理就可以了</span>     $<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1:8000/jsonp?callback=?"</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>username<span class="token operator">:</span>username<span class="token punctuation">,</span>password<span class="token operator">:</span>password<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span></code></pre> <pre><code class="prism language-javascript"><span class="token comment">//后端页面</span> app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"/jsonp"</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> usernames<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"张三"</span><span class="token punctuation">,</span><span class="token string">"李四"</span><span class="token punctuation">,</span><span class="token string">"王五"</span><span class="token punctuation">]</span><span class="token keyword">const</span> passwords<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token string">"666666"</span><span class="token punctuation">,</span><span class="token string">"0a2345"</span><span class="token punctuation">]</span><span class="token keyword">var</span> username<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>username<span class="token keyword">var</span> password<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>password<span class="token keyword">var</span> uindex<span class="token operator">=</span>usernames<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token keyword">var</span> pindex<span class="token operator">=</span> passwords<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token keyword">const</span> cb<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>callback<span class="token comment">//jQuery自带的回调函数，不需要自己定义函数了，直接在前端的回调函数中取数据就可以了</span>   response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>cb<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">([</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>uindex<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>pindex<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">])</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <h2>2.3 使用CORS实现跨域</h2> <p>CORS(Cross-Origin Resource Sharing)，跨域资源共享。CORS是官方跨域解决方案，不需要在客户端做任何特殊操作，完全在服务器端处理，支持get和post请求。跨域资源共享标准新增了一组HTTP 首部字段，允许服务器声明哪些源站通过浏览器有权限访问哪些资源。</p> <p>CORS是怎么工作的？<br /> CORS 是通过设置一个<mark>响应头</mark>来告诉浏览器，该请求允许跨域，浏览器收到该响应以后就会对响应放行。</p> <pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span> //前端页面：不需要做任何更改，直接发送Ajax请求 请输入用户名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 请输入密码：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//1 创建对象</span><span class="token keyword">var</span> xhr<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//  2 进行初始化设置</span><span class="token keyword">var</span> username<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token keyword">var</span> password<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value     url<span class="token operator">=</span><span class="token string">"http://127.0.0.1:8000/cors?username="</span><span class="token operator">+</span> username<span class="token operator">+</span><span class="token string">"&amp;password="</span><span class="token operator">+</span> password     xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token comment">//  3 发送请求</span>     xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//  4 绑定事件</span>     xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState<span class="token operator">===</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//readyState一共有4个值：</span><span class="token comment">//0：初始化new XMLHTTPRequest()</span><span class="token comment">//1:</span><span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status<span class="token operator">&gt;=</span><span class="token number">200</span><span class="token operator">&amp;</span> xhr<span class="token punctuation">.</span>status<span class="token operator">&lt;</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//  输出响应体</span>           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre> <pre><code class="prism language-javascript">app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"/cors"</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token comment">//设置响应头,来实现CORS的跨域</span>   response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">,</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//还可以设置允许进行跨域发送Ajax的网页的url,使用*表示对所有网页都允许</span><span class="token comment">// response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");</span><span class="token comment">//设置允许网页能够设置任意的请求头</span>   response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Headers"</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//设置允许网页所有的请求方法</span>   response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Method"</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> usernames<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"张三"</span><span class="token punctuation">,</span><span class="token string">"李四"</span><span class="token punctuation">,</span><span class="token string">"王五"</span><span class="token punctuation">]</span><span class="token keyword">const</span> passwords<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token string">"666666"</span><span class="token punctuation">,</span><span class="token string">"0a2345"</span><span class="token punctuation">]</span><span class="token keyword">var</span> username<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>username<span class="token keyword">var</span> password<span class="token operator">=</span>request<span class="token punctuation">.</span>query<span class="token punctuation">.</span>password<span class="token keyword">var</span> uindex<span class="token operator">=</span>usernames<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token keyword">var</span> pindex<span class="token operator">=</span> passwords<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token keyword">var</span> str<span class="token operator">=</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>     username<span class="token operator">:</span>uindex<span class="token punctuation">,</span>     password<span class="token operator">:</span>pindex<span class="token punctuation">}</span><span class="token punctuation">)</span>   response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> </h1> <pre><code class="prism language-markup">在这里插入代码片</code></pre> <pre><code class="prism language-markup"># HTTP HTTP（hypertext transport protocol）协议『超文本传输协议』，协议详细规定了浏览器和万维网服务器之间互相通信的规则。 约定, 规则  ## 请求报文 重点是格式与参数  行      POST  /s?ie=utf-8  HTTP/1.1    		请求行包含三部分内容： 请求类型(get,post...) 	url(可能带有参数)	HTTP协议版本 头      Host: atguigu.com         Cookie: name=guigu         Content-type: application/x-www-form-urlencoded         User-Agent: chrome 83 空行 体      username=admin&amp;password=admin 		get请求的请求体为空，post请求请求体可以不为空   ## 响应报文  行      HTTP/1.1  200  OK 		响应行包括三部分：HTTP协议版本	响应状态码	响应字符串 头      Content-Type: text/html;charset=utf-8         Content-length: 2048         Content-encoding: gzip         响应头：主要是对响应体的内容做一个描述 空行     体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>尚硅谷<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>         响应体：是主要的返回结果  * 404 * 403 * 401 * 500 * 200</code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102143.htm">广州宠物领养中心,领养宠物要收钱嘛现在 广州宠物领养中心,领养宠物要收钱嘛现在</a></p>
+                                        <p>下一个：<a href="/news/article-102945.htm">做狗粮卖钱可行吗（卖狗粮的利润大吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-95544.htm" title="免费领养宠物正规网站平台下载大全视频（免费领养宠物的网站）">免费领养宠物正规网站平台下载大全视频（免费领养宠物的网站）</a></li>
+                        <li class="py-2"><a href="/news/article-78187.htm" title="JVM内存管理面试常见问题全解">JVM内存管理面试常见问题全解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-v2ray-subscribe.htm" title="3月19日→20.4M/S|2025年最新免费节点V2ray W订阅链接地址">3月19日→20.4M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-84473.htm" title="Java 树形结构数据生成导出excel文件">Java 树形结构数据生成导出excel文件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-v2ray-subscribe.htm" title="3月10日→21.1M/S|2025年最新免费节点V2ray W订阅链接地址">3月10日→21.1M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-node-share.htm" title="4月20日→20.5M/S|2025年最新免费节点V2ray W订阅链接地址">4月20日→20.5M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-77507.htm" title="符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）">符合动物医院法定条件有哪些内容要求（动物医院资质级别有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-99986.htm" title="搭建vue3.0+Element Plus项目">搭建vue3.0+Element Plus项目</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-free-v2ray-subscribe.htm" title="4月9日→20.2M/S|2025年最新免费节点V2ray W订阅链接地址">4月9日→20.2M/S|2025年最新免费节点V2ray W订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-78868.htm" title="青岛动物医院南京路地址在哪里（青岛动物医院南京路地址在哪里啊）">青岛动物医院南京路地址在哪里（青岛动物医院南京路地址在哪里啊）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- /#about -->
+        <footer id="footer">
+        <div class="container">
+            <div class="row content-justify-between">
+                <div class="col-12 text-center">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">V2ray W机场节点订阅官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Template Javascript Files
+  ================================================== -->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/v2rayw/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/v2rayw/form-validation/jquery.validate.min.js"></script>
+    <!-- slick slider -->
+    <script src="/assets/website/js/frontend/v2rayw/slick/slick.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/v2rayw/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="/assets/website/js/frontend/v2rayw/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="/assets/website/js/frontend/v2rayw/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="/assets/website/js/frontend/v2rayw/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="/assets/website/js/frontend/v2rayw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
