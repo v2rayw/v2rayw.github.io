@@ -1,4 +1,4 @@
-# V2ray W - 9月21日18.6M/S|免费V2ray/SSR/Shadowrocket/Clash节点推荐，V2rayC梯子购买推荐  更新时间 2025-09-21 21:28:40
+# V2ray W - 9月25日22.3M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，V2rayC梯子购买推荐  更新时间 2025-09-25 10:22:15
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://v2rayw.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://v2rayw.github.io/uploads/2025/09/0-20250921.yaml
-- https://v2rayw.github.io/uploads/2025/09/1-20250921.yaml
-- https://v2rayw.github.io/uploads/2025/09/2-20250921.yaml
-- https://v2rayw.github.io/uploads/2025/09/3-20250921.yaml
-- https://v2rayw.github.io/uploads/2025/09/4-20250921.yaml
+- https://v2rayw.github.io/uploads/2025/09/0-20250925.yaml
+- https://v2rayw.github.io/uploads/2025/09/1-20250925.yaml
+- https://v2rayw.github.io/uploads/2025/09/2-20250925.yaml
+- https://v2rayw.github.io/uploads/2025/09/3-20250925.yaml
+- https://v2rayw.github.io/uploads/2025/09/4-20250925.yaml
 
 ### V2ray订阅链接
 
-- https://v2rayw.github.io/uploads/2025/09/0-20250921.txt
-- https://v2rayw.github.io/uploads/2025/09/1-20250921.txt
-- https://v2rayw.github.io/uploads/2025/09/2-20250921.txt
-- https://v2rayw.github.io/uploads/2025/09/3-20250921.txt
-- https://v2rayw.github.io/uploads/2025/09/4-20250921.txt
+- https://v2rayw.github.io/uploads/2025/09/0-20250925.txt
+- https://v2rayw.github.io/uploads/2025/09/1-20250925.txt
+- https://v2rayw.github.io/uploads/2025/09/2-20250925.txt
+- https://v2rayw.github.io/uploads/2025/09/3-20250925.txt
+- https://v2rayw.github.io/uploads/2025/09/4-20250925.txt
 
 ### Sing-box订阅链接
 
-- https://v2rayw.github.io/uploads/2025/09/20250921.json
+- https://v2rayw.github.io/uploads/2025/09/20250925.json
 
 ## 更多clash节点订阅 ：
 
